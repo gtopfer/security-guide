@@ -1,0 +1,4 @@
+workspaces select persona
+modules load import/list
+set SOURCE data/perfis.txt
+run
