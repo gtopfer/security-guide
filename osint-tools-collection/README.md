@@ -1,3 +1,88 @@
+# OSINT Tools Collection
+
+Pequeno resumo de uso rápido para a coleção OSINT.
+
+Estrutura principal:
+
+
+
+# Como usar (passo a passo local)
+
+Siga estes passos para testar a coleção OSINT localmente e de forma reprodutível.
+
+1. Criar e ativar um ambiente virtual:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+2. Instalar a coleção em modo editable (recomendado):
+
+```bash
+# a partir da raiz do repositório
+pip install -e ./osint-tools-collection
+```
+
+3. Preparar variáveis de ambiente (não versionar):
+
+```bash
+cp osint-tools-collection/.env.example osint-tools-collection/.env
+# edite osint-tools-collection/.env e preencha chaves/API keys necessárias
+```
+
+4. Executar o coletor (exemplo):
+
+```bash
+osint-collector --target example.com --out osint-tools-collection/data/outputs/example.json --artifacts-dir osint-tools-collection/data/artifacts/example
+```
+
+5. Verificar saídas e artefatos:
+
+- Saídas JSON: `osint-tools-collection/data/outputs/*.json`.
+- Artefatos brutos (HTML, certificados, robots): `osint-tools-collection/data/artifacts/<alvo>/`.
+
+6. Testes e qualidade:
+
+```bash
+# rodar testes locais da coleção
+pytest -q osint-tools-collection/tests
+
+# rodar pre-commit hooks antes de abrir PR
+pre-commit run --all-files
+```
+
+Observações:
+- Nunca versionar `data/outputs/` nem arquivos `.env` com chaves sensíveis.
+- Para depuração rápida, você também pode executar diretamente o script:
+
+```bash
+python osint-tools-collection/scripts/osint_collector.py --target example.com --out osint-tools-collection/data/outputs/example.json
+```
+
+Instalação (opcional)
+
+Após instalar a partir da pasta `Security-Guide` com `pip install -e .`, o comando `osint-collector` ficará disponível:
+
+```bash
+# a partir da raiz do repositório
+cd Security-Guide
+pip install -e .
+osint-collector --target example.com --out data/outputs/example.json --artifacts-dir data/artifacts/example
+```
+
+Variáveis de ambiente e credenciais
+
+- Crie um arquivo `.env` a partir de `.env.example` e preencha com as chaves necessárias.
+- Nunca comite arquivos `.env` com credenciais reais.
+
+Testes
+
+```bash
+pytest -q osint-tools-collection/tests
+```
+
+Boa prática: antes de abrir PR, execute `pre-commit run --all-files`.
 # OSINT tools collection
 
 Portal de navegação para todas as metodologias, scripts e templates OSINT do repositório. Use esta página para escolher rapidamente o fluxo correto antes de abrir cada subpasta.

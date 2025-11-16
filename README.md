@@ -1,5 +1,7 @@
 # Security-Guide
 
+[![CI](https://github.com/gtopfer/O11y/actions/workflows/ci.yml/badge.svg)](https://github.com/gtopfer/O11y/actions/workflows/ci.yml)
+
 Hub de metodologias e automações de Segurança Ofensiva/Defensiva. Este repositório organiza duas coleções principais — **OSINT** e **Threat Intelligence** — com documentação navegável, scripts Python e templates de dados.
 
 ## Objetivos
@@ -12,19 +14,95 @@ Hub de metodologias e automações de Segurança Ofensiva/Defensiva. Este reposi
 
 | Diretório | Conteúdo | Entrada recomendada |
 |-----------|----------|---------------------|
-| [`OSINT tools collection/`](OSINT%20tools%20collection/README.md) | Playbooks de coleta aberta, scripts automatizados e templates `.env`. | Leia o README local para navegar por `docs/`, `scripts/`, `data/`, `templates/`. |
-| [`Threat Intelligence tools collection/`](Threat%20Intelligence%20tools%20collection/README.md) | Pipelines de TI (coleta, enriquecimento, correlação, disseminação) + conectores e templates STIX/TAXII. | Comece pelo README local e siga para `docs/`, `scripts/ti_collector.py` e `templates/`. |
+| [`osint-tools-collection/`](osint-tools-collection/README.md) | Playbooks de coleta aberta, scripts automatizados e templates `.env`. | Leia o README local para navegar por `docs/`, `scripts/`, `data/`, `templates/`. |
+| [`threat-intel-tools-collection/`](threat-intel-tools-collection/README.md) | Pipelines de TI (coleta, enriquecimento, correlação, disseminação) + conectores e templates STIX/TAXII. | Comece pelo README local e siga para `docs/`, `scripts/ti_collector.py` e `templates/`. |
 
 ## Como usar o repositório
+1. **Passo a passo (início → fim)**
 
-1. **Preparar o ambiente**  
-   - Linux/WSL com Python 3.10+, `pip install -r scripts/requirements.txt` em cada coleção.  
-   - Segredos ficam fora do repo; crie arquivos `.env` a partir de `templates/` e adicione ao `.gitignore`.
-2. **Escolher o domínio**  
-   - OSINT: foco em rastreio público (domínios, perfis, infraestrutura).  
-   - Threat Intel: perguntas táticas/estratégicas, ingestão de IOCs, relatórios para SOC/Executivos.
-3. **Seguir o fluxo indicado** nos READMEs locais (metodologia → playbooks → scripts → dados).  
-4. **Registrar resultados** em `data/outputs/` (não versionado) e usar os templates de relatório/disseminação.
+Siga este roteiro para executar uma investigação completa usando as coleções do repositório.
+
+Pré-requisitos:
+- Sistema Linux/WSL ou similar
+- Python 3.10+ instalado
+- `git` configurado
+
+Passos:
+
+1. Clone o repositório e entre na pasta:
+
+```bash
+git clone https://github.com/gtopfer/O11y.git
+cd O11y/Security-Guide
+```
+
+2. Crie e ative um ambiente virtual (recomendado):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3. Instale apenas a coleção que vai usar (recomendado) em modo editable:
+
+```bash
+# Para OSINT
+pip install -e ./osint-tools-collection
+
+# Para Threat Intelligence
+pip install -e ./threat-intel-tools-collection
+```
+
+Obs: instalar apenas a coleção necessária reduz dependências e acelera testes. Se preferir, instale as duas coleções.
+
+4. Preparar credenciais e variáveis: copie os exemplos de `.env` e atualize com valores reais (local fora do repo):
+
+```bash
+cp osint-tools-collection/.env.example osint-tools-collection/.env
+cp threat-intel-tools-collection/.env.example threat-intel-tools-collection/.env
+# Edite os arquivos e preencha chaves de APIs se necessário
+```
+
+5. Executar a coleta inicial (OSINT):
+
+```bash
+osint-collector --target example.com --out osint-tools-collection/data/outputs/example.json --artifacts-dir osint-tools-collection/data/artifacts/example
+```
+
+6. Executar a normalização/relatório (Threat Intel):
+
+```bash
+ti-collector --ioc-file threat-intel-tools-collection/data/examples/sample_intel_case.json --out threat-intel-tools-collection/data/outputs/ioc_report.json
+```
+
+7. Validar saídas e artifacts:
+
+- Os JSONs de saída ficam em `data/outputs/` (cada coleção tem seu próprio subdiretório não versionado).  
+- Artefatos brutos (HTML, certificados, robots.txt) ficam em `data/artifacts/<alvo>` quando `--artifacts-dir` é usado.
+
+8. Testes e qualidade:
+
+```bash
+# Rodar testes unitários da coleção
+pytest -q osint-tools-collection/tests
+pytest -q threat-intel-tools-collection/tests
+
+# Rodar pre-commit hooks antes de abrir PR
+pre-commit run --all-files
+```
+
+9. Gerar relatório final e anexar evidências:
+
+- Combine as saídas relevantes em um briefing utilizando os templates em `threat-intel-tools-collection/templates` ou `osint-tools-collection/templates`.
+
+10. Submeter mudanças e resultados:
+
+- Commit das mudanças relevantes (ex.: novos exemplos sanitized em `data/examples/`) e abrir PR seguindo o template de PR.
+
+Dicas rápidas:
+- Nunca versionar `data/outputs/` nem arquivos `.env` com chaves. Use `data/examples/` para exemplos sanitizados.
+- Use `pip install -e .` dentro da pasta da coleção para expor somente os comandos daquela coleção.
+
 
 ## Convenções e boas práticas
 

@@ -1,3 +1,36 @@
+# Threat Intelligence Tools Collection
+
+Resumo de uso rápido para a coleção de Threat Intelligence.
+
+Estrutura principal:
+
+- `docs/` — metodologia, grupos e fluxos de coleta/enriquecimento.
+- `scripts/` — `ti_collector.py` e módulos auxiliares.
+- `templates/` — modelos de briefing, perfis e tracking.
+- `data/examples/` — exemplos de casos e IOCs.
+- `data/outputs/` — resultados de execuções (não versionar).
+
+Como usar (exemplo):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r threat-intel-tools-collection/scripts/requirements.txt
+python threat-intel-tools-collection/scripts/ti_collector.py --case threat-intel-tools-collection/data/examples/sample_intel_case.json
+```
+
+Variáveis de ambiente
+
+- Copie `threat-intel-tools-collection/.env.example` para `.env` e preencha as credenciais necessárias.
+- Não comprometa chaves sensíveis no repositório.
+
+Testes
+
+```bash
+pytest -q threat-intel-tools-collection/tests
+```
+
+Execute `pre-commit run --all-files` antes de enviar PRs.
 # Threat Intelligence tools collection
 
 Portal para metodologias, scripts e templates de Threat Intelligence. Use este diretório como guia de navegação antes de abrir cada subpasta ou automatizar fluxos.
@@ -57,9 +90,56 @@ Portal para metodologias, scripts e templates de Threat Intelligence. Use este d
 - Dependências listadas em [scripts/requirements.txt](scripts/requirements.txt).
 - Testes unitários em [`tests/test_ti_collector.py`](tests/test_ti_collector.py); execute com `pytest tests`.
 - Configure `pre-commit` a partir do diretório raiz para validar Markdown e scripts.
+## Execução e passo a passo local
 
-## Próximos passos
+Siga estes passos para preparar e executar o fluxo de Threat Intelligence localmente.
 
-- Integrar conectores STIX/TAXII autenticados.
-- Criar notebooks de análise exploratória (DuckDB, pandas) para aceleração de hunting.
-- Automatizar publicação de relatórios (S3, Confluence) via pipelines CI/CD.
+1. Criar e ativar um ambiente virtual:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+2. Instalar a coleção em modo editable (recomendado):
+
+```bash
+# a partir da raiz do repositório
+pip install -e ./threat-intel-tools-collection
+```
+
+3. Preparar credenciais/variáveis (não versionar):
+
+```bash
+cp threat-intel-tools-collection/.env.example threat-intel-tools-collection/.env
+# edite threat-intel-tools-collection/.env e preencha chaves/API keys necessárias
+```
+
+4. Executar o coletor e gerar relatório JSON:
+
+```bash
+ti-collector --ioc-file threat-intel-tools-collection/data/examples/sample_intel_case.json --out threat-intel-tools-collection/data/outputs/ioc_report.json
+```
+
+5. Verificar resultado e gerar briefing:
+
+- O relatório JSON será salvo em `threat-intel-tools-collection/data/outputs/`.
+- Utilize os templates em `threat-intel-tools-collection/templates/` para montar briefings e relatórios executivos.
+
+6. Testes e qualidade:
+
+```bash
+# rodar testes locais da coleção
+pytest -q threat-intel-tools-collection/tests
+
+# rodar pre-commit hooks antes de abrir PR
+pre-commit run --all-files
+```
+
+Observações:
+- Nunca versionar `data/outputs/` nem arquivos `.env` com chaves sensíveis.
+- Para depuração, o script também pode ser executado diretamente:
+
+```bash
+python threat-intel-tools-collection/scripts/ti_collector.py --ioc-file threat-intel-tools-collection/data/examples/sample_intel_case.json --out threat-intel-tools-collection/data/outputs/ioc_report.json
+```
