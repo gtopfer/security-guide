@@ -1,0 +1,15 @@
+# Lista apenas fontes com as quais você tem key/credencial.
+sources:
+  - alienvault
+  - certspotter
+  - github
+  - intelx
+  - virustotal
+api-keys:
+  alienvault: SUA_CHAVE
+  virustotal: SUA_CHAVE
+  intelx: SUA_CHAVE
+
+# Ajustes adicionais (opcionais)
+max-time: 10m
+remove-duplicates: true

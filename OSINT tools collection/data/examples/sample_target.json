@@ -1,0 +1,23 @@
+{
+  "target": "exemplo.com",
+  "collected_at": "2024-01-01T00:00:00Z",
+  "dns": {
+    "ipv4": ["93.184.216.34"],
+    "ipv6": ["2606:2800:220:1:248:1893:25c8:1946"]
+  },
+  "http": {
+    "scheme": "https",
+    "status": 200,
+    "reason": "OK",
+    "headers": {
+      "server": "ECS (nyb/1D2E)",
+      "content-type": "text/html; charset=UTF-8"
+    }
+  },
+  "robots_txt": "User-agent: *\nDisallow: /private",
+  "open_ports": [
+    {"ip": "93.184.216.34", "port": 80},
+    {"ip": "93.184.216.34", "port": 443}
+  ],
+  "whois_raw": "Domain Name: EXEMPLO.COM\nRegistry Domain ID: 000000_DOMAIN_COM-VRSN\n..."
+}

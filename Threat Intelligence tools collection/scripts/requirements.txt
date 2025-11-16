@@ -1,0 +1,5 @@
+stix2>=3.0.1
+cabby>=0.10.2
+pandas>=2.1.0
+requests>=2.31.0
+pyyaml>=6.0.1

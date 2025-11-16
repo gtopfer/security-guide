@@ -1,0 +1,7 @@
+{
+  "login_user": "usuario",
+  "login_pass": "senha",
+  "interactive": false,
+  "retain_username": true,
+  "destination": "data/instagram"
+}
