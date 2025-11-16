@@ -1,5 +1,0 @@
-workspaces select empresa
-modules load reporting/csv
-set FILENAME reports/hosts.csv
-run
-exit

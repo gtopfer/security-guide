@@ -1,5 +1,0 @@
-workspaces select empresa
-modules load recon/domains-hosts/bing_domain_web
-set SOURCE empresa.com
-run
-show hosts

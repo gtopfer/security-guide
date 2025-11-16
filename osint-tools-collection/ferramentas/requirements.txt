@@ -1,2 +1,0 @@
-# Dependências principais e de testes para os scripts OSINT
-pytest>=7.4

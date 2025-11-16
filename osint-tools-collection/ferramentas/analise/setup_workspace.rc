@@ -1,4 +1,0 @@
-workspaces create empresa
-workspaces select empresa
-keys add bing_api SUA_CHAVE
-keys add virustotal_api SUA_CHAVE

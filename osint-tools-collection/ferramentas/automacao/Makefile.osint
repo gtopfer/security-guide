@@ -1,6 +1,0 @@
-pull:
-	git -C ~/Tools/osint_stuff_tool_collection pull --ff-only
-
-index:
-	rg --files ~/Tools/osint_stuff_tool_collection/collections -g '*.md' \
-		| xargs -I{} pandoc {} -t plain >> /tmp/osint_index.txt
