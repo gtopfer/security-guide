@@ -51,6 +51,7 @@ pip install -e ./osint-tools-collection
 
 # Para Threat Intelligence
 pip install -e ./threat-intel-tools-collection
+
 ```
 
 Obs: instalar apenas a coleção necessária reduz dependências e acelera testes. Se preferir, instale as duas coleções.

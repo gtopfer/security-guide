@@ -4,9 +4,9 @@
 
 [Open-source intelligence (OSINT)](https://pt.wikipedia.org/wiki/Intelig%C3%AAncia_de_c%C3%B3digo_aberto) é inteligência coletada de fontes publicamente disponíveis. Na comunidade de inteligência, o termo "aberto" refere-se a fontes públicas overt (em oposição a fontes encobertas ou clandestinas).
 
-Esta coleção foi desenvolvida para ajudar todos aqueles interessados em Inteligência de Ameaças Cibernéticas (CTI), caça de ameaças (threat hunting) ou OSINT. Do iniciante ao avançado.
+Esta coleção foi desenvolvida para ajudar todos aqueles interessados em Inteligência de Ameaças Cibernéticas (CTI) e OSINT. Do iniciante ao avançado.
 
-**Feliz hacking e hunting 🧙‍♂️**
+**Feliz hacking e pesquisa 🧙‍♂️**
 
 ---
 
