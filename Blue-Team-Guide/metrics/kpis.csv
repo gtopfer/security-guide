@@ -1,0 +1,5 @@
+metric,description,target
+mttd,Tempo médio para detectar incidente,< 15 minutos
+mttr,Tempo médio para resposta/restore,< 4 horas
+auth_mfa_coverage,Percentual de contas com MFA habilitado,> 98%
+playbooks_executed,Playbooks testados por trimestre,>= 4
