@@ -2,10 +2,15 @@
 
 > Biblioteca viva com projetos **100% open source**, hospedados em Git e executáveis local/offline, sem cadastros pagos. O objetivo é oferecer o conjunto mais completo possível para investigações OSINT/CTI.
 
-Cada ferramenta abaixo traz:
-- Link direto para o repositório oficial.
-- Stack principal para facilitar troubleshooting.
-- Um comando de inicialização/teste local (adequar conforme SO).
+Por que usar:
+- Cobrir 80% dos casos OSINT/CTI sem depender de SaaS ou paywalls.
+- Rodar localmente (privacidade e controle) com stacks comuns: Python, Go, Rust, Docker.
+- Montar um lab repetível para treinamento e investigações rápidas.
+
+Como ler e implementar:
+- Cada ferramenta traz link oficial, stack principal e um comando de uso rápido (ajuste ao seu SO).
+- Prefira rodar em ambientes isolados (venv, containers) e contra domínios/dados controlados para testes.
+- Combine ferramentas por fluxo: enumere → colete artefatos → correlacione → armazene em formatos abertos (CSV/JSONL).
 
 > ⚠️ Algumas integrações aceitam APIs externas opcionais (Shodan, Censys, etc.). Elas não são necessárias para iniciar o uso básico descrito aqui.
 
@@ -24,6 +29,7 @@ Contribuições devem seguir os mesmos critérios.
 
 ## 📚 Índice
 
+0. [Kit rápido](#kit-rápido)
 1. [Dorks Google & Macetes](#dorks-google--macetes)
 2. [Frameworks & Suites de Recon](#frameworks--suites-de-recon)
 3. [Perfis e Redes Sociais](#perfis-e-redes-sociais)
@@ -40,6 +46,18 @@ Contribuições devem seguir os mesmos critérios.
 14. [Listas/Referências Complementares](#listasreferências-complementares)
 15. [Começando](#começando)
 16. [Contribuindo](#contribuindo)
+
+---
+
+## Kit rápido
+
+- Ambiente mínimo: Python 3.11+ (`venv`), Go 1.21+, Rust (`rustup`), Docker.  
+- Instale básicos de rede: `nmap`, `masscan`, `curl`, `jq`.  
+- Dados de teste: `example.com`, domínios sob seu controle, dumps públicos (CommonCrawl, Pushshift).  
+- Workflow relâmpago:  
+  1) Enumeração de domínios/subdomínios (Amass/Subfinder) + screenshot (EyeWitness/GoWitness).  
+  2) Coleta social (Sherlock/Maigret) + credenciais vazadas (holehe/Infoga).  
+  3) Correlacione em planilha/CSV/JSONL, crie dorks para validar achados e automatize com `make` ou `n8n`.
 
 ---
 
@@ -62,6 +80,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **BlackWidow** | https://github.com/1N3/BlackWidow | Bash/Python | `./blackwidow -u https://example.com -s` |
 | **GoWitness** | https://github.com/sensepost/gowitness | Go | `go install github.com/sensepost/gowitness@latest` |
 
+Sugestão de uso: comece com SpiderFoot para varredura ampla, valide domínios/subs com Amass/Subfinder e capture screenshots com GoWitness/EyeWitness para priorizar manualmente.
+
 ---
 
 ## Perfis e Redes Sociais
@@ -77,6 +97,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **snscrape** | https://github.com/JustAnotherArchivist/snscrape | Scraper universal para Twitter, Reddit, Telegram channels etc. |
 | **git-hound** | https://github.com/tillson/git-hound | Busca credenciais/leaks em GitHub (útil para perfis corporativos). |
 
+Combos rápidos: Sherlock/Maigret para descobrir perfis → Osintgram/snscrape para coleta detalhada → git-hound para vazamentos ligados ao usuário/org.
+
 ---
 
 ## Mensageria & Plataformas Nicho
@@ -88,6 +110,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **Matrix-Spyglass** | https://github.com/spantaleev/matrix-spotlight | Busca e indexação em salas Matrix auto-hospedadas. |
 | **DiscordChatExporter** | https://github.com/Tyrrrz/DiscordChatExporter | Extrai chats de servidores (é preciso token, mas não há custo). |
 | **Reddit Data Tools** | https://github.com/Watchful1/Pushshift-Importer | Operações locais com dumps Pushshift/Reddit. |
+
+Use tokens apenas em contas autorizadas; prefira dumps públicos para evitar ToS issues.
 
 ---
 
@@ -101,6 +125,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **WhatBreach** | https://github.com/Ekultek/WhatBreach | Consulta e baixa dumps públicos para uma identidade. |
 | **GHunt** | https://github.com/mxrch/GHunt | Perfil OSINT focado em contas Google (cookies opcionais). |
 | **pwndb** | https://github.com/davidtavarez/pwndb | CLI para consultar banco alternativo do serviço `pwndb2am4tzkvold`. |
+
+Prática segura: sempre sanitize resultados, não armazene senhas/PII em texto plano e mantenha hashes ou referências.
 
 ---
 
@@ -118,6 +144,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **massdns** | https://github.com/blechschmidt/massdns | C | Resolução DNS massiva. |
 | **Crt.sh scraper** | https://github.com/crtsh/certificate-transparency-go | Go | Lê CT Logs localmente. |
 
+Sequência recomendada: Subfinder/Amass → puredns/dnsx para limpeza → naabu/nmap para portas → httpx/katana para serviços → gowitness/eyewitness para screenshots.
+
 ---
 
 ## Varrimento Web & Serviços
@@ -134,6 +162,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **hakrawler** | https://github.com/hakluke/hakrawler | Crawler CLI leve para recon. |
 | **EyeWitness** | https://github.com/RedSiege/EyeWitness | Captura screenshots e banners de serviços web. |
 
+Combine httpx + gau/katana para mapear superfície e alimentar brute force ou crawling direcionado.
+
 ---
 
 ## Arquivos, Documentos & Metadados
@@ -148,6 +178,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **oletools** | https://github.com/decalage2/oletools | Inspeção de arquivos Office (VBA, macros). |
 | **Strelka** | https://github.com/target/strelka | Pipeline escalável para análise de arquivos (Docker/K8s). |
 
+Boa prática: extraia metadados em JSONL (exiftool) e mantenha hashes (SHA256) para rastreabilidade.
+
 ---
 
 ## Mídia (Imagem, Áudio, Vídeo)
@@ -160,6 +192,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **Image-Hash** | https://github.com/JohannesBuchner/imagehash | Gera perceptual hashes para comparação offline. |
 | **DeepFaceLive / insightface** | https://github.com/deepinsight/insightface | Reconhecimento/comparação facial (modo local). |
 | **FFmpeg** | https://github.com/FFmpeg/FFmpeg | Manipulação/extração de frames, áudio, legendas. |
+
+Fluxo típico: baixar com yt-dlp/gallery-dl → gerar hashes perceptuais → comparar ou deduplicar → guardar frames/legendagem relevante.
 
 ---
 
@@ -174,6 +208,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **heatmappy** | https://github.com/nikolaypavlov/heatmappy | Gera heatmaps offline usando Folium. |
 | **QGIS** | https://github.com/qgis/QGIS | Plataforma GIS completa e open source (com plugins OSINT). |
 
+Cuide de EPSG/projeções ao cruzar dados e documente fontes (satélite, crowdsourced) para reprodutibilidade.
+
 ---
 
 ## Código & Dados Públicos
@@ -186,6 +222,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **PublicWWW CLI** | https://github.com/xGCx/PublicWWWRipper | Interage com índice PublicWWW local. |
 | **Common Crawl Index** | https://github.com/commoncrawl/cc-pyspark | Scripts para minerar dados do Common Crawl sem serviços pagos. |
 | **datasette** | https://github.com/simonw/datasette | Publica datasets locais para consulta rápida. |
+
+Recomendação: normalize outputs em JSONL/CSV e versionamento em Git LFS quando grandes.
 
 ---
 
@@ -201,6 +239,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **Viper** | https://github.com/viper-framework/viper | Gestão de amostras de malware e metadados IOC. |
 | **Sigma** | https://github.com/SigmaHQ/sigma | Regras genéricas que podem alimentar hunts/monitoramento. |
 
+Para laboratórios isolados, use Docker Compose de OpenCTI/MISP e Cortex juntos; sincronize IOCs via feeds exportáveis (STIX/MISP).
+
 ---
 
 ## Automação & Pipelines
@@ -212,6 +252,8 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **StackStorm Packs** | https://github.com/StackStorm-Exchange/stackstorm-osint | Automação baseada em eventos. |
 | **n8n.io** | https://github.com/n8n-io/n8n | Automação low-code self-hosted (use webhooks/datasets OSINT). |
 | **Prefect** | https://github.com/PrefectHQ/prefect | Orquestração de pipelines Python para coletas periódicas. |
+
+Sugestão: defina pasta `data/` com `inputs/`, `outputs/` e `cache/` para rotinas repetíveis; logue tudo em JSONL.
 
 ---
 
@@ -227,11 +269,12 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 
 ## Começando
 
-1. **Ambiente** — use `pyenv`/`virtualenv`, `conda`, `Go` >=1.20, `Rust` (`rustup`) e Docker para projetos containerizados.
-2. **Clonar & instalar** — siga o `README` de cada ferramenta; quase todas fornecem `requirements.txt` ou scripts `install.sh`.
-3. **Testes locais** — execute contra domínios controlados (ex.: `example.com`, labs internos) antes de mirar alvos reais.
-4. **Automatizar** — padronize `Makefile`/`invoke`/`prefect` para rodar coleções periódicas e salvar em `data/outputs/`.
-5. **Registrar artefatos** — guarde evidências em formatos interoperáveis (JSONL, CSV, Markdown) e sanitize antes de compartilhar.
+1. **Ambiente** — `pyenv`/`venv`, Go >=1.21, Rust via `rustup`, Docker/Compose e ferramentas de rede (`nmap`, `curl`, `jq`).
+2. **Clonar & instalar** — cada projeto traz `requirements.txt`, `poetry.lock` ou binário Go/Rust; priorize isolamento por tool.
+3. **Testes seguros** — use domínios controlados e labs; evite disparos agressivos em redes de terceiros.
+4. **Automatizar** — `Makefile`, `invoke`, `prefect` ou `n8n` para pipelines repetíveis (`make recon`, `make collect-social`).
+5. **Registrar artefatos** — salve em JSONL/CSV, com hashes e timestamps; sanitize PII antes de compartilhar.
+6. **Correlacionar** — cruze dados com dorks, dumps públicos e IOCs; documente hipóteses e limitações.
 
 > Recomendação: mantenha um inventário de wordlists, proxies e datasets em `data/examples/` para reproduzir análises sem dependências externas.
 
@@ -243,5 +286,11 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 - Inclua link, stack, comando de uso rápido e descrição concisa.
 - Caso o projeto precise de API key opcional, detalhe a configuração offline.
 - Atualize apenas se o repositório estiver ativo (release/commit recente) para manter o guia confiável.
+
+## Boas práticas e ética
+- Respeite leis, termos de uso e consentimento. Não ataque ou colete dados de terceiros sem autorização.
+- Limite taxa de varredura; prefira fontes passivas quando possível.
+- Preserve privacidade: descarte PII não necessária, criptografe backups e anonimize relatórios.
+- Documente contexto: origem dos dados, horário de coleta, ferramentas e parâmetros usados.
 
 **Feliz hacking, agora só com código livre!**
