@@ -108,7 +108,7 @@ Combos rápidos: Sherlock/Maigret para descobrir perfis → Osintgram/snscrape p
 | Ferramenta | Repositório | Descrição |
 |------------|-------------|-----------|
 | **Telescan** | <https://github.com/martinlindhe/telescan> | Enumeração de usuários/links em Telegram via CLI. |
-| **Telepathy** | <https://github.com/mk-fg/telepathy> | Ferramentas para scraping/monitoramento de canais Telegram. |
+| **Telepathy** | <https://github.com/proseltd/Telepathy> | Ferramentas para scraping/monitoramento de canais Telegram. |
 | **Matrix-Spyglass** | <https://github.com/spantaleev/matrix-spotlight> | Busca e indexação em salas Matrix auto-hospedadas. |
 | **DiscordChatExporter** | <https://github.com/Tyrrrz/DiscordChatExporter> | Extrai chats de servidores (é preciso token, mas não há custo). |
 | **Reddit Data Tools** | <https://github.com/Watchful1/Pushshift-Importer> | Operações locais com dumps Pushshift/Reddit. |
@@ -144,7 +144,7 @@ Prática segura: sempre sanitize resultados, não armazene senhas/PII em texto p
 | **puredns** | <https://github.com/d3mondev/puredns> | Go | Resolvedor + wordlist aware com filtros wildcard. |
 | **dnsx** | <https://github.com/projectdiscovery/dnsx> | Go | Resolutor multi-record com outputs flexíveis. |
 | **massdns** | <https://github.com/blechschmidt/massdns> | C | Resolução DNS massiva. |
-| **Crt.sh add 'Sescraper** | <https://github.com/crtsh/certificate-transparency-go> | Go | Lê CT Logs localmente. |
+| **certificate-transparency-go** | <https://github.com/google/certificate-transparency-go> | Go | Lê CT Logs localmente. |
 
 Sequência recomendada: Subfinder/Amass → puredns/dnsx para limpeza → naabu/nmap para portas → httpx/katana para serviços → gowitness/eyewitness para screenshots.
 
@@ -155,7 +155,7 @@ Sequência recomendada: Subfinder/Amass → puredns/dnsx para limpeza → naabu/
 | Ferramenta | Repositório | Uso |
 |------------|-------------|-----|
 | **Naabu** | <https://github.com/projectdiscovery/naabu> | Scanner de portas TCP rápido. |
-| **Nmap** | <https://github.com/nmap/nmap> | Scanner clássico multi-protoco. |
+| **Nmap** | <https://github.com/nmap/nmap> | Scanner clássico multi-protocolo. |
 | **Masscan** | <https://github.com/robertdavidgraham/masscan> | Varrimento TCP ultra rápido. |
 | **ZMap** | <https://github.com/zmap/zmap> | Scanner IP layer 3 (IPv4 completo). |
 | **httpx** | <https://github.com/projectdiscovery/httpx> | Descobre serviços HTTP, títulos, fingerprints. |
