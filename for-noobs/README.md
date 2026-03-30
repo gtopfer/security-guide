@@ -43,7 +43,7 @@ Ative o 2FA em **todas** as contas que suportarem (Email, Redes Sociais, Bancos)
 - **Evite SMS**: SMS pode ser interceptado (SIM Swap).
 - **Use Apps Autenticadores**:
   - **Aegis Authenticator** (Android, Open Source)
-  - **Raivo OTP** (iOS, Open Source)
+  - **Tofu** (iOS, Open Source — substitui o Raivo OTP após mudança suspeita de dono em 2023)
   - **Google/Microsoft Authenticator** (Populares, funcionam bem)
 - **Chaves de Segurança (Hardware)**: YubiKey (Nível avançado/Paranóico).
 

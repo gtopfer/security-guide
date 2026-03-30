@@ -19,10 +19,10 @@
 
 ### Filtros Avançados
 - `before:` / `after:` — filtra por data (ex.: `after:2023-01-01 site:example.com`).
-- `cache:URL` — visualizar cache sem acessar site original.
 - `source:` — Google News por veículo.
 - `location:` — Google Alerts restrito a regiões (para monitoramento).
-- `link:dominio` — páginas que apontam para o domínio (ainda parcial).
+- ~~`cache:URL`~~ — **removido pelo Google em fev/2024**; use o [Wayback Machine](https://web.archive.org) ou `view-source:` para fins similares.
+- ~~`link:dominio`~~ — **depreciado**; para backlinks use Common Crawl ou ferramentas como `moz.com/link-explorer` (plano free).
 
 ## 2. Dorks por Categoria
 

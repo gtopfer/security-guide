@@ -107,9 +107,9 @@ Combos rápidos: Sherlock/Maigret para descobrir perfis → Osintgram/snscrape p
 
 | Ferramenta | Repositório | Descrição |
 |------------|-------------|-----------|
-| **Telescan** | <https://github.com/martinlindhe/telescan> | Enumeração de usuários/links em Telegram via CLI. |
+| **TelegramOSINT** | <https://github.com/sejohng/UST-TelegramOSINT> | Enumeração de usuários/links em Telegram via CLI. |
 | **Telepathy** | <https://github.com/proseltd/Telepathy> | Ferramentas para scraping/monitoramento de canais Telegram. |
-| **Matrix-Spyglass** | <https://github.com/spantaleev/matrix-spotlight> | Busca e indexação em salas Matrix auto-hospedadas. |
+| **Matrix-Spyglass** | <https://github.com/mcroning/matrix-spyglass> | Busca e indexação em salas Matrix auto-hospedadas. |
 | **DiscordChatExporter** | <https://github.com/Tyrrrz/DiscordChatExporter> | Extrai chats de servidores (é preciso token, mas não há custo). |
 | **Reddit Data Tools** | <https://github.com/Watchful1/Pushshift-Importer> | Operações locais com dumps Pushshift/Reddit. |
 
@@ -249,7 +249,7 @@ Para laboratórios isolados, use Docker Compose de OpenCTI/MISP e Cortex juntos;
 
 | Ferramenta | Repositório | Aplicação |
 |------------|-------------|-----------|
-| **OSINT Orchestrator** | <https://github.com/cipher387/osint-tools> | Scripts automatizados/schedulers. |
+| **OSINT Orchestrator** | <https://github.com/cipher387/osint_tools_list> | Scripts automatizados/schedulers. |
 | **Cortex/Analyzer** | <https://github.com/TheHive-Project/Cortex-Analyzers> | Executa análises (YARA, hash, etc.) localmente. |
 | **StackStorm Packs** | <https://github.com/StackStorm-Exchange/stackstorm-osint> | Automação baseada em eventos. |
 | **n8n.io** | <https://github.com/n8n-io/n8n> | Automação low-code self-hosted (use webhooks/datasets OSINT). |
