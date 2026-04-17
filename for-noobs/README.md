@@ -45,7 +45,7 @@ Ative o 2FA em **todas** as contas que suportarem (Email, Redes Sociais, Bancos)
   - **Aegis Authenticator** (Android, Open Source)
   - **Raivo OTP** (iOS, Open Source)
   - **Google/Microsoft Authenticator** (Populares, funcionam bem)
-- **Chaves de Segurança (Hardware)**: YubiKey (Nível avançado/Paranóico).
+- **Chaves de Segurança (Hardware)**: YubiKey (nível avançado, máxima proteção).
 
 ## 4. Navegação e Privacidade 🌐
 
@@ -66,7 +66,44 @@ Ative o 2FA em **todas** as contas que suportarem (Email, Redes Sociais, Bancos)
 - **ProtonVPN** (Tem plano grátis confiável)
 - **Mullvad** (Foco total em privacidade)
 
-## 5. Phishing e Engenharia Social 🎣
+### Tor Browser
+
+Para anonimato mais elevado (jornalistas, ativistas, situações de risco), o **Tor Browser** roteia seu tráfego por múltiplos relays criptografados. Use quando uma VPN comum não é suficiente.
+
+- Download em: <https://www.torproject.org/>
+- Não use para login em contas pessoais ou torrents — isso quebra o anonimato.
+
+## 5. Comunicação Segura 💬
+
+### Aplicativos de Mensagens
+
+Nem todo app de mensagens é igual. Prefira os que usam **criptografia ponta a ponta (E2EE) por padrão**.
+
+- **Signal** (Recomendado): E2EE por padrão, open source, sem anúncios.
+- **Element/Matrix**: Federado e self-hostável, bom para grupos e comunidades.
+- **WhatsApp**: Tem E2EE, mas é da Meta. Melhor que SMS, mas não ideal.
+- **Evite**: Telegram (sem E2EE por padrão), SMS para informações sensíveis.
+
+### Email Seguro
+
+- **Proton Mail**: E2EE nativo entre usuários Proton, sem rastreamento.
+- **Tutanota**: Alternativa open source com E2EE.
+- Se usar Gmail/Outlook, ative a verificação em duas etapas e desconfie de links.
+
+## 6. Criptografia do Dispositivo 🔒
+
+Criptografia garante que, mesmo se seu dispositivo for roubado, os dados não podem ser lidos.
+
+### Como ativar
+
+- **Windows**: Procure por "BitLocker" nas configurações (disponível no Pro/Enterprise). No Home, use "Criptografia do dispositivo".
+- **macOS**: Ative o **FileVault** em Preferências do Sistema → Segurança e Privacidade.
+- **Linux**: Use **LUKS** durante a instalação — a maioria das distros oferece a opção.
+- **Android/iOS**: Em dispositivos modernos, a criptografia já está ativa por padrão ao definir um PIN ou senha de tela.
+
+> Sem criptografia de disco, basta retirar o HD/SSD para ler todos os arquivos — sem precisar da sua senha.
+
+## 7. Phishing e Engenharia Social 🎣
 
 O elo mais fraco é você.
 
@@ -74,7 +111,30 @@ O elo mais fraco é você.
 - **Desconfie de urgência**: "Sua conta será bloqueada AGORA" é quase sempre golpe.
 - **Verifique a URL**: `g0ogle.com` não é `google.com`.
 
-## 6. Backups 💾
+## 8. Verifique a Integridade do que Você Baixa 🔏
+
+Antes de instalar qualquer software importante, confirme que o arquivo não foi alterado ou corrompido.
+
+### No Linux/macOS
+
+```bash
+sha256sum arquivo_baixado.iso
+# compare com o hash publicado no site oficial
+```
+
+### No Windows (PowerShell)
+
+```powershell
+Get-FileHash .\arquivo_baixado.iso -Algorithm SHA256
+```
+
+### Por que fazer isso?
+
+Atacantes podem interceptar downloads ou comprometer servidores de distribuição. O hash publicado pelo projeto é sua garantia de que o arquivo é legítimo.
+
+> Projetos sérios sempre publicam o hash SHA256 (ou assinatura GPG) na página de download.
+
+## 9. Backups 💾
 
 Seus dados não existem se não tiverem backup.
 
@@ -83,7 +143,7 @@ Seus dados não existem se não tiverem backup.
   - 2 mídias diferentes (ex: Nuvem + HD Externo).
   - 1 cópia fora do local físico (ex: Nuvem).
 
-## 7. Verifique sua Pegada Digital 👣
+## 10. Verifique sua Pegada Digital 👣
 
 Agora que você se protegeu, que tal ver o que a internet já sabe sobre você? Use as ferramentas do próprio repositório para investigar.
 

@@ -96,7 +96,7 @@ Sugestão de uso: comece com SpiderFoot para varredura ampla, valide domínios/s
 | **LittleBrother** | <https://github.com/lulz3xploit/LittleBrother> | OSINT sobre identidades (nome, domínios, redes). |
 | **Osintgram** | <https://github.com/Datalux/Osintgram> | CLI para extrair dados de contas Instagram públicas. |
 | **tiktok-scraper** | <https://github.com/drawrowfly/tiktok-scraper> | Coleta vídeos/perfis TikTok via Node.js. |
-| **snscrape** | <https://github.com/JustAnotherArchivist/snscrape> | Scraper universal para Twitter, Reddit, Telegram channels etc. |
+| **snscrape** | <https://github.com/JustAnotherArchivist/snscrape> | Scraper para Reddit, Telegram, Mastodon etc. ⚠️ Suporte a Twitter/X foi quebrado pelas mudanças de API de 2023. |
 | **git-hound** | <https://github.com/tillson/git-hound> | Busca credenciais/leaks em GitHub (útil para perfis corporativos). |
 
 Combos rápidos: Sherlock/Maigret para descobrir perfis → Osintgram/snscrape para coleta detalhada → git-hound para vazamentos ligados ao usuário/org.
@@ -111,7 +111,10 @@ Combos rápidos: Sherlock/Maigret para descobrir perfis → Osintgram/snscrape p
 | **Telepathy** | <https://github.com/mk-fg/telepathy> | Ferramentas para scraping/monitoramento de canais Telegram. |
 | **Matrix-Spyglass** | <https://github.com/spantaleev/matrix-spotlight> | Busca e indexação em salas Matrix auto-hospedadas. |
 | **DiscordChatExporter** | <https://github.com/Tyrrrz/DiscordChatExporter> | Extrai chats de servidores (é preciso token, mas não há custo). |
-| **Reddit Data Tools** | <https://github.com/Watchful1/Pushshift-Importer> | Operações locais com dumps Pushshift/Reddit. |
+| **Arctic Shift** | <https://github.com/ArthurHeitmann/arctic_shift> | Dumps Reddit pós-Pushshift: baixa e pesquisa comentários/posts localmente. |
+| **psaw / pullpush** | <https://github.com/mattparlane/pullpush> | Wrapper para o PullPush.io, substituto comunitário do Pushshift. |
+
+> ⚠️ O Pushshift original foi desativado em 2023. Use Arctic Shift ou PullPush para acesso a dados históricos do Reddit.
 
 Use tokens apenas em contas autorizadas; prefira dumps públicos para evitar ToS issues.
 
@@ -144,7 +147,7 @@ Prática segura: sempre sanitize resultados, não armazene senhas/PII em texto p
 | **puredns** | <https://github.com/d3mondev/puredns> | Go | Resolvedor + wordlist aware com filtros wildcard. |
 | **dnsx** | <https://github.com/projectdiscovery/dnsx> | Go | Resolutor multi-record com outputs flexíveis. |
 | **massdns** | <https://github.com/blechschmidt/massdns> | C | Resolução DNS massiva. |
-| **Crt.sh add 'Sescraper** | <https://github.com/crtsh/certificate-transparency-go> | Go | Lê CT Logs localmente. |
+| **ct-go (CT Logs)** | <https://github.com/google/certificate-transparency-go> | Go | Lê CT Logs localmente. |
 
 Sequência recomendada: Subfinder/Amass → puredns/dnsx para limpeza → naabu/nmap para portas → httpx/katana para serviços → gowitness/eyewitness para screenshots.
 
