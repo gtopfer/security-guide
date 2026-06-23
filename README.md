@@ -88,3 +88,8 @@ Contribuições são bem-vindas! Abra uma issue ou pull request para:
 ---
 
 *Mantenha-se seguro e curioso.*
+
+
+## Licença
+
+Este projeto está licenciado sob a [GNU General Public License v3.0](LICENSE).
