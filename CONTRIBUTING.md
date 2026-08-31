@@ -8,9 +8,9 @@ Obrigado por querer contribuir! Este guia é mantido pela comunidade e depende d
 2. Faça um fork do repositório e crie uma branch descritiva (`fix/link-quebrado`, `feat/nova-ferramenta-x`).
 3. Abra o PR explicando o motivo da mudança.
 
-## Adicionando uma ferramenta OSINT
+## Adicionando uma ferramenta (OSINT ou Pentest)
 
-Toda ferramenta sugerida para `osint-tools-collection/README.md` precisa seguir os [Critérios de Curadoria](osint-tools-collection/README.md#-critérios-de-curadoria):
+Toda ferramenta sugerida para `osint-tools-collection/README.md` ou `pentest-tools-collection/README.md` precisa seguir os mesmos critérios de curadoria:
 
 - Licença permissiva (GPL, MIT, Apache etc.) e código-fonte auditável.
 - Instalação via `git clone`, `pip`, `poetry`, `npm`, `cargo`, `go install` ou Docker público — **sem** portal proprietário obrigatório.

@@ -81,6 +81,10 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **Photon** | <https://github.com/s0md3v/Photon> | Python | `pip install photon && photon -u https://example.com` |
 | **BlackWidow** ⚠️ | <https://github.com/1N3/BlackWidow> | Bash/Python | `./blackwidow -u https://example.com -s` |
 | **GoWitness** | <https://github.com/sensepost/gowitness> | Go | `go install github.com/sensepost/gowitness@latest` |
+| **bbot** | <https://github.com/blacklanternsecurity/bbot> | Python | `pip install bbot && bbot -t example.com -f subdomain-enum` |
+| **reNgine** | <https://github.com/yogeshojha/rengine> | Python/Django | Framework de recon com UI web (Docker Compose). |
+| **Mr.Holmes** | <https://github.com/Lucksi/Mr.Holmes> | Python | `python mrholmes.py` — toolkit OSINT completo (menu interativo). |
+| **seekr** | <https://github.com/seekr-osint/seekr> | Rust/Web | Toolkit OSINT self-hosted com interface web. |
 
 Sugestão de uso: comece com SpiderFoot para varredura ampla, valide domínios/subs com Amass/Subfinder e capture screenshots com GoWitness/EyeWitness para priorizar manualmente.
 
@@ -100,8 +104,12 @@ Sugestão de uso: comece com SpiderFoot para varredura ampla, valide domínios/s
 | **tiktok-scraper** | <https://github.com/drawrowfly/tiktok-scraper> | Coleta vídeos/perfis TikTok via Node.js. |
 | **snscrape** | <https://github.com/JustAnotherArchivist/snscrape> | Scraper para Reddit, Telegram, Mastodon etc. ⚠️ Suporte a Twitter/X foi quebrado pelas mudanças de API de 2023. |
 | **git-hound** | <https://github.com/tillson/git-hound> | Busca credenciais/leaks em GitHub (útil para perfis corporativos). |
+| **gosearch** | <https://github.com/ibnaleem/gosearch> | Pegada digital em 300+ sites por username, em Go (mais rápido que equivalentes em Python). |
+| **tookie-osint** | <https://github.com/Alfredredbird/tookie-osint> | Busca de contas por username, ~80% de taxa de acerto. |
+| **instaloader** | <https://github.com/instaloader/instaloader> | Download e coleta estruturada de perfis/posts públicos do Instagram. |
+| **toutatis** | <https://github.com/megadose/toutatis> | Extrai dados de contas Instagram (email/telefone parcial, bio, seguidores) via session ID. |
 
-Combos rápidos: Sherlock/Maigret para descobrir perfis → Osintgram/snscrape para coleta detalhada → git-hound para vazamentos ligados ao usuário/org.
+Combos rápidos: Sherlock/Maigret/gosearch para descobrir perfis → Osintgram/instaloader/toutatis para coleta detalhada → git-hound para vazamentos ligados ao usuário/org.
 
 ---
 
@@ -130,6 +138,7 @@ Use tokens apenas em contas autorizadas; prefira dumps públicos para evitar ToS
 | **PhoneInfoga** | <https://github.com/sundowndev/phoneinfoga> | Recon OSINT de números telefônicos. |
 | **WhatBreach** | <https://github.com/Ekultek/WhatBreach> | Consulta e baixa dumps públicos para uma identidade. |
 | **GHunt** | <https://github.com/mxrch/GHunt> | Perfil OSINT focado em contas Google (cookies opcionais). |
+| **mosint** | <https://github.com/alpkeskin/mosint> | OSINT automatizado de email (breach check, validação, pastebins) em Go. |
 | **pwndb** ⚠️ | <https://github.com/davidtavarez/pwndb> | CLI para consultar banco alternativo do serviço `pwndb2am4tzkvold` via Tor. |
 
 Prática segura: sempre sanitize resultados, não armazene senhas/PII em texto plano e mantenha hashes ou referências.
@@ -167,6 +176,7 @@ Sequência recomendada: Subfinder/Amass → puredns/dnsx para limpeza → naabu/
 | **gau** | <https://github.com/lc/gau> | Coleta URLs arquivadas (Wayback, CommonCrawl). |
 | **hakrawler** | <https://github.com/hakluke/hakrawler> | Crawler CLI leve para recon. |
 | **EyeWitness** | <https://github.com/RedSiege/EyeWitness> | Captura screenshots e banners de serviços web. |
+| **web-check** | <https://github.com/lissy93/web-check> | OSINT all-in-one de um site: DNS, SSL, headers, tecnologias, geolocalização do servidor. |
 
 Combine httpx + gau/katana para mapear superfície e alimentar brute force ou crawling direcionado.
 
@@ -226,6 +236,7 @@ Cuide de EPSG/projeções ao cruzar dados e documente fontes (satélite, crowdso
 | **TruffleHog OSS** | <https://github.com/trufflesecurity/trufflehog> | Busca segredos em repositórios/dumps. |
 | **Gitleaks** | <https://github.com/gitleaks/gitleaks> | Auditoria de credenciais expostas. |
 | **Zoekt** | <https://github.com/sourcegraph/zoekt> | Motor de busca de código por trigramas, self-hosted, para indexar e buscar em múltiplos repositórios. |
+| **octosuite** | <https://github.com/bellingcat/octosuite> | Toolkit de terminal (Bellingcat) para analisar usuários, repositórios e orgs do GitHub. |
 | **Common Crawl Index** | <https://github.com/commoncrawl/cc-pyspark> | Scripts para minerar dados do Common Crawl sem serviços pagos. |
 | **datasette** | <https://github.com/simonw/datasette> | Publica datasets locais para consulta rápida. |
 
@@ -244,6 +255,7 @@ Recomendação: normalize outputs em JSONL/CSV e versionamento em Git LFS quando
 | **Stoq** | <https://github.com/PUNCH-Cyber/stoq> | Orquestração de análises de artefatos (plugins locais). |
 | **Viper** | <https://github.com/viper-framework/viper> | Gestão de amostras de malware e metadados IOC. |
 | **Sigma** | <https://github.com/SigmaHQ/sigma> | Regras genéricas que podem alimentar hunts/monitoramento. |
+| **World Monitor** | <https://github.com/koala73/worldmonitor> | Dashboard de inteligência global em tempo real: notícias, eventos geopolíticos e infraestrutura, com IA. |
 
 Para laboratórios isolados, use Docker Compose de OpenCTI/MISP e Cortex juntos; sincronize IOCs via feeds exportáveis (STIX/MISP).
 
@@ -253,7 +265,6 @@ Para laboratórios isolados, use Docker Compose de OpenCTI/MISP e Cortex juntos;
 
 | Ferramenta | Repositório | Aplicação |
 |------------|-------------|-----------|
-| **osint_stuff_tool_collection** | <https://github.com/cipher387/osint_stuff_tool_collection> | Catálogo com centenas de serviços/scripts OSINT organizados por categoria. |
 | **Cortex/Analyzer** | <https://github.com/TheHive-Project/Cortex-Analyzers> | Executa análises (YARA, hash, etc.) localmente. |
 | **Huginn** | <https://github.com/huginn/huginn> | Automação baseada em eventos/agents (estilo IFTTT), self-hosted. |
 | **n8n.io** | <https://github.com/n8n-io/n8n> | Automação low-code self-hosted (use webhooks/datasets OSINT). |
@@ -267,6 +278,8 @@ Sugestão: defina pasta `data/` com `inputs/`, `outputs/` e `cache/` para rotina
 
 - **OSINT-Framework** — <https://github.com/lockfale/osint-framework> (taxonomia navegável de links; pode ser auto-hospedado).
 - **Awesome OSINT** — <https://github.com/jivoi/awesome-osint> (curadoria comunitária extensa).
+- **osint_stuff_tool_collection** — <https://github.com/cipher387/osint_stuff_tool_collection> (centenas de serviços/ferramentas online organizados por categoria).
+- **Legendary OSINT** — <https://github.com/K2SOsint/Legendary_OSINT> (lista voltada a fraude, CTI, KYC e AML, 25+ categorias).
 - **Awesome Threat Intelligence** — <https://github.com/hslatman/awesome-threat-intelligence>.
 - **Punk Security OSINT Collection** — <https://github.com/punk-security/OSINT_Collection>.
 - **Maltego-CE Transforms (local)** — <https://github.com/maltegoct/maltego-trx> (permite criar transforms offline).

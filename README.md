@@ -4,7 +4,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-bem--vindas-brightgreen.svg)](CONTRIBUTING.md)
 [![100% FOSS](https://img.shields.io/badge/ferramentas-100%25%20FOSS-orange.svg)](osint-tools-collection/README.md)
 
-Bem-vindo ao **Security Guide**! Um hub central em português com recursos de segurança digital, ferramentas OSINT e guias práticos — do básico ao avançado. Tudo **100% open source**, sem paywalls.
+Bem-vindo ao **Security Guide**! Um hub central em português com recursos de segurança digital, ferramentas OSINT, pentest/red team e guias práticos — do básico ao avançado. Tudo **100% open source**, sem paywalls.
 
 ## Índice
 
@@ -23,6 +23,7 @@ Bem-vindo ao **Security Guide**! Um hub central em português com recursos de se
 | Pesquisador de segurança / OSINT | [Coleção de Ferramentas OSINT](./osint-tools-collection/README.md) |
 | Quer aprender Google Dorks | [Guia de Google Dorks](./osint-tools-collection/docs/google-search/README.md) |
 | Profissional de CTI / Threat Intel | [Inteligência de Ameaças](./osint-tools-collection/README.md#inteligência-de-ameaças--ioc) |
+| Pentester / Red Team / Bug Bounty | [Coleção de Ferramentas de Pentest](./pentest-tools-collection/README.md) |
 
 ---
 
@@ -48,6 +49,9 @@ Nível 5 — Análise e correlação
 
 Nível 6 — Automação de pipelines
 └── n8n, Prefect, Cortex/Analyzers
+
+Nível 7 — Pentest e red team (opcional, requer autorização)
+└── Labs (Juice Shop, Mutillidae), sqlmap, Metasploit, Sn1per
 ```
 
 > Cada nível pressupõe domínio do anterior. Não pule etapas — entender como se defender é o que torna um pesquisador ético eficaz.
@@ -82,6 +86,15 @@ Uma biblioteca viva com projetos **100% open source** para investigações OSINT
 - Inteligência de ameaças (IOC/CTI)
 - Automação e pipelines
 - E muito mais...
+
+### 3. [Coleção de Ferramentas de Pentest](./pentest-tools-collection/README.md)
+
+Ferramentas e listas **100% open source** para pentest, red team e bug bounty — uso autorizado apenas.
+
+- Listas e coleções de recursos
+- Ferramentas clássicas (Metasploit, sqlmap, dirsearch, Hydra...)
+- Agentes de IA para pentest (experimental)
+- Labs e apps propositalmente vulneráveis para praticar
 
 ---
 
