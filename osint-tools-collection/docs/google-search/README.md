@@ -71,6 +71,13 @@
 - `"Directory listing for /"` + `site:example.com`
 - `"Error" "Warning" "Notice" filetype:log`
 
+### 2.8 Cloud Storage Exposto
+- `site:s3.amazonaws.com "empresa"`
+- `site:storage.googleapis.com "confidencial" OR "backup"`
+- `site:blob.core.windows.net filetype:pdf OR filetype:xlsx`
+- `intitle:"index of" "s3.amazonaws.com"`
+- `"bucket" "empresa" filetype:json inurl:s3`
+
 > Mantenha um catálogo local (`docs/dorks.md`) com colunas `categoria`, `dork`, `contexto`.
 
 ## 3. Combinações Avançadas de Operadores
@@ -106,6 +113,11 @@ intitle:"admin" (inurl:/admin | inurl:/dashboard | inurl:/panel) -"login" -"pass
 ### Backups e arquivos esquecidos em servidores
 ```
 site:example.com (ext:bak | ext:old | ext:backup | ext:sql | ext:dump) -github
+```
+
+### Buckets de cloud storage mal configurados
+```
+(site:s3.amazonaws.com OR site:storage.googleapis.com OR site:blob.core.windows.net) "empresa" (filetype:pdf | filetype:sql | filetype:env)
 ```
 
 > Dica: salve combinações eficazes em `data/dorks/library.md` por categoria para reutilizar em engajamentos futuros.

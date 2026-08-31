@@ -1,6 +1,19 @@
 # 🛡️ Security Guide
 
+[![Licença: GPL v3](https://img.shields.io/badge/Licen%C3%A7a-GPLv3-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-bem--vindas-brightgreen.svg)](CONTRIBUTING.md)
+[![100% FOSS](https://img.shields.io/badge/ferramentas-100%25%20FOSS-orange.svg)](osint-tools-collection/README.md)
+
 Bem-vindo ao **Security Guide**! Um hub central em português com recursos de segurança digital, ferramentas OSINT e guias práticos — do básico ao avançado. Tudo **100% open source**, sem paywalls.
+
+## Índice
+
+- [Para quem é este guia?](#para-quem-é-este-guia)
+- [Roadmap de Aprendizado](#-roadmap-de-aprendizado)
+- [Conteúdo](#-conteúdo)
+- [Guia de Google Dorks](#-guia-de-google-dorks)
+- [Contribuição](#-contribuição)
+- [Licença](#licença)
 
 ## Para quem é este guia?
 
@@ -54,6 +67,7 @@ Um guia prático para quem está começando a se preocupar com segurança digita
 - Comunicação segura (Signal, ProtonMail)
 - Criptografia de disco (BitLocker, FileVault, LUKS)
 - Phishing e engenharia social
+- Segurança mobile e resposta a incidentes (o que fazer se você for comprometido)
 - Backups com a regra 3-2-1
 - Como verificar sua pegada digital
 
@@ -79,10 +93,10 @@ Está separado na seção OSINT, mas merece destaque: o [Guia de Google Dorks](.
 
 ## 🤝 Contribuição
 
-Contribuições são bem-vindas! Abra uma issue ou pull request para:
+Contribuições são bem-vindas! Veja o [guia de contribuição](CONTRIBUTING.md) para abrir uma issue ou pull request para:
 
 - Sugerir novas ferramentas FOSS
-- Corrigir informações desatualizadas
+- Corrigir informações desatualizadas ou links quebrados
 - Adicionar seções ao guia para iniciantes
 
 ---

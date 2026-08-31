@@ -76,13 +76,15 @@ Resumo rápido disponível em [`docs/google-search/README.md`](docs/google-searc
 | **SpiderFoot** | <https://github.com/smicallef/spiderfoot> | Python | `pip install spiderfoot && sf.py -s example.com -o simple` |
 | **recon-ng** | <https://github.com/lanmaster53/recon-ng> | Python | `git clone ... && ./recon-ng` |
 | **sn0int** | <https://github.com/kpcyrd/sn0int> | Rust | `cargo install sn0int && sn0int init` |
-| **datasploit** | <https://github.com/DataSploit/datasploit> | Python | `pip install datasploit && datasploit -d example.com` |
+| **datasploit** ⚠️ | <https://github.com/DataSploit/datasploit> | Python | `pip install datasploit && datasploit -d example.com` |
 | **theHarvester** | <https://github.com/laramies/theHarvester> | Python | `pip install theHarvester && theHarvester -d example.com -b all` |
 | **Photon** | <https://github.com/s0md3v/Photon> | Python | `pip install photon && photon -u https://example.com` |
-| **BlackWidow** | <https://github.com/1N3/BlackWidow> | Bash/Python | `./blackwidow -u https://example.com -s` |
+| **BlackWidow** ⚠️ | <https://github.com/1N3/BlackWidow> | Bash/Python | `./blackwidow -u https://example.com -s` |
 | **GoWitness** | <https://github.com/sensepost/gowitness> | Go | `go install github.com/sensepost/gowitness@latest` |
 
 Sugestão de uso: comece com SpiderFoot para varredura ampla, valide domínios/subs com Amass/Subfinder e capture screenshots com GoWitness/EyeWitness para priorizar manualmente.
+
+> ⚠️ = sem commits/releases recentes. Ainda funcionam, mas prefira alternativas mais ativas quando possível (ex.: SpiderFoot, theHarvester, Photon no lugar de datasploit/BlackWidow).
 
 ---
 
@@ -93,7 +95,7 @@ Sugestão de uso: comece com SpiderFoot para varredura ampla, valide domínios/s
 | **Sherlock** | <https://github.com/sherlock-project/sherlock> | Checagem de usernames em 600+ plataformas. |
 | **Maigret** | <https://github.com/soxoj/maigret> | Perfil OSINT completo com ranking de confiança. |
 | **Social Analyzer** | <https://github.com/qeeqbox/social-analyzer> | API/CLI para encontrar perfis por username + nome real. |
-| **LittleBrother** | <https://github.com/lulz3xploit/LittleBrother> | OSINT sobre identidades (nome, domínios, redes). |
+| **LittleBrother** ⚠️ | <https://github.com/lulz3xploit/LittleBrother> | OSINT sobre identidades (nome, domínios, redes). |
 | **Osintgram** | <https://github.com/Datalux/Osintgram> | CLI para extrair dados de contas Instagram públicas. |
 | **tiktok-scraper** | <https://github.com/drawrowfly/tiktok-scraper> | Coleta vídeos/perfis TikTok via Node.js. |
 | **snscrape** | <https://github.com/JustAnotherArchivist/snscrape> | Scraper para Reddit, Telegram, Mastodon etc. ⚠️ Suporte a Twitter/X foi quebrado pelas mudanças de API de 2023. |
@@ -107,12 +109,11 @@ Combos rápidos: Sherlock/Maigret para descobrir perfis → Osintgram/snscrape p
 
 | Ferramenta | Repositório | Descrição |
 |------------|-------------|-----------|
-| **Telescan** | <https://github.com/martinlindhe/telescan> | Enumeração de usuários/links em Telegram via CLI. |
+| **Telescan** | <https://github.com/pielco11/telescan> | Enumeração de usuários/links em Telegram via CLI. |
 | **Telepathy** | <https://github.com/mk-fg/telepathy> | Ferramentas para scraping/monitoramento de canais Telegram. |
-| **Matrix-Spyglass** | <https://github.com/spantaleev/matrix-spotlight> | Busca e indexação em salas Matrix auto-hospedadas. |
 | **DiscordChatExporter** | <https://github.com/Tyrrrz/DiscordChatExporter> | Extrai chats de servidores (é preciso token, mas não há custo). |
 | **Arctic Shift** | <https://github.com/ArthurHeitmann/arctic_shift> | Dumps Reddit pós-Pushshift: baixa e pesquisa comentários/posts localmente. |
-| **psaw / pullpush** | <https://github.com/mattparlane/pullpush> | Wrapper para o PullPush.io, substituto comunitário do Pushshift. |
+| **BAScraper** | <https://github.com/maxjo020418/BAScraper> | Wrapper Python assíncrono para PullPush.io e Arctic Shift, substitutos comunitários do Pushshift. |
 
 > ⚠️ O Pushshift original foi desativado em 2023. Use Arctic Shift ou PullPush para acesso a dados históricos do Reddit.
 
@@ -129,7 +130,7 @@ Use tokens apenas em contas autorizadas; prefira dumps públicos para evitar ToS
 | **PhoneInfoga** | <https://github.com/sundowndev/phoneinfoga> | Recon OSINT de números telefônicos. |
 | **WhatBreach** | <https://github.com/Ekultek/WhatBreach> | Consulta e baixa dumps públicos para uma identidade. |
 | **GHunt** | <https://github.com/mxrch/GHunt> | Perfil OSINT focado em contas Google (cookies opcionais). |
-| **pwndb** | <https://github.com/davidtavarez/pwndb> | CLI para consultar banco alternativo do serviço `pwndb2am4tzkvold`. |
+| **pwndb** ⚠️ | <https://github.com/davidtavarez/pwndb> | CLI para consultar banco alternativo do serviço `pwndb2am4tzkvold` via Tor. |
 
 Prática segura: sempre sanitize resultados, não armazene senhas/PII em texto plano e mantenha hashes ou referências.
 
@@ -207,10 +208,10 @@ Fluxo típico: baixar com yt-dlp/gallery-dl → gerar hashes perceptuais → com
 | Ferramenta | Repositório | Destaques |
 |------------|-------------|-----------|
 | **SatDump** | <https://github.com/altillimity/SatDump> | Decodifica dados de satélite (NOAA, GOES, METEOR) com SDR consumer. |
-| **SARchiver** | <https://github.com/planetlabs/notebooks> | Scripts para processar dados SAR públicos (Sentinel-1). |
-| **OpenAerialMap tools** | <https://github.com/hotosm/oam-uploader> | Interage com acervo OAM/OSM. |
+| **OpenSarToolkit** | <https://github.com/ESA-PhiLab/OpenSarToolkit> | Inventário, download e pré-processamento de dados SAR do Sentinel-1 em Python. |
+| **OpenAerialMap tools** ⚠️ | <https://github.com/hotosm/oam-uploader> | Interage com acervo OAM/OSM. |
 | **gpxpy** | <https://github.com/tkrajina/gpxpy> | Manipula trilhas GPX, útil para analisar rotas físicas. |
-| **heatmappy** | <https://github.com/nikolaypavlov/heatmappy> | Gera heatmaps offline usando Folium. |
+| **Folium** | <https://github.com/python-visualization/folium> | Gera mapas e heatmaps interativos offline em Python (wrapper de Leaflet.js). |
 | **QGIS** | <https://github.com/qgis/QGIS> | Plataforma GIS completa e open source (com plugins OSINT). |
 
 Cuide de EPSG/projeções ao cruzar dados e documente fontes (satélite, crowdsourced) para reprodutibilidade.
@@ -224,7 +225,7 @@ Cuide de EPSG/projeções ao cruzar dados e documente fontes (satélite, crowdso
 | **git-dorks** | <https://github.com/thewhiteh4t/gitdorker> | Procura leaks sensíveis em GitHub pela CLI. |
 | **TruffleHog OSS** | <https://github.com/trufflesecurity/trufflehog> | Busca segredos em repositórios/dumps. |
 | **Gitleaks** | <https://github.com/gitleaks/gitleaks> | Auditoria de credenciais expostas. |
-| **PublicWWW CLI** | <https://github.com/xGCx/PublicWWWRipper> | Interage com índice PublicWWW local. |
+| **Zoekt** | <https://github.com/sourcegraph/zoekt> | Motor de busca de código por trigramas, self-hosted, para indexar e buscar em múltiplos repositórios. |
 | **Common Crawl Index** | <https://github.com/commoncrawl/cc-pyspark> | Scripts para minerar dados do Common Crawl sem serviços pagos. |
 | **datasette** | <https://github.com/simonw/datasette> | Publica datasets locais para consulta rápida. |
 
@@ -252,9 +253,9 @@ Para laboratórios isolados, use Docker Compose de OpenCTI/MISP e Cortex juntos;
 
 | Ferramenta | Repositório | Aplicação |
 |------------|-------------|-----------|
-| **OSINT Orchestrator** | <https://github.com/cipher387/osint-tools> | Scripts automatizados/schedulers. |
+| **osint_stuff_tool_collection** | <https://github.com/cipher387/osint_stuff_tool_collection> | Catálogo com centenas de serviços/scripts OSINT organizados por categoria. |
 | **Cortex/Analyzer** | <https://github.com/TheHive-Project/Cortex-Analyzers> | Executa análises (YARA, hash, etc.) localmente. |
-| **StackStorm Packs** | <https://github.com/StackStorm-Exchange/stackstorm-osint> | Automação baseada em eventos. |
+| **Huginn** | <https://github.com/huginn/huginn> | Automação baseada em eventos/agents (estilo IFTTT), self-hosted. |
 | **n8n.io** | <https://github.com/n8n-io/n8n> | Automação low-code self-hosted (use webhooks/datasets OSINT). |
 | **Prefect** | <https://github.com/PrefectHQ/prefect> | Orquestração de pipelines Python para coletas periódicas. |
 
@@ -286,6 +287,8 @@ Sugestão: defina pasta `data/` com `inputs/`, `outputs/` e `cache/` para rotina
 ---
 
 ## Contribuindo
+
+Veja o [guia de contribuição](../CONTRIBUTING.md) do repositório para os critérios completos. Resumo:
 
 - Abra uma Issue ou PR propondo nova ferramenta **FOSS** (sem SaaS, sem paywall).
 - Inclua link, stack, comando de uso rápido e descrição concisa.

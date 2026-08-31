@@ -134,7 +134,33 @@ Atacantes podem interceptar downloads ou comprometer servidores de distribuiçã
 
 > Projetos sérios sempre publicam o hash SHA256 (ou assinatura GPG) na página de download.
 
-## 9. Backups 💾
+## 9. Segurança Mobile 📱
+
+Seu celular carrega mais informação sensível que seu computador — trate-o com o mesmo cuidado.
+
+- **Baixe apps só das lojas oficiais**: Google Play e App Store. Evite APKs de sites terceiros — é o jeito mais comum de instalar malware sem perceber.
+- **Revise permissões**: um app de lanterna não precisa de acesso aos seus contatos ou microfone. Revise periodicamente em Configurações → Apps → Permissões.
+- **Evite root/jailbreak** em dispositivos do dia a dia: eles removem proteções do sistema operacional.
+- **Ative "Encontrar meu dispositivo"** (Google) ou "Buscar" (Apple) — permite localizar, bloquear ou apagar remotamente um aparelho perdido/roubado.
+- **Cuidado com redes Wi-Fi públicas**: evite acessar banco ou fazer login em contas sensíveis em Wi-Fi aberto sem VPN.
+- **Bluetooth e NFC**: desative quando não estiver usando, para reduzir superfície de ataque.
+
+## 10. O Que Fazer se Você Foi Comprometido 🚨
+
+Se você suspeita que uma conta ou dispositivo foi invadido, aja rápido e na ordem certa:
+
+1. **Isole o problema**: desconecte o dispositivo da internet (Wi-Fi/dados) se suspeitar de malware ativo.
+2. **Troque a senha da conta afetada** — de outro dispositivo confiável, se possível.
+3. **Revogue sessões ativas**: a maioria dos serviços (Google, Facebook, bancos) tem uma opção "sair de todos os dispositivos" ou "gerenciar sessões".
+4. **Verifique o 2FA**: confirme que os métodos de recuperação (email, telefone, apps autenticadores) ainda são seus. Atacantes às vezes trocam esses dados para manter acesso.
+5. **Troque senhas reutilizadas**: se você reusou a senha comprometida em outro lugar, troque lá também — e migre para um gerenciador de senhas.
+6. **Escaneie o dispositivo**: rode um antivírus/antimalware confiável se o comprometimento foi no computador ou celular.
+7. **Avise contatos**: se a conta invadida for de email ou mensagens, avise pessoas próximas — contas comprometidas são usadas para golpes contra seus contatos.
+8. **Documente**: guarde prints e horários. Útil para boletim de ocorrência ou contestação de fraude no banco.
+
+> Depois de resolvido, reveja a seção [7. Phishing e Engenharia Social](#7-phishing-e-engenharia-social-) para entender como isso pode ter acontecido e evitar repetição.
+
+## 11. Backups 💾
 
 Seus dados não existem se não tiverem backup.
 
@@ -143,7 +169,7 @@ Seus dados não existem se não tiverem backup.
   - 2 mídias diferentes (ex: Nuvem + HD Externo).
   - 1 cópia fora do local físico (ex: Nuvem).
 
-## 10. Verifique sua Pegada Digital 👣
+## 12. Verifique sua Pegada Digital 👣
 
 Agora que você se protegeu, que tal ver o que a internet já sabe sobre você? Use as ferramentas do próprio repositório para investigar.
 
