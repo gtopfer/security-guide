@@ -11,6 +11,7 @@ Bem-vindo ao **Security Guide**! Um hub central em português com recursos de se
 - [Para quem é este guia?](#para-quem-é-este-guia)
 - [Roadmap de Aprendizado](#-roadmap-de-aprendizado)
 - [Conteúdo](#-conteúdo)
+- [Estudos ofensivos](./offensive-security/README.md)
 - [Guia de Google Dorks](#-guia-de-google-dorks)
 - [Contribuição](#-contribuição)
 - [Licença](#licença)
@@ -24,6 +25,7 @@ Bem-vindo ao **Security Guide**! Um hub central em português com recursos de se
 | Quer aprender Google Dorks | [Guia de Google Dorks](./osint-tools-collection/docs/google-search/README.md) |
 | Profissional de CTI / Threat Intel | [Inteligência de Ameaças](./osint-tools-collection/README.md#inteligência-de-ameaças--ioc) |
 | Pentester / Red Team / Bug Bounty | [Coleção de Ferramentas de Pentest](./pentest-tools-collection/README.md) |
+| Quer **estudar** segurança ofensiva (conceitos, não certificação) | [Estudos de Segurança Ofensiva](./offensive-security/README.md) |
 
 ---
 
@@ -50,8 +52,8 @@ Nível 5 — Análise e correlação
 Nível 6 — Automação de pipelines
 └── n8n, Prefect, Cortex/Analyzers
 
-Nível 7 — Pentest e red team (opcional, requer autorização)
-└── Labs (Juice Shop, Mutillidae), sqlmap, Metasploit, Sn1per
+Nível 7 — Segurança ofensiva (opcional, requer autorização)
+└── Estudos (metodologia, web, AD, nuvem) + labs legais + coleção de pentest
 ```
 
 > Cada nível pressupõe domínio do anterior. Não pule etapas — entender como se defender é o que torna um pesquisador ético eficaz.
@@ -96,6 +98,15 @@ Ferramentas e listas **100% open source** para pentest, red team e bug bounty �
 - Agentes de IA para pentest (experimental)
 - Labs e apps propositalmente vulneráveis para praticar
 
+### 4. [Estudos de Segurança Ofensiva](./offensive-security/README.md)
+
+Biblioteca de documentos em português sobre **temas** ofensivos: método, recon, web/API, redes, Linux/Windows, AD, nuvem, CI/CD, engenharia social, detecção e relatório. Sem trilha de certificação, sem payloads e sem passo a passo de exploit.
+
+- Fundamentos (ética, PTES, ATT&CK, threat modeling)
+- Superfícies (web, mobile, protocolos, identidade, cloud, containers)
+- Prática em labs legais e lista de material livre (OWASP, PortSwigger, MITRE)
+- Catálogo FOSS no estilo OSINT: [coleção de pentest](./pentest-tools-collection/README.md) (HackTricks, ZAP, Impacket, GOAD, Prowler…)
+
 ---
 
 ## 📖 Guia de Google Dorks
@@ -111,6 +122,7 @@ Contribuições são bem-vindas! Veja o [guia de contribuição](CONTRIBUTING.md
 - Sugerir novas ferramentas FOSS
 - Corrigir informações desatualizadas ou links quebrados
 - Adicionar seções ao guia para iniciantes
+- Expandir os [estudos de segurança ofensiva](./offensive-security/README.md) (conceitos e referências, sem exploits)
 
 ---
 

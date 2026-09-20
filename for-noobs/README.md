@@ -196,3 +196,5 @@ Descubra se sua senha já está em bancos de dados de hackers.
 ## Próximos Passos 🚀
 
 Agora que você cobriu o básico, explore a [Coleção de Ferramentas OSINT](../osint-tools-collection/README.md) para aprender como investigar e entender o que está exposto sobre você na internet.
+
+Se o interesse for entender **como ataques são pensados** (para se defender melhor), a pasta [Estudos de Segurança Ofensiva](../offensive-security/README.md) cobre método, web, identidade e labs legais — sem ensinar a invadir terceiros.
