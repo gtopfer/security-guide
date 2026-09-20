@@ -35,8 +35,9 @@ Para cada tema, uma página:
 ## Ligação com este repo
 
 - Proteção pessoal: `for-noobs/`
-- OSINT: `osint-tools-collection/`
-- Ferramentas: `pentest-tools-collection/`
+- OSINT (recon): `osint-tools-collection/`
+- Ferramentas ofensivas FOSS (estilo da OSINT): `pentest-tools-collection/`
+- Mapa tema → Git: [mapa-ferramentas.md](../biblioteca/mapa-ferramentas.md)
 - Conceitos: esta pasta
 
 ## Leitura seguinte

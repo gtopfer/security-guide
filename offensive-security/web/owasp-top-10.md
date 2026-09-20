@@ -74,6 +74,24 @@ Para cada item, escreva:
 
 Depois aprofunde no [WSTG](https://owasp.org/www-project-web-security-testing-guide/) e no [ASVS](https://owasp.org/www-project-application-security-verification-standard/) — leia objetivos de teste; execute só em lab autorizado.
 
+## Git para aprofundar
+
+Fonte das listas: [coleção de pentest](../../pentest-tools-collection/README.md). Recorte web:
+
+| Classe (estudo) | Repos |
+|-----------------|--------|
+| Proxy / HTTP | [ZAP](https://github.com/zaproxy/zaproxy), [mitmproxy](https://github.com/mitmproxy/mitmproxy) |
+| Access control | duas sessões no ZAP; lab Juice Shop / crAPI; [OFFAT](https://github.com/OWASP/OFFAT) |
+| Crypto / TLS | [testssl.sh](https://github.com/drwetter/testssl.sh), [sslyze](https://github.com/nabla-c0d3/sslyze) |
+| Injection | [sqlmap](https://github.com/sqlmapproject/sqlmap), [commix](https://github.com/commixproject/commix), [SSTImap](https://github.com/vladko312/SSTImap) **só em DVWA/WebGoat** |
+| XSS | [dalfox](https://github.com/hahwul/dalfox); PortSwigger Academy |
+| Misconfig / CVE conhecida | [nuclei](https://github.com/projectdiscovery/nuclei) + templates; [nikto](https://github.com/sullo/nikto) |
+| Componentes | [Trivy](https://github.com/aquasecurity/trivy), [osv-scanner](https://github.com/google/osv-scanner) |
+| Secrets | Gitleaks / TruffleHog (coleção OSINT) |
+| Cheatsheets | [WSTG](https://github.com/OWASP/wstg), [CheatSheetSeries](https://github.com/OWASP/CheatSheetSeries), [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings), [HackTricks](https://github.com/HackTricks-wiki/hacktricks) |
+
+Mapa completo: [mapa-ferramentas.md](../biblioteca/mapa-ferramentas.md).
+
 ## Leitura seguinte
 
 - [APIs](apis-e-auth.md)

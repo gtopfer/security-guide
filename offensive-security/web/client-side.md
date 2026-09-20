@@ -44,6 +44,10 @@ PortSwigger Web Security Academy (XSS, CSRF) é o padrão de ouro gratuito, em l
 
 OWASP Juice Shop no seu Docker: ver [labs legais](../pratica/labs-legais.md).
 
+## Git para aprofundar
+
+[ZAP](https://github.com/zaproxy/zaproxy), [dalfox](https://github.com/hahwul/dalfox), [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) (seção XSS — estudo), [CheatSheetSeries](https://github.com/OWASP/CheatSheetSeries) (XSS Prevention).
+
 ## Leitura seguinte
 
 - [HTTP](modelo-http-e-sessao.md)

@@ -105,6 +105,7 @@ Biblioteca de documentos em português sobre **temas** ofensivos: método, recon
 - Fundamentos (ética, PTES, ATT&CK, threat modeling)
 - Superfícies (web, mobile, protocolos, identidade, cloud, containers)
 - Prática em labs legais e lista de material livre (OWASP, PortSwigger, MITRE)
+- Catálogo FOSS no estilo OSINT: [coleção de pentest](./pentest-tools-collection/README.md) (HackTricks, ZAP, Impacket, GOAD, Prowler…)
 
 ---
 

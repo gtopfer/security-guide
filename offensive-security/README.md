@@ -9,8 +9,8 @@ Material de **estudo** em português sobre temas de segurança ofensiva: o que e
 1. Leia [O que é segurança ofensiva](fundamentos/o-que-e.md) e [Ética, escopo e lei](fundamentos/etica-e-lei.md).
 2. Estude o [método](fundamentos/mentalidade-e-metodo.md) e as [taxonomias](fundamentos/taxonomias-mitre-owasp-cwe.md) — elas organizam o resto.
 3. Percorra os temas (web, redes, sistemas, identidade, nuvem) na ordem que fizer sentido para você.
-4. Feche com [como estudar](pratica/como-estudar.md), [labs legais](pratica/labs-legais.md) e o [glossário](biblioteca/glossario.md).
-5. Ferramentas FOSS ficam na [coleção de pentest](../pentest-tools-collection/README.md) e na [coleção OSINT](../osint-tools-collection/README.md).
+4. Aprofunde com Gits: [mapa tema → repo](biblioteca/mapa-ferramentas.md) + [coleção de pentest](../pentest-tools-collection/README.md) (formato igual à [OSINT](../osint-tools-collection/README.md)). Recon de hosts continua na OSINT.
+5. Feche com [como estudar](pratica/como-estudar.md), [labs legais](pratica/labs-legais.md) e o [glossário](biblioteca/glossario.md).
 
 Cada documento explica **conceitos, vocabulário, o que observar e o que ler**. Não traz payloads, exploits nem passos para reproduzir ataques.
 
@@ -87,6 +87,8 @@ Cada documento explica **conceitos, vocabulário, o que observar e o que ler**. 
 | [Labs legais](pratica/labs-legais.md) | Onde treinar com autorização explícita |
 | [Livros e normas](biblioteca/livros-e-normas.md) | Referências estáveis |
 | [Cursos e material livre](biblioteca/cursos-gratuitos.md) | OWASP, PortSwigger, MITRE, etc. |
+| [Mapa de ferramentas e Gits](biblioteca/mapa-ferramentas.md) | Tema de estudo → repositórios FOSS |
+| [Coleção de pentest (catálogo)](../pentest-tools-collection/README.md) | Wikis, labs, web, AD, nuvem, RE, purple — estilo OSINT |
 | [Glossário](biblioteca/glossario.md) | Termos ofensivos e defensivos |
 
 ## O que esta pasta não é

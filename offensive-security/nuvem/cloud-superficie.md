@@ -36,6 +36,12 @@ CloudTrail / Activity Log / Cloud Audit: a verdade do control plane. Purple team
 - OWASP Cloud / CSA guidance (visão).
 - Labs oficiais: accounts **suas** com billing alarme; never a conta do empregador sem mandato.
 
+## Git para aprofundar
+
+Wiki: [HackTricks Cloud](https://github.com/HackTricks-wiki/hacktricks-cloud). Audit: [Prowler](https://github.com/prowler-cloud/prowler), [ScoutSuite](https://github.com/nccgroup/ScoutSuite). Lab AWS: [CloudGoat](https://github.com/RhinoSecurityLabs/cloudgoat). Enum com credencial de lab: [CloudFox](https://github.com/BishopFox/cloudfox), [Pacu](https://github.com/RhinoSecurityLabs/pacu). IAM graph: [PMapper](https://github.com/nccgroup/PMapper). Entra: [ROADtools](https://github.com/dirkjanm/ROADtools). Purple na conta: [Stratus](https://github.com/DataDog/stratus-red-team).
+
+Tabela completa: [coleção pentest — nuvem](../../pentest-tools-collection/README.md#nuvem).
+
 ## Leitura seguinte
 
 - [CI/CD](cicd-e-supply-chain.md)

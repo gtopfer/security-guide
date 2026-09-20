@@ -40,6 +40,10 @@ auth.log/journal, sudo logs, auditd, bash history (frágil). Ver [detecção](..
 
 Este guia não documenta enumeração ofensiva passo a passo nem exploits de kernel/sudo.
 
+## Git para aprofundar
+
+[PEASS-ng](https://github.com/peass-ng/PEASS-ng) (LinPEAS), [pspy](https://github.com/DominicBreuker/pspy), [GTFOBins](https://github.com/GTFOBins/GTFOBins.github.io), [lynis](https://github.com/CISOfy/lynis), [osquery](https://github.com/osquery/osquery). Wiki: HackTricks Linux. Tabela: [coleção pentest — Linux](../../pentest-tools-collection/README.md#linux-enum-e-referência-de-binários).
+
 ## Leitura seguinte
 
 - [Privilégios](privilegios-o-que-estudar.md)

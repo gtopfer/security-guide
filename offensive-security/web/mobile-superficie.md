@@ -30,4 +30,8 @@ Interceptar tráfego de app de terceiro na rede alheia, implantar spyware, bypas
 ## Leitura seguinte
 
 - [APIs](../web/apis-e-auth.md)
-- [for-noobs: mobile](../../for-noobs/README.md)
+- [MASVS](https://mas.owasp.org/)
+
+## Git para aprofundar
+
+[MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF), [apktool](https://github.com/iBotPeaches/Apktool), [jadx](https://github.com/skylot/jadx), [Frida](https://github.com/frida/frida), [objection](https://github.com/sensepost/objection), [MASTG](https://github.com/OWASP/mastg), labs DIVA / InjuredAndroid / iGoat na coleção.

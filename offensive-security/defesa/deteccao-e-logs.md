@@ -15,6 +15,10 @@ Se você só “entra no lab” e nunca pergunta **quem veria**, está treinando
 
 Sigma: regras genéricas — <https://github.com/SigmaHQ/sigma> (já apontado na coleção OSINT/CTI).
 
+## Git purple
+
+[Atomic Red Team](https://github.com/redcanaryco/atomic-red-team), [CALDERA](https://github.com/mitre/caldera), [Wazuh](https://github.com/wazuh/wazuh), [HELK](https://github.com/Cyb3rWard0g/HELK), [falco](https://github.com/falcosecurity/falco). Tabela: [coleção pentest — purple](../../pentest-tools-collection/README.md#purple-team-detecção-e-emulação).
+
 ## ATT&CK para defesa
 
 Cada técnica tem seção **Detections** e **Mitigations**. Estude *isso* tanto quanto a descrição ofensiva.

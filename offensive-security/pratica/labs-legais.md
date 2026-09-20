@@ -15,6 +15,8 @@ Só treine onde a autorização está no ToS ou no contrato. Abaixo são **ponto
 
 Subir lab ≠ atacar a LAN: use rede isolada / Docker bridge.
 
+Lista **grande** (GOAD, Vulhub, CloudGoat, K8s Goat, mobile, GraphQL…): [Labs na coleção de pentest](../../pentest-tools-collection/README.md#labs-e-ambientes-vulneráveis).
+
 ## Plataformas (conta + regras)
 
 - **PortSwigger Academy** — <https://portswigger.net/web-security> — labs web gratuitos, excelente didática.

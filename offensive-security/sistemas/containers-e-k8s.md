@@ -21,6 +21,10 @@ Container não é VM. É **isolamento de processo** com namespaces e cgroups. Ku
 
 Breakout de container é tópico avançado; este guia não descreve exploits. Em lab, use Kind/minikube **local**.
 
+## Git para aprofundar
+
+[Kubernetes Goat](https://github.com/madhuakula/kubernetes-goat), [Trivy](https://github.com/aquasecurity/trivy), [kube-hunter](https://github.com/aquasecurity/kube-hunter), [peirates](https://github.com/inguardians/peirates) (lab), [falco](https://github.com/falcosecurity/falco), [checkov](https://github.com/bridgecrewio/checkov). [Tabela K8s](../../pentest-tools-collection/README.md#containers-e-kubernetes).
+
 ## Leitura seguinte
 
 - [Linux](../sistemas/linux-superficie.md)

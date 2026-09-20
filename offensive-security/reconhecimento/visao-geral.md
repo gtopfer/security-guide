@@ -41,6 +41,16 @@ Dorks, GitHub, pastebins, vagas, PDF com metadados: tudo isso é recon se o ROE 
 - HTTP: host headers, vhosts, redirecionamentos.
 - Rate limiting e WAF: recon agressivo *é visível* e pode ser DoS acidental.
 
+## Git para aprofundar
+
+- Passivo / subdomínios / httpx / nmap: [coleção OSINT](../../osint-tools-collection/README.md)
+- Pipeline e host de lab: [AutoRecon](https://github.com/Tib3rius/AutoRecon), [reconftw](https://github.com/six2dez/reconftw)
+- Templates: [nuclei](https://github.com/projectdiscovery/nuclei)
+- TLS: [testssl.sh](https://github.com/drwetter/testssl.sh)
+- Wiki: [HackTricks](https://github.com/HackTricks-wiki/hacktricks)
+
+Mapa: [mapa-ferramentas.md](../biblioteca/mapa-ferramentas.md)
+
 ## Leitura seguinte
 
 - [Passivo vs ativo](passivo-vs-ativo.md)
