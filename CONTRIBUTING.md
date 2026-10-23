@@ -40,4 +40,6 @@ Textos novos nessa pasta devem:
 
 ## Código de conduta
 
+O texto completo está no [Código de Conduta](CODE_OF_CONDUCT.md).
+
 Seja respeitoso. Este é um espaço para aprendizado sobre segurança defensiva, OSINT ético e estudo ofensivo **autorizado** — conteúdo voltado a atividades ilegais (ataques não autorizados, invasão de contas de terceiros, etc.) não será aceito.

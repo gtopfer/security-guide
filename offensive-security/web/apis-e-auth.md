@@ -9,7 +9,7 @@ API é aplicação sem HTML. Os bugs mais caros da última década em SaaS foram
 - **RPC / gRPC** — contratos; authz ainda precisa existir *por RPC*.
 - **Webhooks** — o servidor *chama* você; autenticar a origem (assinatura HMAC) é o tema ofensivo/defensivo.
 
-OWASP API Security: <https://owasp.org/www-project-api-security/>
+OWASP API Security: <https://api-security.owasp.org/>
 
 ## Autenticação vs autorização
 

@@ -11,7 +11,7 @@ Só treine onde a autorização está no ToS ou no contrato. Abaixo são **ponto
 | [DVWA](https://github.com/digininja/DVWA) | Didático; isole em VM/container |
 | [WebGoat](https://github.com/WebGoat/WebGoat) | OWASP, lições guiadas |
 | [crAPI](https://github.com/OWASP/crAPI) | API Security |
-| [Juice Shop + seu proxy HTTP](https://owasp.org/www-community/Zed_Attack_Proxy) | ZAP é FOSS para *inspecionar* HTTP no lab |
+| [Juice Shop + seu proxy HTTP](https://www.zaproxy.org/) | ZAP é FOSS para *inspecionar* HTTP no lab |
 
 Subir lab ≠ atacar a LAN: use rede isolada / Docker bridge.
 
