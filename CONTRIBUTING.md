@@ -30,6 +30,14 @@ Abra uma Issue com o link do repositório afetado e, se souber, uma alternativa 
 - Links de repositórios sempre entre `<angle brackets>` no Markdown.
 - Rode um verificador de links (ou teste manualmente) antes de submeter uma lista grande de ferramentas novas.
 
+## Estudos de segurança ofensiva (`offensive-security/`)
+
+Textos novos nessa pasta devem:
+
+- Permanecer em **pt-BR**, conceituais (o que é, o que estudar, o que ler).
+- Apontar para labs oficiais e fontes primárias (OWASP, MITRE, RFCs, docs de vendor).
+- **Não** incluir payloads, exploits, PoCs, dumps de prova nem procedimentos para reproduzir ataques.
+
 ## Código de conduta
 
-Seja respeitoso. Este é um espaço para aprendizado sobre segurança defensiva e OSINT ético — conteúdo voltado a atividades ilegais (ataques não autorizados, invasão de contas de terceiros, etc.) não será aceito.
+Seja respeitoso. Este é um espaço para aprendizado sobre segurança defensiva, OSINT ético e estudo ofensivo **autorizado** — conteúdo voltado a atividades ilegais (ataques não autorizados, invasão de contas de terceiros, etc.) não será aceito.
