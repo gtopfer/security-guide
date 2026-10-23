@@ -14,6 +14,7 @@ Bem-vindo ao **Security Guide**! Um hub central em português com recursos de se
 - [Estudos ofensivos](./offensive-security/README.md)
 - [Guia de Google Dorks](#-guia-de-google-dorks)
 - [Contribuição](#-contribuição)
+- [Código de Conduta](CODE_OF_CONDUCT.md)
 - [Licença](#licença)
 
 ## Para quem é este guia?
@@ -124,6 +125,8 @@ Contribuições são bem-vindas! Veja o [guia de contribuição](CONTRIBUTING.md
 - Adicionar seções ao guia para iniciantes
 - Expandir os [estudos de segurança ofensiva](./offensive-security/README.md) (conceitos e referências, sem exploits)
 
+O espaço é de estudo. Ao participar, siga o [Código de Conduta](CODE_OF_CONDUCT.md): respeito, OSINT ético e prática ofensiva só com autorização.
+
 ---
 
 *Mantenha-se seguro e curioso.*
@@ -132,3 +135,4 @@ Contribuições são bem-vindas! Veja o [guia de contribuição](CONTRIBUTING.md
 ## Licença
 
 Este projeto está licenciado sob a [GNU General Public License v3.0](LICENSE).
+Participar também significa seguir o [Código de Conduta](CODE_OF_CONDUCT.md).

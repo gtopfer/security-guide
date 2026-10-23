@@ -58,7 +58,7 @@ Contribuições devem seguir os mesmos critérios.
 - Dados de teste: `example.com`, domínios sob seu controle, dumps públicos (CommonCrawl, Pushshift).  
 - Workflow relâmpago:  
   1) Enumeração de domínios/subdomínios (Amass/Subfinder) + screenshot (EyeWitness/GoWitness).  
-  2) Coleta social (Sherlock/Maigret) + credenciais vazadas (holehe/Infoga).  
+  2) Coleta social (Sherlock/Maigret) + credenciais vazadas (holehe/mosint).  
   3) Correlacione em planilha/CSV/JSONL, crie dorks para validar achados e automatize com `make` ou `n8n`.
 
 ---
@@ -118,7 +118,6 @@ Combos rápidos: Sherlock/Maigret/gosearch para descobrir perfis → Osintgram/i
 | Ferramenta | Repositório | Descrição |
 |------------|-------------|-----------|
 | **Telescan** | <https://github.com/pielco11/telescan> | Enumeração de usuários/links em Telegram via CLI. |
-| **Telepathy** | <https://github.com/mk-fg/telepathy> | Ferramentas para scraping/monitoramento de canais Telegram. |
 | **DiscordChatExporter** | <https://github.com/Tyrrrz/DiscordChatExporter> | Extrai chats de servidores (é preciso token, mas não há custo). |
 | **Arctic Shift** | <https://github.com/ArthurHeitmann/arctic_shift> | Dumps Reddit pós-Pushshift: baixa e pesquisa comentários/posts localmente. |
 | **BAScraper** | <https://github.com/maxjo020418/BAScraper> | Wrapper Python assíncrono para PullPush.io e Arctic Shift, substitutos comunitários do Pushshift. |
@@ -134,7 +133,6 @@ Use tokens apenas em contas autorizadas; prefira dumps públicos para evitar ToS
 | Ferramenta | Repositório | Uso |
 |------------|-------------|-----|
 | **holehe** | <https://github.com/megadose/holehe> | Verifica se emails aparecem em serviços populares. |
-| **Infoga** | <https://github.com/m4ll0k/Infoga> | Enumeração de emails + vazamentos públicos. |
 | **PhoneInfoga** | <https://github.com/sundowndev/phoneinfoga> | Recon OSINT de números telefônicos. |
 | **WhatBreach** | <https://github.com/Ekultek/WhatBreach> | Consulta e baixa dumps públicos para uma identidade. |
 | **GHunt** | <https://github.com/mxrch/GHunt> | Perfil OSINT focado em contas Google (cookies opcionais). |
@@ -187,7 +185,7 @@ Combine httpx + gau/katana para mapear superfície e alimentar brute force ou cr
 | Ferramenta | Repositório | Descrição |
 |------------|-------------|-----------|
 | **ExifTool** | <https://github.com/exiftool/exiftool> | Extração universal de metadados. |
-| **peepdf** | <https://github.com/eternal-todo/peepdf> | Análise de PDFs maliciosos. |
+| **peepdf** | <https://github.com/digitalsleuth/peepdf-3> | Análise de PDFs maliciosos. Porte Python 3 (GPL-3.0); o repo do autor segue em <https://github.com/jesparza/peepdf>. |
 | **Metagoofil** | <https://github.com/opsdisk/metagoofil> | Busca docs públicos e extrai autor, SO, versão. |
 | **bulk-extractor** | <https://github.com/simsong/bulk_extractor> | Mineração de artefatos em dumps/disk images. |
 | **pdfid/pdf-parser** | <https://github.com/DidierStevens/DidierStevensSuite> | Ferramentas forenses para PDFs. |
@@ -232,7 +230,6 @@ Cuide de EPSG/projeções ao cruzar dados e documente fontes (satélite, crowdso
 
 | Ferramenta | Repositório | Uso |
 |------------|-------------|-----|
-| **git-dorks** | <https://github.com/thewhiteh4t/gitdorker> | Procura leaks sensíveis em GitHub pela CLI. |
 | **TruffleHog OSS** | <https://github.com/trufflesecurity/trufflehog> | Busca segredos em repositórios/dumps. |
 | **Gitleaks** | <https://github.com/gitleaks/gitleaks> | Auditoria de credenciais expostas. |
 | **Zoekt** | <https://github.com/sourcegraph/zoekt> | Motor de busca de código por trigramas, self-hosted, para indexar e buscar em múltiplos repositórios. |
@@ -281,8 +278,7 @@ Sugestão: defina pasta `data/` com `inputs/`, `outputs/` e `cache/` para rotina
 - **osint_stuff_tool_collection** — <https://github.com/cipher387/osint_stuff_tool_collection> (centenas de serviços/ferramentas online organizados por categoria).
 - **Legendary OSINT** — <https://github.com/K2SOsint/Legendary_OSINT> (lista voltada a fraude, CTI, KYC e AML, 25+ categorias).
 - **Awesome Threat Intelligence** — <https://github.com/hslatman/awesome-threat-intelligence>.
-- **Punk Security OSINT Collection** — <https://github.com/punk-security/OSINT_Collection>.
-- **Maltego-CE Transforms (local)** — <https://github.com/maltegoct/maltego-trx> (permite criar transforms offline).
+- **Maltego Transforms (SDK local)** — <https://github.com/MaltegoTech/maltego-transforms> (MIT; cria transforms que rodam na sua máquina. O `maltego-trx` legado foi arquivado).
 
 ---
 
