@@ -1,52 +1,52 @@
 # Protocolos comuns e superfície típica
 
-Lista de estudo: o que cada família *é* e que classe de risco costuma carregar. Sem comandos de ataque.
+Lista de estudo: o que cada família é e qual classe de risco ela costuma carregar. Sem comando de ataque.
 
 ## DNS
 
-Resolve nomes. Superfície: transferência de zona mal configurada (vaza mapa), records TXT (SPF/DMARC — também defesa de e-mail), subdomínios esquecidos, DNS rebinding como *classe* em apps que confiam em “é intranet”.
+Resolve nome. Superfície: transferência de zona mal configurada (vaza o mapa), registro TXT (SPF e DMARC, que também defendem o e-mail), subdomínio esquecido e DNS rebinding como classe em aplicativo que confia em "é a intranet".
 
-Estude: tipos de record, resolvers, cache.
+Estude tipo de registro, resolvedor e cache.
 
 ## HTTP(S)
 
-Ver pasta [web](../web/modelo-http-e-sessao.md). Na rede: vhosts, proxy reverso, TLS offload.
+Veja a pasta [web](../web/modelo-http-e-sessao.md). Na rede: virtual host, proxy reverso e terminação TLS.
 
 ## SSH
 
-Admin remoto. Superfície: senha vs chave, usuário `root` permitido, versão antiga, port knocking como obscuridade (não é controle). Defesa: chave, MFA, allowlist, jump host.
+Administração remota. Superfície: senha em vez de chave, usuário `root` permitido, versão antiga e port knocking como obscuridade (não é controle). Defesa: chave, MFA, lista de permissão e bastion.
 
-## SMB / RPC (Windows)
+## SMB e RPC (Windows)
 
-Compartilhamentos e API remota histórica. Superfície: share aberto, named pipes, auth NTLM na rede. Estude **o que é** um share e um *null session* em material histórico; pratique só em lab Windows isolado.
+Compartilhamento e API remota histórica. Superfície: share aberto, named pipe e autenticação NTLM na rede. Estude o que é um share e o que foi uma sessão nula, em material histórico. Pratique somente em laboratório Windows isolado.
 
-## LDAP / Kerberos
+## LDAP e Kerberos
 
-Identidade. Ver [Active Directory](../identidade/active-directory-conceitos.md). Expor LDAP anônimo ou certificado ruim em AD é tema de superfície.
+Identidade. Veja [Active Directory](../identidade/active-directory-conceitos.md). LDAP anônimo ou certificado inadequado no AD é tema de superfície.
 
-## SMTP / IMAP / Magia de e-mail
+## SMTP, IMAP e e-mail
 
-Relay aberto (clássico), spoofing (SPF/DKIM/DMARC), webmail. Engenharia social *entrega* por aqui.
+Relay aberto (caso clássico), falsificação (SPF, DKIM e DMARC) e webmail. A engenharia social entrega a mensagem por aqui.
 
-## RDP / VPN / TLS VPN
+## RDP, VPN e VPN sobre TLS
 
-Borda de acesso remoto: credencial, MFA, CVE de appliance (classe: patch de perímetro). Inventariar *o que* está na 443 além do site marketing.
+Borda de acesso remoto: credencial, MFA e CVE de appliance (classe: correção de perímetro). Inventarie o que escuta na porta 443 além do site de marketing.
 
-## SNMP, IPMI, WinRM, WMI, Docker API, Kubernetes API
+## SNMP, IPMI, WinRM, WMI, API do Docker e API do Kubernetes
 
-Gerência. Se está na internet sem auth, o problema é **exposição**, não “técnica avançada”. Estude o *propósito* do protocolo (monitorar, controlar hardware, orquestrar).
+Gerência. Se o serviço está na internet sem autenticação, o problema é a **exposição**, não uma técnica avançada. Estude o propósito do protocolo: monitorar, controlar hardware ou orquestrar.
 
 ## Banco de dados em porta padrão
 
-Postgres, MySQL, Mongo, Redis, Elasticsearch: o achado típico é **não deveria estar no 0.0.0.0**. Auth default e falta de TLS são classes de misconfig.
+PostgreSQL, MySQL, MongoDB, Redis e Elasticsearch: o achado típico é que o serviço **não deveria escutar em 0.0.0.0**. Autenticação padrão e falta de TLS são classes de configuração incorreta.
 
-## ICS / IoT (aviso)
+## ICS e IoT
 
-Protocolos sem auth histórica (Modbus, etc.). Não teste em planta real “para ver”. Labs específicos ou simulação.
+Protocolo sem autenticação histórica (Modbus, entre outros). Não teste em planta real "para ver". Use laboratório específico ou simulação.
 
 ## Como usar esta lista
 
-Monte um quadro: protocolo → função de negócio → se internet-facing faz sentido → log típico. Isso é o que um pentester júnior *deveria* saber antes de qualquer framework.
+Monte um quadro: protocolo, função de negócio, se a exposição à internet faz sentido, e log típico. Isso é o que um pentester no início precisa saber antes de qualquer framework.
 
 ## Leitura seguinte
 

@@ -1,78 +1,78 @@
-# Active Directory — conceitos para ofensiva e defesa
+# Active Directory: conceitos para ofensiva e defesa
 
-AD é o **sistema de identidade** da maior parte das empresas Windows: quem é quem, o que pode, qual máquina é de confiança. Comprometer o *modelo* (contas, grupos, GPOs, trusts) costuma valer mais que uma CVE isolada num IIS.
+O AD é o **sistema de identidade** da maior parte das empresas Windows. Ele define quem é quem, o que a conta pode fazer e qual máquina é confiável. Comprometer o modelo (conta, grupo, GPO, relação de confiança) costuma ter mais impacto do que uma CVE isolada em um IIS.
 
-Este texto é vocabulário e desenho. Não é guia de ataque a domínio.
+Este texto é vocabulário e desenho. Não é um guia de ataque a domínio.
 
 ## Peças
 
-- **Domínio / floresta / trust** — fronteiras de identidade. Trust demais = superfície.
-- **DC (Domain Controller)** — a fonte da verdade; LDAP + Kerberos + DNS muitas vezes juntos.
-- **Objetos** — usuários, computadores, grupos, OUs.
-- **SID** — identificador; o nome pode mudar, o SID não.
-- **GPO** — política empurrada; misconfig vira persistência *legítima*.
-- **Kerberos** — tickets (TGT, TGS), tempo, SPN. Estude o *fluxo feliz* na documentação Microsoft antes de qualquer ferramenta.
-- **NTLM** — legado; ainda aparece; é um ímã de relay *como classe de risco de protocolo* em redes planas.
+- **Domínio, floresta e trust** — fronteira de identidade. Trust em excesso aumenta a superfície.
+- **DC (controlador de domínio)** — a fonte da verdade. LDAP, Kerberos e DNS costumam estar juntos.
+- **Objetos** — usuário, computador, grupo e OU.
+- **SID** — identificador. O nome pode mudar. O SID não muda.
+- **GPO** — política aplicada aos objetos. Uma configuração incorreta vira persistência que parece legítima.
+- **Kerberos** — ticket (TGT e TGS), tempo e SPN. Estude o fluxo esperado na documentação da Microsoft antes de qualquer ferramenta.
+- **NTLM** — protocolo legado. Ainda aparece. Em rede plana, é uma classe de risco de relay.
 
-## Grupos que o analista deve saber o *significado*
+## Grupos cujo significado o analista precisa conhecer
 
-Domain Admins, Enterprise Admins, Schema Admins, Account Operators, Backup Operators, Server Operators, Print Operators (histórico de privilégio), Domain Computers, Domain Users.
+Domain Admins, Enterprise Admins, Schema Admins, Account Operators, Backup Operators, Server Operators, Print Operators (privilégio histórico), Domain Computers e Domain Users.
 
-Não memorize SID; entenda **por que Backup Operators é poderoso** (acesso a dado).
+Não memorize o SID. Entenda **por que Backup Operators é poderoso**: o grupo acessa dado.
 
 ## Autenticação na prática (ideia)
 
-Estação junta ao domínio, usuário loga, recebe TGT, pede ticket para serviço (CIFS, HTTP, LDAP). Delegação (unconstrained/constrained/resource-based) é *confiança entre serviços* — tema avançado para ler em Learn.microsoft.com, não para reproduzir aqui.
+A estação ingressa no domínio. O usuário entra. Recebe um TGT. Pede um ticket para o serviço (CIFS, HTTP, LDAP). A delegação (unconstrained, constrained ou baseada em recurso) é confiança entre serviços. É um tema avançado para ler em Learn.microsoft.com, não para reproduzir aqui.
 
-## Superfície típica (o que inventariar em pentest *autorizado*)
+## Superfície típica (o que inventariar em pentest autorizado)
 
-- Quantos DCs, se há DC na internet (não deveria).
-- Política de senha e MFA na *borda* vs no domínio.
-- Contas de serviço com senha em GPO/script antigo (classe: secret sprawl).
-- ACL em objetos (quem pode resetar senha de quem) — isso é o coração de muita pesquisa de AD; use lab.
+- Quantos controladores existem e se algum está na internet. Não deveria estar.
+- Política de senha e MFA na borda, em comparação com o domínio.
+- Conta de serviço com senha em GPO ou em script antigo (classe: segredo espalhado).
+- ACL em objeto (quem pode redefinir a senha de quem). Esta é a base de muita pesquisa de AD. Use laboratório.
 
-## BloodHound e similares (como pensar)
+## BloodHound e ferramentas semelhantes
 
-Ferramentas de **grafo** mostram caminhos de permissão. Em engajamento autorizado, servem para evidenciar “este helpdesk consegue chegar naquele grupo”. Fora de escopo, são arma. A coleção de pentest não substitui contrato.
+A ferramenta de **grafo** mostra caminho de permissão. Em trabalho autorizado, ela evidencia que o service desk alcança determinado grupo. Fora do escopo, ela é uma arma. A coleção de pentest não substitui o contrato.
 
-## Kerberos no fluxo feliz (o que memorizar)
+## Kerberos no fluxo esperado
 
-1. Cliente pede TGT ao **KDC** (AS-REQ / AS-REP). Pré-auth (timestamp cifrado com a chave do usuário) existe para dificultar certas classes de ataque offline — política importa.
-2. Com o TGT, pede **TGS** para um SPN (HTTP/sql/cifs/…).
-3. Apresenta o ticket ao serviço. O serviço confia no KDC, não “conhece a senha do usuário”.
+1. O cliente pede um TGT ao **KDC** (AS-REQ e AS-REP). A pré-autenticação (carimbo de tempo cifrado com a chave do usuário) dificulta certas classes de ataque offline. A política importa.
+2. Com o TGT, o cliente pede um **TGS** para um SPN (HTTP, SQL, CIFS).
+3. O cliente apresenta o ticket ao serviço. O serviço confia no KDC. Ele não conhece a senha do usuário.
 
-Consequências de estudo (sem receita):
+Consequências de estudo, sem receita:
 
-- Relógio (skew) quebra Kerberos.
-- SPN em conta de usuário com senha fraca é classe de risco (Kerberoasting *como nome de problema*, não como tutorial).
-- Delegação larga = um serviço comprometido finge ser o usuário em muitos outros.
-- NTLM fallback em rede plana = outra classe (relay), mitigada com signing, EPA, desligar NTLM onde der.
+- Diferença de relógio quebra o Kerberos.
+- SPN em conta de usuário com senha fraca é uma classe de risco. Kerberoasting é o nome do problema, não um tutorial.
+- Delegação ampla permite que um serviço comprometido aja como o usuário em muitos outros serviços.
+- O fallback para NTLM em rede plana é outra classe (relay). Mitigue com assinatura, EPA e desativação do NTLM onde for possível.
 
 ## ACL: o grafo que o BloodHound desenha
 
-No AD, permissão não é só “é admin”. Objetos têm DACL: *GenericAll*, *WriteDacl*, *ForceChangePassword*, *AddMember*, *DCSync* (replicação)… são **direitos**. O grafo pergunta: a partir da conta de lab, que cadeia de direitos chega num grupo privilegiado?
+No AD, permissão não é só "é administrador". O objeto tem DACL. *GenericAll*, *WriteDacl*, *ForceChangePassword*, *AddMember* e *DCSync* (replicação) são **direitos**. O grafo pergunta: a partir da conta de laboratório, qual cadeia de direitos chega a um grupo privilegiado?
 
-Estude: herança, AdminSDHolder, protected groups. Lab: GOAD. Ferramenta: BloodHound CE.
+Estude herança, AdminSDHolder e grupos protegidos. Laboratório: GOAD. Ferramenta: BloodHound CE.
 
 ## AD CS (certificados)
 
-AD Certificate Services emite certificados. Templates mal definidos (enrollee supply SAN, auth EKUs) são a pesquisa “ESC1…” — leia os whitepapers de SpecterOps / posts de ly4k **como ameaça e mitigação**. Ferramenta de lab: Certipy. Não é o primeiro tópico; é o que diferencia estudo raso de profundo em 2024+.
+O AD Certificate Services emite certificado. Um template mal definido (o solicitante informa o SAN, ou o EKU de autenticação é amplo) é a pesquisa conhecida pela série "ESC". Leia os whitepapers da SpecterOps e os textos de ly4k como ameaça e como mitigação. Ferramenta de laboratório: Certipy. Não é o primeiro tópico. É o que separa um estudo superficial de um estudo profundo a partir de 2024.
 
-## Entra ID / Azure AD
+## Entra ID (Azure AD)
 
-Não é o mesmo AD. Tokens Graph, app registrations, CA policies, sync (Entra Connect). Git: ROADtools, GraphRunner, Stormspotter — só tenant **seu**.
+Não é o mesmo AD. Há token do Microsoft Graph, registro de aplicativo, política de acesso condicional e sincronização (Entra Connect). Repositórios: ROADtools, GraphRunner e Stormspotter. Use somente no tenant **seu**.
 
-## Git para aprofundar (lab)
+## Repositórios para aprofundar (laboratório)
 
-Ver tabela longa em [Windows, AD e movimento interno](../../pentest-tools-collection/README.md#windows-ad-e-movimento-interno) e o [mapa](../biblioteca/mapa-ferramentas.md).
+Veja a tabela em [Windows, AD e movimento interno](../../pentest-tools-collection/README.md#windows-ad-e-movimento-interno) e o [mapa](../biblioteca/mapa-ferramentas.md).
 
-Mínimo: GOAD + Impacket docs + BloodHound + InternalAllTheThings + Microsoft Kerberos overview.
+Mínimo: GOAD, documentação do Impacket, BloodHound, InternalAllTheThings e a visão geral de Kerberos da Microsoft.
 
 ## O que estudar
 
-1. Docs Microsoft: Kerberos explained, AD DS fundamentals, Authentication mechanisms.
-2. ATT&CK: Credential Access, Lateral Movement — **mitigações**.
-3. Lab: AD **seu**. Nunca o domínio de produção “porque sou estagiário”.
+1. Documentação Microsoft: *Kerberos explained*, fundamentos de AD DS e mecanismos de autenticação.
+2. ATT&CK: Credential Access e Lateral Movement, com foco nas mitigações.
+3. Laboratório: um AD **seu**. Nunca o domínio de produção, mesmo com a justificativa de ser estagiário.
 
 ## Leitura seguinte
 

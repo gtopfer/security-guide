@@ -1,46 +1,46 @@
-# Superfície em nuvem (AWS, Azure, GCP — ideias comuns)
+# Superfície em nuvem (AWS, Azure e GCP)
 
-Nuvem não é “servidor em data center alheio”. É **API de controle** (IAM) + **planos de dados** (storage, compute, DB). A ofensiva moderna muitas vezes é *permission gap*, não RCE.
+Nuvem não é "um servidor no data center de outra empresa". É uma **API de controle** (IAM) mais **planos de dados** (armazenamento, computação, banco). A ofensiva atual, com frequência, é uma lacuna de permissão, não uma execução remota de código.
 
 ## Modelo compartilhado
 
-O provedor segura o hypervisor e a API global; você segura **conta, identidade, config, dado**. Misconfig sua (bucket público, security group 0.0.0.0/0, chave de acesso no Git) é a história típica de breach.
+O provedor protege o hypervisor e a API global. Você protege **conta, identidade, configuração e dado**. A configuração sua (bucket público, security group `0.0.0.0/0`, chave de acesso no Git) é o caminho típico de vazamento.
 
-## IAM como AD da nuvem
+## IAM como o diretório da nuvem
 
-- Identidade humana vs workload (role, service principal, attached role em VM).
-- Política: allow/deny, herança, *privilege escalation* via permissões que passam roles ou criam keys.
-- Federação: SSO corporativo entra na nuvem; um IdP frágil vira todas as contas.
+- Identidade humana e identidade de workload (função, service principal, função anexada à máquina virtual).
+- Política: permitir e negar, herança, e aumento de privilégio por permissão que passa função ou cria chave.
+- Federação: o SSO corporativo entra na nuvem. Um provedor de identidade frágil alcança todas as contas.
 
-Estude a **documentação de evaluation de política** do provedor que você usa (um só, fundo, em vez de três superficiais).
+Estude a **documentação de avaliação de política** do provedor que você usa. Um provedor em profundidade vale mais do que três em superfície.
 
-## Storage
+## Armazenamento
 
-Objetos (S3, Blob, GCS): ACL pública, política de bucket, versionamento, logs de acesso. Dorks e CT às vezes acham nomes; **acessar dado de terceiro não é OSINT inocente**.
+Objeto (S3, Blob, GCS): ACL pública, política do bucket, versionamento e log de acesso. Dork e Certificate Transparency às vezes revelam o nome. **Acessar dado de terceiro não é OSINT inofensivo.**
 
-## Metadados de instância (IMDS)
+## Metadado de instância (IMDS)
 
-VMs perguntam “quem sou eu / qual role?” a um endereço link-local. SSRF ou malware na VM que alcança IMDS vira **credencial de nuvem**. Defesa: IMDSv2 (hop limit), firewall de metadata, least privilege na role.
+A máquina virtual pergunta "quem sou eu" e "qual é a minha função" a um endereço link-local. SSRF, ou malware na máquina que alcança o IMDS, obtém **credencial de nuvem**. Defesa: IMDSv2 (limite de salto), firewall de metadado e privilégio mínimo na função.
 
 ## Rede
 
-VPC/VNet, peering, endpoints privados, security groups vs NACLs. Superfície: RDS com IP público, Kubernetes API 443 na internet.
+VPC ou VNet, peering, endpoint privado, security group e NACL. Superfície: banco com IP público e API do Kubernetes na porta 443 da internet.
 
-## Logs ofensivos/defensivos
+## Log ofensivo e defensivo
 
-CloudTrail / Activity Log / Cloud Audit: a verdade do control plane. Purple team em nuvem começa por “esse AssumeRole apareceria?”.
+CloudTrail, Activity Log e Cloud Audit Logs são o registro do plano de controle. O purple team em nuvem começa pela pergunta: este AssumeRole apareceria?
 
 ## O que estudar
 
 - CIS Benchmarks do provedor (leitura de controle).
-- OWASP Cloud / CSA guidance (visão).
-- Labs oficiais: accounts **suas** com billing alarme; never a conta do empregador sem mandato.
+- OWASP e CSA para a visão de nuvem.
+- Laboratório oficial: conta **sua**, com alarme de cobrança. Não use a conta do empregador sem mandato.
 
-## Git para aprofundar
+## Repositórios para aprofundar
 
-Wiki: [HackTricks Cloud](https://github.com/HackTricks-wiki/hacktricks-cloud). Audit: [Prowler](https://github.com/prowler-cloud/prowler), [ScoutSuite](https://github.com/nccgroup/ScoutSuite). Lab AWS: [CloudGoat](https://github.com/RhinoSecurityLabs/cloudgoat). Enum com credencial de lab: [CloudFox](https://github.com/BishopFox/cloudfox), [Pacu](https://github.com/RhinoSecurityLabs/pacu). IAM graph: [PMapper](https://github.com/nccgroup/PMapper). Entra: [ROADtools](https://github.com/dirkjanm/ROADtools). Purple na conta: [Stratus](https://github.com/DataDog/stratus-red-team).
+Wiki: [HackTricks Cloud](https://github.com/HackTricks-wiki/hacktricks-cloud). Auditoria: [Prowler](https://github.com/prowler-cloud/prowler), [ScoutSuite](https://github.com/nccgroup/ScoutSuite). Laboratório AWS: [CloudGoat](https://github.com/RhinoSecurityLabs/cloudgoat). Enumeração com credencial de laboratório: [CloudFox](https://github.com/BishopFox/cloudfox), [Pacu](https://github.com/RhinoSecurityLabs/pacu). Grafo de IAM: [PMapper](https://github.com/nccgroup/PMapper). Entra: [ROADtools](https://github.com/dirkjanm/ROADtools). Purple team na conta: [Stratus](https://github.com/DataDog/stratus-red-team).
 
-Tabela completa: [coleção pentest — nuvem](../../pentest-tools-collection/README.md#nuvem).
+Tabela completa: [coleção de pentest — nuvem](../../pentest-tools-collection/README.md#nuvem).
 
 ## Leitura seguinte
 

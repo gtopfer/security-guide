@@ -1,39 +1,39 @@
-# TCP/IP e serviços — o que um scan significa
+# TCP/IP e serviços: o que um scan indica
 
-Antes de qualquer ferramenta de porta, precisa ficar sólido: **endereço, porta, estado, protocolo de aplicação**. Caso contrário você interpreta “open” como “invadi”.
+Antes de qualquer ferramenta de porta, fixe quatro ideias: **endereço, porta, estado e protocolo de aplicação**. Sem isso, "open" é lido como "invadido".
 
-## Modelo em quatro camadas úteis
+## Quatro camadas úteis
 
-1. **Link** — Ethernet/Wi-Fi; ARP na LAN. Ofensiva física/wireless vive aqui; na internet você quase não escolhe o link.
-2. **Rede (IP)** — roteamento, ICMP, fragmentação. “Pingar” não prova que não há host (ICMP filtrado).
-3. **Transporte** — TCP (conexão, handshake) vs UDP (datagrama, mais ambíguo de “aberto”).
-4. **Aplicação** — HTTP, SSH, DNS… o *payload* que o serviço entende.
+1. **Enlace** — Ethernet e Wi-Fi; ARP na LAN. A ofensiva física e sem fio vive aqui. Na internet, você quase não escolhe o enlace.
+2. **Rede (IP)** — roteamento, ICMP e fragmentação. Um ping não prova que o host está ausente. O ICMP pode estar filtrado.
+3. **Transporte** — TCP (conexão e handshake) e UDP (datagrama; o estado "aberto" é mais ambíguo).
+4. **Aplicação** — HTTP, SSH, DNS. É o conteúdo que o serviço entende.
 
-Estude: três vias do TCP, RST vs timeout vs filtered, diferença entre host down e policy drop.
+Estude o handshake de três vias do TCP, a diferença entre RST, timeout e filtered, e a diferença entre host desligado e descarte por política.
 
-Livros clássicos de redes (Tanenbaum, Kurose, ou o *TCP/IP Illustrated* em espírito) valem mais no longo prazo que tutorial de scanner.
+Um livro clássico de redes (Tanenbaum, Kurose, ou o espírito de *TCP/IP Illustrated*) dura mais do que um tutorial de scanner.
 
 ## Porta e serviço
 
-- Porta é um **número** no transporte. “22” não é “SSH seguro”; é “alguém escutou 22/tcp”.
-- Banner e fingerprint *sugerem* produto; mentem (honeypot, CDN, port reuse).
-- UDP: DNS, SNMP, IKE — “open|filtered” é normal; não conclua demais.
+- A porta é um **número** no transporte. "22" não significa "SSH seguro". Significa que alguém escuta em 22/tcp.
+- Banner e fingerprint sugerem o produto. Eles podem estar errados (honeypot, CDN, reuso de porta).
+- UDP: DNS, SNMP e IKE. O estado "open|filtered" é normal. Não conclua além da evidência.
 
-## O que estudar em enumeração (conceito)
+## O que estudar na enumeração
 
-- Inventário: o que *deveria* estar exposto vs o que está.
-- Versão: para **gestão de patch**, não para caçar exploit neste guia.
-- Segmentação: host na DMZ que fala SMB com AD interno é achado de *arquitetura*.
+- Inventário: o que deveria estar exposto e o que está.
+- Versão: para **gestão de correção**, não para procurar exploit neste guia.
+- Segmentação: um host na DMZ que fala SMB com o AD interno é um achado de arquitetura.
 
 ## Ruído e ética
 
-Varredura ampla é visível, pode degradar equipamento frágil (IoT, ICS) e é o primeiro item que ROE restringe. Em lab, observe o que o *seu* IDS vê — purple começa aqui.
+A varredura ampla é visível. Ela pode degradar equipamento frágil (IoT, sistema industrial). É o primeiro item que as regras de engajamento restringem. No laboratório, observe o que o seu IDS vê. O purple team começa aqui.
 
 ## IPv6 e nomes
 
-Inventário só IPv4 perde hosts. DNS e dual-stack fazem parte do mapa de superfície.
+Um inventário só IPv4 perde host. DNS e dual-stack fazem parte do mapa de superfície.
 
 ## Leitura seguinte
 
 - [Protocolos comuns](protocolos-comuns.md)
-- [Recon ativo](../reconhecimento/passivo-vs-ativo.md)
+- [Reconhecimento ativo](../reconhecimento/passivo-vs-ativo.md)

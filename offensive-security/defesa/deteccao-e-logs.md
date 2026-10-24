@@ -1,35 +1,35 @@
-# Detecção e logs — estudar ofensiva pelo lado blue
+# Detecção e logs: estudar a ofensiva pelo lado da defesa
 
-Se você só “entra no lab” e nunca pergunta **quem veria**, está treinando vandalismo, não pentest profissional. Purple team é o atalho de aprendizado.
+Se você entra no laboratório e não pergunta **quem veria o evento**, o treino não é um pentest profissional. O purple team é o caminho curto de aprendizado.
 
 ## Telemetria mínima que o analista ofensivo deve conhecer
 
 | Ambiente | Exemplos de pergunta |
 |----------|----------------------|
-| Windows | Logon (sucesso/falha), logon explícito, criação de serviço, PowerShell 4104, Sysmon se existir |
-| Linux | auth/sudo, new user, systemd, auditd |
-| AD | replicação, Kerberos anômalo, GPO, gold/silver *como ideia de IR* (não como tutorial) |
+| Windows | Logon (sucesso e falha), logon explícito, criação de serviço, PowerShell 4104, Sysmon se existir |
+| Linux | auth e sudo, usuário novo, systemd, auditd |
+| AD | replicação, Kerberos anômalo, GPO, ticket anômalo como tema de resposta a incidente (não como tutorial) |
 | Nuvem | CloudTrail: CreateUser, AttachPolicy, PutBucketAcl |
-| Web | 401/403 em massa, user-agent de scanner, path de admin |
-| E-mail | fail DMARC, anexos |
+| Web | 401 e 403 em massa, user-agent de scanner, caminho de administração |
+| E-mail | falha de DMARC, anexo |
 
-Sigma: regras genéricas — <https://github.com/SigmaHQ/sigma> (já apontado na coleção OSINT/CTI).
+Sigma: regras genéricas — <https://github.com/SigmaHQ/sigma> (também na coleção OSINT e de CTI).
 
-## Git purple
+## Repositórios de purple team
 
-[Atomic Red Team](https://github.com/redcanaryco/atomic-red-team), [CALDERA](https://github.com/mitre/caldera), [Wazuh](https://github.com/wazuh/wazuh), [HELK](https://github.com/Cyb3rWard0g/HELK), [falco](https://github.com/falcosecurity/falco). Tabela: [coleção pentest — purple](../../pentest-tools-collection/README.md#purple-team-detecção-e-emulação).
+[Atomic Red Team](https://github.com/redcanaryco/atomic-red-team), [CALDERA](https://github.com/mitre/caldera), [Wazuh](https://github.com/wazuh/wazuh), [HELK](https://github.com/Cyb3rWard0g/HELK), [falco](https://github.com/falcosecurity/falco). Tabela: [coleção de pentest — purple team](../../pentest-tools-collection/README.md#purple-team-detecção-e-emulação).
 
 ## ATT&CK para defesa
 
-Cada técnica tem seção **Detections** e **Mitigations**. Estude *isso* tanto quanto a descrição ofensiva.
+Cada técnica tem as seções **Detections** e **Mitigations**. Estude essas seções tanto quanto a descrição ofensiva.
 
-## O que o pentester deve entregar
+## O que o pentester entrega
 
-Não só “achamos XSS”. Também: “não vimos alerta no WAF / o EDR não registrou o binário do lab”. Isso exige combinado no ROE (às vezes o teste é *stealth*, às vezes é *barulhento de propósito*).
+Não entregue só "encontramos XSS". Entregue também: "não vimos alerta no WAF" ou "o EDR não registrou o binário do laboratório". Isso exige acordo nas regras de engajamento. Às vezes o teste é discreto. Às vezes o teste é ruidoso de propósito.
 
-## Logging failures (Top 10)
+## Falha de registro (Top 10)
 
-Falta de log é achado. Evidência: você fez ação ruidosa autorizada e o SIEM não tem evento. Documente horário — senão o SOC não consegue procurar.
+A falta de log é um achado. A evidência é esta: você executou uma ação ruidosa e autorizada, e o SIEM não tem o evento. Documente o horário. Sem o horário, o SOC não consegue procurar.
 
 ## Leitura seguinte
 

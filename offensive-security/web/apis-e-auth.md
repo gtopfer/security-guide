@@ -1,48 +1,48 @@
 # APIs e autorização
 
-API é aplicação sem HTML. Os bugs mais caros da última década em SaaS foram **autorização** (objeto de outro tenant) e **excesso de dado** no JSON, não XSS bonito.
+API é aplicação sem HTML. Os defeitos mais caros da última década em SaaS foram **autorização** (objeto de outro inquilino) e **excesso de dado** no JSON, não XSS.
 
 ## Estilos
 
-- **REST** — recursos, verbos HTTP, códigos. Auth frequentemente Bearer.
-- **GraphQL** — um endpoint, consultas flexíveis; risco de enumerar o *schema* e pedir campos demais (introspection em produção).
-- **RPC / gRPC** — contratos; authz ainda precisa existir *por RPC*.
-- **Webhooks** — o servidor *chama* você; autenticar a origem (assinatura HMAC) é o tema ofensivo/defensivo.
+- **REST** — recurso, verbo HTTP e código. A autenticação costuma ser Bearer.
+- **GraphQL** — um endpoint e consulta flexível. O risco é enumerar o schema e pedir campo demais (introspecção em produção).
+- **RPC e gRPC** — contrato. A autorização ainda precisa existir por operação.
+- **Webhook** — o servidor chama você. Autenticar a origem (assinatura HMAC) é o tema ofensivo e defensivo.
 
 OWASP API Security: <https://api-security.owasp.org/>
 
-## Autenticação vs autorização
+## Autenticação e autorização
 
-- **Authentication:** quem é (token válido).
-- **Authorization:** o que pode (este `GET /faturas/881` é *dele*?).
+- **Autenticação:** quem é (token válido).
+- **Autorização:** o que pode (este `GET /faturas/881` é desta pessoa?).
 
-BOLA (*Broken Object Level Authorization*) / IDOR: o token é válido, o **ID do objeto** não é checado contra o dono. Estudar isso vale mais que memorizar 50 CVEs de framework.
+BOLA (*Broken Object Level Authorization*) e IDOR: o token é válido, e o **identificador do objeto** não é conferido com o dono. Estudar isso vale mais do que memorizar dezenas de CVE de framework.
 
-BFLA (*Broken Function Level*): usuário chama operação de admin porque a rota existe e o gateway só olhou “está logado”.
+BFLA (*Broken Function Level Authorization*): o usuário chama operação de administrador porque a rota existe e o gateway só verificou se havia login.
 
 ## Tokens
 
 Estude, em conceito:
 
-- **Bearer opaco** — sessão no servidor; revogação fácil.
-- **JWT** — auto-contido; revogação difícil; algoritmo `none` e chave confusa são *classes* históricas — entenda o modelo de confiança (quem assina, quem guarda a chave).
-- **OAuth2 / OIDC** — papéis: resource owner, client, authorization server, resource server. Authorization code + PKCE vs implicit (legado). Escopos ≠ authz fina da API de negócio.
-- **mTLS e API keys** — identidade de *máquina*; keys no frontend = públicas.
+- **Bearer opaco** — a sessão fica no servidor. A revogação é direta.
+- **JWT** — auto-contido. A revogação é difícil. O algoritmo `none` e a confusão de chave são classes históricas. Entenda o modelo de confiança: quem assina e quem guarda a chave.
+- **OAuth 2 e OIDC** — papéis: resource owner, client, authorization server e resource server. Authorization code com PKCE, e o fluxo implicit como legado. Escopo não é a autorização fina da API de negócio.
+- **mTLS e chave de API** — identidade de máquina. Chave no frontend é pública.
 
-## Mass assignment e oversharing
+## Atribuição em massa e excesso de campo
 
-O cliente manda JSON com `"role":"admin"` e o backend aceita. Ou a API devolve campos internos (`is_admin`, hash). Contratos OpenAPI ajudam a ver o que *deveria* existir; compare com o que o lab realmente devolve.
+O cliente envia JSON com `"role":"admin"` e o backend aceita. Ou a API devolve campo interno (`is_admin`, hash). O contrato OpenAPI mostra o que deveria existir. Compare com o que o laboratório devolve de fato.
 
-## Rate limit, paginação, export
+## Limite de taxa, paginação e exportação
 
-Falta de limite vira enumeração de IDs, stuffing, custo (DoS financeiro). Export “CSV de tudo” é superfície de exfiltração interna.
+A falta de limite vira enumeração de identificador, stuffing e custo (negação de serviço financeira). A exportação "CSV de tudo" é superfície de exfiltração interna.
 
 ## Como estudar
 
-1. Leia um OpenAPI público de um produto (muitos vendors publicam).
-2. Marque operações que aceitam **ID** e pergunte: “onde o servidor liga ID ↔ caller?”
-3. No Juice Shop / APIs de lab, use **duas contas** e troque só o identificador — ideia do teste, ambiente autorizado.
-4. GraphQL: leia sobre depth limiting e allowlist de queries em produção.
+1. Leia um OpenAPI público de um produto. Muitos fornecedores publicam o contrato.
+2. Marque a operação que aceita **identificador** e pergunte onde o servidor liga o identificador a quem chama.
+3. No Juice Shop ou em API de laboratório, use **duas contas** e troque somente o identificador. A ideia do teste fica no ambiente autorizado.
+4. Em GraphQL, leia sobre limite de profundidade e lista de consultas permitidas em produção.
 
 ## Leitura seguinte
 

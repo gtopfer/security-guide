@@ -1,37 +1,37 @@
 # CI/CD e supply chain
 
-Se o pipeline publica produção, **comprometer o pipeline é comprometer o produto**. SolarWinds, actions maliciosas e dependências npm/PyPI ensinaram o mercado na marra.
+Se o pipeline publica produção, **comprometer o pipeline é comprometer o produto**. Os casos SolarWinds, actions maliciosas e dependências em npm e PyPI mostraram esse caminho ao mercado.
 
 ## Cadeia
 
-Código → review → build → artefato → deploy → runtime.
+Código, revisão, build, artefato, deploy e tempo de execução.
 
-Ofensiva de estudo pergunta: em cada seta, **quem pode inserir bits** e **quem verifica integridade?**
+A pergunta do estudo ofensivo, em cada seta, é: **quem pode inserir bits** e **quem verifica a integridade**.
 
 ## Superfícies comuns (classes)
 
-- Segredo no repo ou na variável do CI logada em texto.
-- Runner self-hosted poderoso demais (acesso à rede interna / cloud keys).
-- Branch protection fraca; botão “skip checks”.
-- Dependência com typosquat; lockfile não revisto.
-- GitHub Action de terceiro com `pull_request_target` mal entendido (classe de risco documentada pela própria GitHub).
-- Registry de imagem sem assinatura (cosign/sigstore como *ideia* de controle).
-- Dependabot/renovate desligado; imagem base de 2019.
+- Segredo no repositório ou em variável de CI registrada em texto claro.
+- Runner self-hosted com privilégio excessivo (acesso à rede interna ou a chave de nuvem).
+- Proteção de branch fraca e opção de ignorar as verificações.
+- Dependência com nome parecido (typosquat) e lockfile sem revisão.
+- GitHub Action de terceiro com `pull_request_target` mal entendido. A própria GitHub documenta essa classe de risco.
+- Registry de imagem sem assinatura. Cosign e Sigstore são a ideia de controle.
+- Dependabot ou Renovate desligados, e imagem base antiga.
 
 ## SBOM e CVE
 
-Lista de componentes não é ofensiva; é o mapa. Ofensiva ética em AppSec: “este lib tem CVE explorável *neste* contexto?” — muitas vezes não (não alcançável).
+A lista de componentes não é ofensiva. É o mapa. A pergunta ética em AppSec é: esta biblioteca tem CVE explorável neste contexto? Em muitos casos, não, porque o código não é alcançável.
 
 ## O que estudar
 
-- SLSA framework (níveis de integridade de build): <https://slsa.dev/>
-- Sigstore overview
-- NIST SSDF (em espírito)
+- Framework SLSA (nível de integridade de build): <https://slsa.dev/>
+- Visão geral do Sigstore
+- NIST SSDF, como referência de processo
 - ATT&CK: Supply Chain Compromise
 
-Pratique: leia o YAML de um pipeline **seu** e marque onde um PR malicioso (de fork) ganharia poder. Corrija. Isso é estudo ofensivo responsável.
+Prática: leia o YAML de um pipeline **seu**. Marque onde um pull request malicioso, vindo de um fork, ganharia poder. Corrija. Isso é estudo ofensivo responsável.
 
 ## Leitura seguinte
 
-- [Integrity no Top 10](../web/owasp-top-10.md)
+- [Integridade no Top 10](../web/owasp-top-10.md)
 - [Relatório](../defesa/relatorio-e-comunicacao.md)

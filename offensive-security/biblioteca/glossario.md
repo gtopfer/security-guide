@@ -1,123 +1,123 @@
 # Glossário (ofensiva e defesa)
 
-Definições curtas para leitura dos outros documentos. Não são normas.
+Definição curta para a leitura dos outros documentos. Estas linhas não são norma.
 
-**ACL** — lista de quem pode o quê em objeto (arquivo, bucket, objeto AD).
+**ACL** — lista de quem pode o quê em um objeto (arquivo, bucket, objeto do AD).
 
 **AD / Active Directory** — serviço de identidade Windows em empresas.
 
-**ATT&CK** — catálogo de táticas e técnicas adversárias (MITRE).
+**ATT&CK** — catálogo de tática e de técnica de adversário (MITRE).
 
-**Authn / Authz** — autenticação (quem é) vs autorização (o que pode).
+**Authn / Authz** — autenticação (quem é) e autorização (o que pode).
 
-**Banner** — texto que um serviço mostra ao conectar; indício, não prova.
+**Banner** — texto que um serviço mostra ao conectar. É indício, não prova.
 
-**BOLA / IDOR** — acesso a objeto de outro usuário mudando o identificador.
+**BOLA / IDOR** — acesso ao objeto de outro usuário pela troca do identificador.
 
-**Bug bounty** — recompensa por achados dentro de regras publicadas.
+**Bug bounty** — recompensa por achado dentro de regra publicada.
 
-**C2** — *command and control*; canal de comando de malware. Estude pelo lado IR, não monte o seu.
+**C2** — *command and control*; canal de comando de malware. Estude pelo lado da resposta a incidente. Não monte o seu contra terceiro.
 
-**CAPEC** — padrões de ataque (MITRE).
+**CAPEC** — padrão de ataque (MITRE).
 
-**CI/CD** — integração e entrega contínuas; pipeline.
+**CI/CD** — integração e entrega contínuas; o pipeline.
 
 **CWE** — classe de fraqueza em software.
 
 **CVE** — identificador de vulnerabilidade pública.
 
-**CVSS** — score de gravidade; precisa de contexto.
+**CVSS** — pontuação de gravidade. Exige contexto.
 
 **Credential stuffing** — reuso de senha vazada em outro serviço.
 
-**CSP** — Content-Security-Policy; mitiga parte de XSS.
+**CSP** — Content-Security-Policy. Reduz parte do impacto de XSS.
 
-**CSRF** — pedido forçado no browser da vítima autenticada.
+**CSRF** — pedido forçado no navegador da vítima autenticada.
 
-**CT logs** — registros públicos de certificados.
+**CT logs** — registro público de certificado.
 
-**DC** — domain controller.
+**DC** — controlador de domínio.
 
-**Disclosure** — como se avisa uma falha.
+**Disclosure** — forma de avisar uma falha.
 
 **DMZ** — segmento de rede mais exposto.
 
-**DoS** — tornar serviço indisponível; em geral fora de escopo.
+**DoS** — tornar o serviço indisponível. Em geral, fica fora do escopo.
 
-**EDR** — agente de detecção em endpoint.
+**EDR** — agente de detecção no endpoint.
 
-**Escopo / ROE** — o que pode testar e como.
+**Escopo / ROE** — o que você pode testar e de que forma. ROE são as regras de engajamento.
 
-**Exploit** — código/condição que usa uma falha. Este repo não publica PoCs.
+**Exploit** — código ou condição que usa uma falha. Este repositório não publica prova de conceito.
 
-**Flag (CTF)** — prova de desafio; ≠ pentest.
+**Flag (CTF)** — prova de um desafio. Não é pentest.
 
 **GPO** — Group Policy Object no AD.
 
-**Hash** — função de resumo; senhas devem usar KDF lento, não “MD5 de estudo”.
+**Hash** — função de resumo. Senha deve usar uma função lenta de derivação de chave, não um MD5 de exercício.
 
-**IAM** — gestão de identidade e acesso (sobretudo nuvem).
+**IAM** — gestão de identidade e de acesso, sobretudo em nuvem.
 
-**IMDS** — serviço de metadados da instância em cloud.
+**IMDS** — serviço de metadado da instância em nuvem.
 
-**IOC** — indicador de compromisso (hash, IP, domínio).
+**IOC** — indicador de comprometimento (hash, IP, domínio).
 
-**Kerberos** — protocolo de tickets em AD.
+**Kerberos** — protocolo de ticket no AD.
 
 **Kill chain** — modelo linear de intrusão.
 
-**Lateral movement** — de um host/conta para outro.
+**Lateral movement** — passagem de um host ou de uma conta para outro.
 
-**Least privilege** — só a permissão necessária.
+**Least privilege** — somente a permissão necessária.
 
 **MFA / 2FA** — segundo fator.
 
-**Misconfig** — sistema certo, ajuste errado (default, exposição).
+**Misconfig** — o sistema é o previsto, mas o ajuste está errado (padrão ou exposição).
 
 **MITM** — intermediário no tráfego.
 
-**NTLM** — autenticação Windows legado.
+**NTLM** — autenticação Windows legada.
 
-**OSINT** — inteligência de fontes abertas.
+**OSINT** — inteligência de fonte aberta.
 
-**OWASP** — comunidade de AppSec.
+**OWASP** — comunidade de segurança de aplicação.
 
-**Payload** — dado que dispara comportamento. Não listamos aqui.
+**Payload** — dado que dispara um comportamento. Este glossário não lista payload.
 
 **Pentest** — teste de invasão contratado, com relatório.
 
 **Phishing** — engenharia social por mensagem.
 
-**Priv-esc** — aumentar privilégio.
+**Priv-esc** — aumento de privilégio.
 
-**Purple team** — ataque e defesa juntos.
+**Purple team** — ataque e defesa no mesmo exercício.
 
 **RCE** — execução remota de código (classe de impacto).
 
-**Red team** — exercício de objetivo, mais stealth.
+**Red team** — exercício de objetivo, com mais discrição.
 
 **Recon** — reconhecimento de superfície.
 
-**Root / SYSTEM** — máximo privilégio local típico.
+**Root / SYSTEM** — privilégio local máximo típico.
 
-**SIEM** — correlação de logs.
+**SIEM** — correlação de log.
 
-**SOP** — same-origin policy no browser.
+**SOP** — same-origin policy no navegador.
 
-**SSRF** — servidor busca URL controlável; risco a rede interna/IMDS.
+**SSRF** — o servidor busca uma URL controlável. O risco alcança rede interna e IMDS.
 
-**SSO / IdP** — um login para vários apps.
+**SSO / IdP** — um login para vários aplicativos. IdP é o provedor de identidade.
 
-**Supply chain** — comprometer dependência ou build.
+**Supply chain** — comprometimento de dependência ou de build.
 
 **TGT / TGS** — tickets Kerberos.
 
-**Threat model** — quem ataca, o que quer, o que quebra.
+**Threat model** — quem ataca, o que quer e o que quebra.
 
-**WAF** — filtro na frente de HTTP; controle, não milagre.
+**WAF** — filtro na frente do HTTP. É um controle. Não cobre toda falha de aplicação.
 
-**WSTG** — guia de teste web OWASP.
+**WSTG** — guia de teste web da OWASP.
 
-**XSS** — script no contexto da origem da app.
+**XSS** — script no contexto da origem da aplicação.
 
-**0-day** — falha sem patch público conhecido. Pesquisa tem disclosure; uso contra terceiro é outra conversa legal.
+**0-day** — falha sem correção pública conhecida. A pesquisa tem disclosure. O uso contra terceiro é uma questão legal distinta.

@@ -1,45 +1,52 @@
 # Contribuindo com o Security Guide
 
-Obrigado por querer contribuir! Este guia é mantido pela comunidade e depende de gente apontando ferramentas novas, corrigindo informações desatualizadas e melhorando a didática dos textos.
+Este guia é mantido pela comunidade. Uma contribuição útil indica uma ferramenta nova, corrige um dado desatualizado ou torna um texto mais claro.
 
 ## Como contribuir
 
-1. Abra uma **Issue** descrevendo o que você quer mudar/adicionar, ou vá direto para um **Pull Request** se a mudança for pequena e óbvia (typo, link quebrado, etc.).
-2. Faça um fork do repositório e crie uma branch descritiva (`fix/link-quebrado`, `feat/nova-ferramenta-x`).
-3. Abra o PR explicando o motivo da mudança.
+1. Abra uma **issue** e descreva a mudança. Para uma correção pequena e evidente (erro de digitação ou link quebrado), abra um **pull request** direto.
+2. Faça um fork do repositório. Crie um branch com nome descritivo (`fix/link-quebrado`, `feat/nova-ferramenta-x`).
+3. No pull request, explique o motivo da mudança.
 
-## Adicionando uma ferramenta (OSINT ou Pentest)
+## Adicionar uma ferramenta (OSINT ou pentest)
 
-Toda ferramenta sugerida para `osint-tools-collection/README.md` ou `pentest-tools-collection/README.md` precisa seguir os mesmos critérios de curadoria:
+Uma ferramenta nova em `osint-tools-collection/README.md` ou em `pentest-tools-collection/README.md` segue os critérios de curadoria:
 
-- Licença permissiva (GPL, MIT, Apache etc.) e código-fonte auditável.
-- Instalação via `git clone`, `pip`, `poetry`, `npm`, `cargo`, `go install` ou Docker público — **sem** portal proprietário obrigatório.
-- Execução local possível (mesmo que aceite APIs externas opcionais).
-- Projeto ativo (commits/releases/issues recentes) — evite sugerir repositórios abandonados há anos.
+- A licença é permissiva (GPL, MIT, Apache ou equivalente) e o código-fonte é auditável.
+- A instalação usa `git clone`, `pip`, `poetry`, `npm`, `cargo`, `go install` ou uma imagem Docker pública. Não exija um portal proprietário.
+- A execução local é possível. Uma API externa pode ser opcional.
+- O projeto tem manutenção recente (commit, release ou issue). Não sugira um repositório abandonado há anos.
 
-Ao adicionar uma linha na tabela, inclua: nome, link do repositório, stack/uso principal e uma descrição curta e direta.
+Na linha da tabela, inclua o nome, o link do repositório, a stack ou o uso principal, e uma descrição curta.
 
-## Reportando link quebrado ou ferramenta desatualizada
+## Reportar um link quebrado ou uma ferramenta desatualizada
 
-Abra uma Issue com o link do repositório afetado e, se souber, uma alternativa mantida. Ferramentas sem atividade recente mas ainda funcionais são marcadas com ⚠️ na tabela em vez de removidas — a menos que o link esteja de fato quebrado (404), caso em que devem ser substituídas ou removidas.
+Abra uma issue com o link do repositório. Se você conhece uma alternativa mantida, inclua o link dela.
+
+Uma ferramenta sem atividade recente, mas ainda funcional, permanece na tabela com a marca **manutenção irregular**. Não remova essa linha só pela falta de commits novos.
+
+Substitua ou remova a linha quando o link retorna 404.
 
 ## Estilo
 
-- O conteúdo é em **português** (pt-BR).
-- Prefira frases curtas e exemplos práticos a explicações longas.
-- Links de repositórios sempre entre `<angle brackets>` no Markdown.
-- Rode um verificador de links (ou teste manualmente) antes de submeter uma lista grande de ferramentas novas.
+- Escreva em **português do Brasil** (pt-BR).
+- Use frases curtas. Prefira um exemplo concreto a um parágrafo longo.
+- Coloque links de repositório entre `<angle brackets>` no Markdown.
+- Antes de enviar uma lista grande, verifique os links (ferramenta ou teste manual).
 
 ## Estudos de segurança ofensiva (`offensive-security/`)
 
-Textos novos nessa pasta devem:
+Um texto novo nesta pasta deve:
 
-- Permanecer em **pt-BR**, conceituais (o que é, o que estudar, o que ler).
-- Apontar para labs oficiais e fontes primárias (OWASP, MITRE, RFCs, docs de vendor).
-- **Não** incluir payloads, exploits, PoCs, dumps de prova nem procedimentos para reproduzir ataques.
+- Permanecer em **pt-BR**.
+- Explicar o conceito: o que é, o que estudar e o que ler.
+- Apontar para um laboratório oficial e para a fonte primária (OWASP, MITRE, RFC, documentação do fornecedor).
+- **Não** incluir payload, exploit, prova de conceito, dump de prova ou procedimento para reproduzir um ataque.
 
 ## Código de conduta
 
 O texto completo está no [Código de Conduta](CODE_OF_CONDUCT.md).
 
-Seja respeitoso. Este é um espaço para aprendizado sobre segurança defensiva, OSINT ético e estudo ofensivo **autorizado** — conteúdo voltado a atividades ilegais (ataques não autorizados, invasão de contas de terceiros, etc.) não será aceito.
+Trate as pessoas com respeito. Este espaço cobre segurança defensiva, OSINT ético e estudo ofensivo **autorizado**.
+
+O repositório recusa conteúdo para atividade ilegal. Isso inclui ataque sem autorização e invasão de conta de terceiro.
