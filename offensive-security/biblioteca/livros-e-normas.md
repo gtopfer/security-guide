@@ -1,19 +1,19 @@
 # Livros, RFCs e normas
 
-Referências **estáveis**. Prefira fonte primária a thread de rede social. Não copiamos capítulos (direitos autorais); apontamos.
+Referências **estáveis**. Prefira a fonte primária a uma publicação de rede social. Este guia não copia capítulo (direito autoral). Ele indica a obra.
 
 ## Fundamentos técnicos
 
-- Kurose & Ross, *Computer Networking* (ou equivalente) — redes.
-- Material TCP/IP (*TCP/IP Illustrated* vol. 1, em espírito) — o que o pacote é.
-- Stevens / equivalentes de programação de sockets se for para o lado de desenvolvimento seguro.
-- *The Web Application Hacker’s Handbook* (clássico de *modelo* web; edições antigas não cobrem API moderna — complemente com PortSwigger/OWASP).
-- Documentação Microsoft Learn (AD, Kerberos) e docs.aws.amazon.com / learn.microsoft.com / cloud.google.com para IAM.
+- Kurose e Ross, *Computer Networking* (ou equivalente) — redes.
+- Material de TCP/IP, no espírito de *TCP/IP Illustrated*, volume 1 — o que o pacote contém.
+- Stevens, ou equivalente de programação de sockets, se o seu caminho for desenvolvimento seguro.
+- *The Web Application Hacker's Handbook* — clássico do modelo web. Edições antigas não cobrem API moderna. Complemente com PortSwigger e OWASP.
+- Documentação Microsoft Learn (AD e Kerberos) e a documentação de IAM em docs.aws.amazon.com, learn.microsoft.com e cloud.google.com.
 
 ## AppSec e processo
 
-- OWASP ASVS, WSTG, Cheat Sheet Series — <https://owasp.org/>
-- NIST SP 800-115 (technical guide to information security testing) — <https://csrc.nist.gov/>
+- OWASP ASVS, WSTG e Cheat Sheet Series — <https://owasp.org/>
+- NIST SP 800-115 (*technical guide to information security testing*) — <https://csrc.nist.gov/>
 - NIST SP 800-63 (identidade)
 - PTES — <http://www.pentest-standard.org/>
 - CIS Benchmarks — hardening
@@ -21,17 +21,17 @@ Referências **estáveis**. Prefira fonte primária a thread de rede social. Nã
 ## Ameaça e detecção
 
 - MITRE ATT&CK
-- MITRE D3FEND (lado defesa) — <https://d3fend.mitre.org/>
-- Relatórios anuais de *threat landscape* de CERTs (CERT.br, ENISA) — contexto, não tutoriais de malware
+- MITRE D3FEND (lado da defesa) — <https://d3fend.mitre.org/>
+- Relatório anual de cenário de ameaça de CERT (CERT.br, ENISA) — contexto, não tutorial de malware
 
-## Direito e privacidade (BR)
+## Direito e privacidade (Brasil)
 
-- Textos oficiais: Planalto (leis citadas em [ética](../fundamentos/etica-e-lei.md))
+- Texto oficial: Planalto (leis citadas em [ética](../fundamentos/etica-e-lei.md))
 - CERT.br — <https://www.cert.br/>
 
-## Como ler livro técnico ofensivo
+## Como ler um livro técnico ofensivo
 
-Leia o capítulo de **arquitetura e precondição**. Pule anexos de exploit se o seu objetivo é emprego ético e este guia. Pratique o conceito no lab oficial, não no capítulo.
+Leia o capítulo de **arquitetura e de pré-condição**. Se o objetivo é trabalho ético alinhado a este guia, não dependa do anexo de exploit. Pratique o conceito no laboratório oficial, não no capítulo.
 
 ## Leitura seguinte
 

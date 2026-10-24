@@ -1,28 +1,28 @@
 # Hardening visto pelo ataque
 
-Depois de estudar classes ofensivas, inverta: **cada hipótese vira um controle**. Isso fecha o ciclo do Security Guide (defesa no `for-noobs`, ofensiva aqui).
+Depois de estudar a classe ofensiva, inverta a pergunta: **cada hipótese vira um controle**. Isso fecha o ciclo deste guia (defesa em `for-noobs/`, ofensiva nesta pasta).
 
 ## Tabela de inversão (exemplos)
 
-| Hipótese ofensiva | Controle preventivo | Controle detetive |
+| Hipótese ofensiva | Controle preventivo | Controle detectivo |
 |-------------------|---------------------|-------------------|
-| Conta válida na VPN | MFA resistente a phishing, least privilege | Logon anômalo, geo impossível |
-| Bucket listável | Block public ACLs, SCP | CloudTrail PutBucketAcl |
-| XSS armazenado | Encoding, CSP | WAF + CSP report |
-| IDOR | Authz no servidor por objeto | Log de acesso cross-tenant |
-| Secret no Git | Pre-commit, vault, rotating | Gitleaks no CI (coleção OSINT) |
-| Admin local em massa | LAPS/equivalente, GPO | Inventory de grupo Administrators |
-| Pipeline poderoso | Branch protection, signed artifacts | Log de workflow |
+| Conta válida na VPN | MFA resistente a phishing e privilégio mínimo | Logon anômalo e localização impossível |
+| Bucket listável | Bloqueio de ACL pública e política de controle de serviço | CloudTrail PutBucketAcl |
+| XSS armazenado | Codificação de saída e CSP | WAF e relatório de CSP |
+| IDOR | Autorização no servidor, por objeto | Log de acesso entre inquilinos |
+| Segredo no Git | Hook de pre-commit, cofre e rotação | Gitleaks no CI (coleção OSINT) |
+| Administrador local em massa | LAPS ou equivalente, e GPO | Inventário do grupo Administrators |
+| Pipeline com privilégio alto | Proteção de branch e artefato assinado | Log do workflow |
 
-## Baselines
+## Linhas de base
 
-CIS, STIG, ASVS nível adequado ao risco, CIS+cloud. Não aplique STIG inteiro em startup no dia 1 — priorize exposição internet e identidade.
+CIS, STIG, ASVS no nível adequado ao risco, e o benchmark de nuvem. Não aplique o STIG inteiro no primeiro dia de uma organização pequena. Priorize a exposição à internet e a identidade.
 
 ## Pentest como verificação
 
-O teste autorizado *mede* se o baseline pegou. Achado repetido no trimestre seguinte é falha de processo, não de scanner.
+O teste autorizado mede se a linha de base segurou. Um achado repetido no trimestre seguinte é falha de processo, não falha do scanner.
 
 ## Leitura seguinte
 
 - [Detecção](deteccao-e-logs.md)
-- [for-noobs](../../for-noobs/README.md)
+- [Fundamentos para iniciantes](../../for-noobs/README.md)
