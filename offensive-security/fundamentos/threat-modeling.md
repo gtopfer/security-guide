@@ -1,40 +1,40 @@
 # Threat modeling (modelagem de ameaças)
 
-Threat model responde: **quem** pode querer o quê, **por qual caminho**, e **o que já mitiga**. Ofensiva sem isso vira scanner. Defesa sem isso vira checklist CIS copiado.
+O modelo de ameaça responde três perguntas. **Quem** pode querer o quê. **Por qual caminho**. **O que já mitiga** esse caminho. Ofensiva sem esse modelo vira execução de scanner. Defesa sem esse modelo vira cópia de checklist.
 
-## Perguntas STRIDE (Microsoft, clássico)
+## Perguntas STRIDE (Microsoft)
 
-Use como *brainstorm*, não como verdade:
+Use a tabela como lista de perguntas, não como conclusão automática.
 
 | Letra | Classe | Pergunta |
 |-------|--------|----------|
-| S | Spoofing | Posso fingir identidade? |
-| T | Tampering | Posso alterar dado em trânsito ou em repo? |
-| R | Repudiation | Dá para negar que fez? (falta de log) |
-| I | Information disclosure | Dado vaza? |
-| D | Denial of service | Consigo derrubar? (muitas vezes fora de ROE) |
-| E | Elevation of privilege | Consigo mais poder? |
+| S | Spoofing | Posso me passar por outra identidade? |
+| T | Tampering | Posso alterar dado em trânsito ou no repositório? |
+| R | Repudiation | A pessoa pode negar a ação por falta de log? |
+| I | Information disclosure | O dado vaza? |
+| D | Denial of service | Consigo tornar o serviço indisponível? Em geral, isto fica fora das regras de engajamento. |
+| E | Elevation of privilege | Consigo obter mais privilégio? |
 
-## Outros óculos
+## Outros modelos
 
 - **LINDDUN** — privacidade.
-- **Attack trees** — objetivo na raiz, caminhos nas folhas.
-- **Pastas PASTA / OCTAVE** — mais processo de empresa; saiba que existem.
+- **Árvore de ataque** — o objetivo fica na raiz e os caminhos ficam nas folhas.
+- **PASTA e OCTAVE** — processos de empresa. Saiba que existem.
 
-## Como praticar em uma tarde
+## Como praticar em uma sessão
 
-Pegue um sistema que você use (o próprio Security Guide publicado no GitHub, um Juice Shop, um bot de Discord):
+Escolha um sistema que você usa: este Security Guide no GitHub, um Juice Shop ou um bot de Discord.
 
-1. Liste ativos e atores (usuário anônimo, admin, CI, dependabot).
-2. Para cada fronteira (internet→app, app→banco, CI→prod), uma hipótese STRIDE.
-3. Marque o que *já* é controle e o que é só esperança.
-4. Compare com um pentest: o teste só vale nas hipóteses in-scope.
+1. Liste ativo e ator (usuário anônimo, administrador, CI, Dependabot).
+2. Para cada fronteira (internet para aplicação, aplicação para banco, CI para produção), escreva uma hipótese STRIDE.
+3. Marque o que já é controle e o que é apenas expectativa.
+4. Compare com um pentest: o teste só vale para a hipótese que está no escopo.
 
-## Relação com ATT&CK
+## Relação com o ATT&CK
 
-ATT&CK entra *depois*: “se o ator for ransomware humano, quais técnicas são plausíveis *nesta* rede?”. Não comece o modelo pela matriz inteira.
+O ATT&CK entra depois. A pergunta é: se o ator for um operador de ransomware, quais técnicas são plausíveis nesta rede? Não comece o modelo pela matriz inteira.
 
 ## Leitura
 
 - Microsoft Threat Modeling: <https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool>
-- OWASP Threat Dragon (FOSS): <https://owasp.org/www-project-threat-dragon/>
+- OWASP Threat Dragon (software livre): <https://owasp.org/www-project-threat-dragon/>

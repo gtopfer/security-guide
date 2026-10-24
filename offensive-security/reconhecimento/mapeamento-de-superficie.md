@@ -1,60 +1,60 @@
 # Mapeamento de superfície de ataque
 
-Superfície de ataque é o conjunto de **pontos onde um ator externo ou interno pode interagir** com o sistema e, se algo falhar, causar impacto. Mapear é desenhar isso com dono, exposição e criticidade.
+A superfície de ataque é o conjunto de **pontos em que um ator externo ou interno pode interagir** com o sistema. Se um controle falha nesse ponto, há impacto. Mapear é registrar o ponto com dono, exposição e criticidade.
 
-## Não é só “portas abertas”
+## Não é só porta aberta
 
-Inclui:
+A superfície inclui:
 
-- Apps web e APIs (incluindo versões antigas `/v1` esquecidas)
-- VPNs, webmail, Citrix, painéis de nuvem
-- Repositórios, pipelines, registry de containers
-- Identidade: SSO, usuários de serviço, chaves de API no CI
-- Dependências (biblioteca, imagem Docker, GitHub Action)
-- Pessoas (helpdesk, processos de reset de senha) — ver [engenharia social](../humano/engenharia-social.md)
-- Físico e wireless, se o escopo incluir escritório
+- Aplicação web e API, inclusive versão antiga esquecida, como `/v1`
+- VPN, webmail, Citrix e painel de nuvem
+- Repositório, pipeline e registry de contêiner
+- Identidade: SSO, usuário de serviço e chave de API no CI
+- Dependência: biblioteca, imagem Docker e GitHub Action
+- Pessoa: service desk e processo de redefinição de senha. Veja [engenharia social](../humano/engenharia-social.md)
+- Acesso físico e rede sem fio, se o escopo incluir o escritório
 
 ## Modelo simples de inventário
 
-Para cada ativo in-scope, anote:
+Para cada ativo no escopo, anote:
 
 | Campo | Por quê |
 |-------|---------|
-| Nome / URL / IP | Identidade |
-| Dono (time) | Correção depois |
-| Exposição | Internet, parceiro, só VPN, só LAN |
-| Auth | Anônimo, usuário, admin, m2m |
-| Dado | Público, interno, pessoal, segredo |
-| Confiança | Produção vs staging vs “alguém subiu na AWS pessoal” |
+| Nome, URL ou IP | Identidade do ativo |
+| Dono (time) | Quem corrige depois |
+| Exposição | Internet, parceiro, somente VPN ou somente LAN |
+| Autenticação | Anônimo, usuário, administrador ou máquina a máquina |
+| Dado | Público, interno, pessoal ou segredo |
+| Confiança | Produção, homologação ou ambiente criado em conta pessoal |
 
-Isso já é entregável de pentest mediano — muitos clientes não têm essa tabela.
+Esta tabela já é entregável de um pentest. Muitos clientes não a possuem.
 
 ## Priorização (estudo)
 
-Heurística comum, não lei:
+Heurística comum, não uma regra fixa:
 
-1. Internet-facing + autenticação frágil + dado sensível
-2. Identidade (IdP, AD, IAM) — compromisso escala
-3. CI/CD e supply chain — compromisso vira *todos* os deploys
-4. Staging que fala com produção ou replica dados reais
-5. Marketing sites isolados (ainda podem ser ponta de phishing da marca)
+1. Exposto à internet, com autenticação frágil e com dado sensível.
+2. Identidade (provedor de identidade, AD, IAM). O comprometimento se espalha.
+3. CI/CD e supply chain. O comprometimento alcança os deploys seguintes.
+4. Homologação que fala com produção ou que replica dado real.
+5. Site de marketing isolado. Ainda pode servir de página de phishing da marca.
 
 ## Shadow IT
 
-SaaS que um time criou com cartão corporativo, bucket de “teste”, domínio expirado que ainda aponta. Recon de **certificados e DNS** costuma achar isso melhor que o CMDB oficial.
+SaaS criado por um time com cartão corporativo, bucket de teste e domínio expirado que ainda resolve. Reconhecimento de **certificado e de DNS** encontra esse ativo com mais frequência do que o CMDB oficial.
 
-## Superfície *assumida* vs *real*
+## Superfície assumida e superfície real
 
-Diagramas de arquitetura mentem por omissão. O mapa real sai de:
+O diagrama de arquitetura omite componentes. O mapa real sai de:
 
-- Tráfego (se o cliente der)
-- Inventário de nuvem (se o cliente der leitura IAM)
-- Recon combinado com entrevistas (purple / kickoff)
+- Tráfego, se o cliente entregar a captura.
+- Inventário de nuvem, se o cliente entregar leitura de IAM.
+- Reconhecimento combinado com entrevista (purple team ou reunião de início).
 
-Em red team, às vezes o mapa *é* o objetivo (“chegar no SAP”). Em pentest de conformidade, o mapa *é* o escopo fechado no contrato.
+Em red team, o mapa às vezes é o objetivo, por exemplo chegar ao SAP. Em pentest de conformidade, o mapa é o escopo fechado no contrato.
 
 ## Leitura seguinte
 
-- [Cloud](../nuvem/cloud-superficie.md)
+- [Nuvem](../nuvem/cloud-superficie.md)
 - [CI/CD](../nuvem/cicd-e-supply-chain.md)
 - [Relatório](../defesa/relatorio-e-comunicacao.md)

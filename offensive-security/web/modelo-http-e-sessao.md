@@ -1,59 +1,59 @@
 # HTTP, cookies e sessão
 
-Quase toda AppSec ofensiva começa em **como o protocolo trata estado e identidade**. Sem isso, “vulnerabilidade web” vira palavra mágica.
+Quase toda segurança ofensiva de aplicação começa em **como o protocolo trata estado e identidade**. Sem isso, "vulnerabilidade web" não tem definição operacional.
 
-## Request / response
+## Pedido e resposta
 
-HTTP é mensagem: método, path, headers, corpo. O servidor decide; o cliente (browser ou `curl`) só propõe. Qualquer controle *só no JavaScript* é dica, não segurança.
+HTTP é uma mensagem: método, caminho, cabeçalho e corpo. O servidor decide. O cliente (navegador ou `curl`) apenas propõe. Um controle que existe **somente no JavaScript** é uma indicação para a interface. Não é segurança.
 
-Conceitos para estudar até ficar entediado:
+Conceitos para estudar até ficarem estáveis:
 
-- Métodos: GET idempotente na teoria; POST/PUT/PATCH/DELETE mudam estado.
-- Códigos: 2xx sucesso, 3xx redirect (open redirect vive aqui), 4xx cliente, 5xx servidor.
-- Headers de segurança: `Content-Security-Policy`, `Set-Cookie` (atributos), `Authorization`, CORS (`Access-Control-*`).
-- HTTP/2 e HTTP/3 mudam transporte; a semântica de app continua sendo recurso + authz.
+- Métodos: GET é idempotente na teoria. POST, PUT, PATCH e DELETE mudam estado.
+- Códigos: 2xx é sucesso, 3xx é redirecionamento (open redirect vive aqui), 4xx é cliente e 5xx é servidor.
+- Cabeçalhos de segurança: `Content-Security-Policy`, `Set-Cookie` (atributos), `Authorization` e CORS (`Access-Control-*`).
+- HTTP/2 e HTTP/3 mudam o transporte. A semântica da aplicação continua sendo recurso e autorização.
 
-Material: RFC 9110 (HTTP Semantics) — pesado, mas é a fonte. MDN é mais digerível: <https://developer.mozilla.org/en-US/docs/Web/HTTP>
+Material: RFC 9110 (HTTP Semantics) é densa, e é a fonte. O MDN é mais direto: <https://developer.mozilla.org/en-US/docs/Web/HTTP>
 
 ## Cookies e atributos
 
-Cookie é armazenamento que o browser **anexa** depois, segundo regras de domínio/path.
+O cookie é armazenamento que o navegador **anexa depois**, segundo regras de domínio e de caminho.
 
 Estude o significado de:
 
-- **HttpOnly** — JS não lê (mitiga *roubo* via XSS, não a existência do XSS).
-- **Secure** — só HTTPS.
-- **SameSite** — reduz CSRF clássico; não é absoluto (exceções, browsers velhos, top-level).
-- **Domain / Path** — escopo demais = cookie viaja para apps que não deveriam.
+- **HttpOnly** — o JavaScript não lê o cookie. Isso reduz o roubo via XSS. Não elimina o XSS.
+- **Secure** — o cookie segue somente por HTTPS.
+- **SameSite** — reduz o CSRF clássico. Não é absoluto: há exceção, navegador antigo e navegação de nível superior.
+- **Domain e Path** — escopo amplo faz o cookie viajar para aplicativos que não deveriam recebê-lo.
 
-Sessão no servidor (ID opaco) vs JWT no cliente são **modelos diferentes** de confiança. Um JWT “assinado” ainda pode ser um problema de **authz** (você é quem o token diz? o *endpoint* checa?).
+Sessão no servidor (identificador opaco) e JWT no cliente são **modelos diferentes** de confiança. Um JWT assinado ainda pode ser um problema de **autorização**: o endpoint verifica se você é a identidade que o token declara?
 
 ## Same-origin policy (SOP)
 
-Origem ≈ esquema + host + porta. JS de `https://a.exemplo` não lê o DOM de `https://b.exemplo` à toa. Muita da “magia” de XSS/CSRF/CORS é sobre **quem consegue fazer o browser enviar credenciais para onde**.
+A origem é, de forma aproximada, esquema mais host mais porta. O JavaScript de `https://a.exemplo` não lê o DOM de `https://b.exemplo` por padrão. Grande parte de XSS, CSRF e CORS trata de **quem consegue fazer o navegador enviar credencial para onde**.
 
-CORS é o servidor *relaxando* SOP de forma explícita. `Access-Control-Allow-Origin: *` com credenciais é combinação que você deve *entender*, não copiar.
+CORS é o servidor relaxando a SOP de forma explícita. Entenda a combinação `Access-Control-Allow-Origin: *` com credencial. Não copie essa combinação.
 
 ## Sessão e autenticação
 
-Perguntas de estudo (responda por escrito num app que você use):
+Responda por escrito, em um aplicativo que você usa:
 
-1. Onde vive a identidade após o login?
-2. Como o servidor associa pedido à identidade?
-3. Como encerra (logout, expiração, rotação)?
-4. O que acontece se eu reenviar o mesmo cookie/token de outro IP/UA?
-5. Reset de senha: o token é de uso único? Expira? Vaza no Referer?
+1. Onde a identidade fica depois do login?
+2. Como o servidor associa o pedido à identidade?
+3. Como a sessão termina (logout, expiração, rotação)?
+4. O que ocorre se o mesmo cookie ou token for reenviado de outro endereço IP ou de outro user-agent?
+5. Na redefinição de senha: o token é de uso único? Ele expira? Ele vaza no cabeçalho Referer?
 
 ## TLS
 
-TLS protege o **trânsito**, não a lógica da app. Certificado inválido, mTLS, HSTS são temas de superfície e de phishing (usuário clicando em aviso). Para ofensiva de estudo: o que um MITM *na rede local* ainda vê se houver TLS bem feito (quase nada do HTTP) vs se houver HTTP puro.
+O TLS protege o **trânsito**, não a lógica da aplicação. Certificado inválido, mTLS e HSTS são temas de superfície e de phishing (a pessoa aceita o aviso). Para estudo ofensivo: com TLS bem feito, um intermediário na rede local vê quase nada do HTTP. Com HTTP puro, vê o conteúdo.
 
 ## O que não está neste documento
 
-Nada de lista de payloads, bypass de WAF ou receitas de session fixation. Entenda o modelo; pratique em [labs legais](../pratica/labs-legais.md) (Juice Shop, PortSwigger Academy).
+Não há lista de payload, contorno de WAF nem receita de fixação de sessão. Entenda o modelo. Pratique em [laboratórios legais](../pratica/labs-legais.md) (Juice Shop e PortSwigger Academy).
 
 ## Leitura seguinte
 
-- [Client-side](client-side.md)
-- [APIs e auth](apis-e-auth.md)
+- [Cliente](client-side.md)
+- [APIs e autenticação](apis-e-auth.md)
 - [OWASP Top 10](owasp-top-10.md)

@@ -1,36 +1,36 @@
-# Engenharia social (estudo de classe de risco)
+# Engenharia social (classe de risco)
 
-O humano é interface. Ofensiva real combina pretexto + canal (e-mail, telefone, presencial) + um pedaço técnico (página falsa, USB, “TI pediu o código”). Este guia trata **reconhecimento do risco e defesa**. Não ensina a montar golpe contra pessoas.
+A pessoa é uma interface do sistema. O ataque real combina pretexto, canal (e-mail, telefone, presença) e um componente técnico (página falsa, USB ou um pedido em nome da TI). Este guia trata o **reconhecimento do risco e a defesa**. Não ensina a montar golpe contra pessoas.
 
 ## Pretexto
 
-História plausível: RH, suporte, fornecedor, urgência. Urgência e medo são os aceleradores — o [for-noobs](../../for-noobs/README.md) já descreve isso para o usuário comum.
+O pretexto é uma história plausível: RH, suporte, fornecedor, urgência. Urgência e medo aceleram a decisão. O guia [para iniciantes](../../for-noobs/README.md) descreve isso para o usuário comum.
 
 ## Canais
 
-- E-mail (phishing, BEC — *business email compromise*)
-- Mensageria / SMS (smishing)
-- Voz (vishing, SIM swap *como ameaça*)
-- Presencial / crachá / “segurou a porta”
-- Deepfake de voz/vídeo (classe emergente)
+- E-mail (phishing e comprometimento de e-mail corporativo, ou BEC)
+- Mensagem e SMS (smishing)
+- Voz (vishing e troca de chip como ameaça)
+- Presença física, crachá e acesso por acompanhar outra pessoa na porta
+- Deepfake de voz ou de vídeo (classe em crescimento)
 
-## O que um red team *contratado* combina
+## O que um red team contratado combina antes
 
-Escopo **explícito** de social: quem pode ser alvo (não o CEO internado, não clientes), o que é proibido (não pedir dinheiro, não assustar família), como consentir depois (debrief). Sem isso, não faça.
+O escopo de engenharia social é **explícito**. Ele define quem pode ser alvo. Não inclui pessoa em situação de saúde grave nem cliente. Define o que é proibido: não pedir dinheiro e não assustar a família. Define o debrief depois do exercício. Sem esse acordo, não execute o teste.
 
-## Defesa que realmente escala
+## Defesa que escala
 
-- FIDO2 / chaves: phishing de senha perde valor.
-- Processos: tesouraria confirma fora de banda.
-- DMARC/SPF/DKIM + marcação de e-mail externo.
-- Least privilege: estagiário não reseta senha de DA.
-- Cultura sem humilhar quem reporta o clique.
+- FIDO2 e chave de segurança: o phishing de senha perde valor.
+- Processo: a tesouraria confirma o pagamento por um canal separado.
+- DMARC, SPF e DKIM, mais a marcação de e-mail externo.
+- Privilégio mínimo: um estagiário não redefine a senha de Domain Admin.
+- Cultura que não humilha quem reporta o clique.
 
 ## OSINT e pessoas
 
-Sherlock, dumps, organogramas: no pentest, servem para **mostrar exposição da org**. Usar para assediar indivíduo é abuso e pode ser crime. Ver ética.
+Sherlock, dump e organograma, no pentest, mostram a **exposição da organização**. Usar esse material para assediar uma pessoa é abuso e pode ser crime. Veja a página de ética.
 
 ## Leitura seguinte
 
 - [Ética](../fundamentos/etica-e-lei.md)
-- [for-noobs: phishing](../../for-noobs/README.md)
+- [Phishing no guia para iniciantes](../../for-noobs/README.md)

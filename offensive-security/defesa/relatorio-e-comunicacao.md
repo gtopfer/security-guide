@@ -1,34 +1,34 @@
 # Relatório e comunicação
 
-O entregável de pentest não é a shell: é o **texto que o time consegue corrigir**. Relatórios públicos de consultorias (lista na [coleção de pentest](../../pentest-tools-collection/README.md)) ensinam tom e estrutura.
+O entregável do pentest não é a shell. É o **texto que o time consegue corrigir**. Relatórios públicos de consultoria, listados na [coleção de pentest](../../pentest-tools-collection/README.md), mostram tom e estrutura.
 
 ## Estrutura que funciona
 
-1. **Sumário executivo** — risco em português de negócio, sem jargão. O que pode acontecer este trimestre se não fizer nada.
-2. **Escopo e metodologia** — o que foi testado, o que não, janela, contas.
-3. **Achados** — cada um com título, severidade *contextual*, evidência, impacto, reprodução *autorizada e mínima*, remediação, referências (CWE, ASVS, CVE).
-4. **Superfície / inventário** — mesmo sem exploit.
-5. **Limitações** — WAF, falta de conta admin de teste, tempo.
+1. **Sumário executivo** — risco em linguagem de negócio, sem jargão. O que pode ocorrer neste trimestre se nada for feito.
+2. **Escopo e método** — o que foi testado, o que não foi, a janela e as contas.
+3. **Achados** — cada um com título, severidade contextual, evidência, impacto, reprodução autorizada e mínima, correção e referência (CWE, ASVS, CVE).
+4. **Superfície e inventário** — mesmo sem exploit.
+5. **Limitações** — WAF, falta de conta de administrador de teste, tempo.
 
 ## Reprodução no relatório
 
-O cliente precisa reproduzir no **ambiente dele**. Isso não é desculpa para publicar exploit genérico na internet. Neste repositório não colamos PoCs; no relatório contratual, descreva passos no alvo autorizado com dados de teste, sem dump de PII.
+O cliente precisa repetir o teste no **ambiente dele**. Isso não autoriza publicar um exploit genérico na internet. Este repositório não cola prova de conceito. No relatório contratual, descreva os passos no alvo autorizado, com dado de teste, sem dump de dado pessoal.
 
 ## Severidade
 
-CVSS + contexto (ver [taxonomias](../fundamentos/taxonomias-mitre-owasp-cwe.md)). Três XSS refletidos não somam um Domain Admin. Agrupe por **cadeia**.
+Use CVSS mais contexto. Veja [taxonomias](../fundamentos/taxonomias-mitre-owasp-cwe.md). Três XSS refletidos não equivalem a um Domain Admin. Agrupe por **cadeia**.
 
 ## Tom
 
-Sem humilhar o dev. Sem ameaça. Sem “hackeamos vocês”. Fatos, precondições, correção verificável.
+Não humilhe quem desenvolve. Não ameace. Não escreva "invadimos vocês". Escreva fato, pré-condição e correção verificável.
 
 ## LGPD e evidência
 
-Minimize. Hash, ID interno, print recortado. Relatório é documento com dado pessoal em potencial — trate como tal.
+Minimize. Use hash, identificador interno e captura recortada. O relatório pode conter dado pessoal. Trate-o como tal.
 
 ## Bug bounty
 
-O “relatório” é o ticket da plataforma: título claro, endpoint, impacto, conta de teste. Fora de escopo não envie “de brinde” com PoC agressivo.
+O relatório é o ticket da plataforma: título claro, endpoint, impacto e conta de teste. Não envie um item fora de escopo com prova de conceito agressiva.
 
 ## Leitura seguinte
 

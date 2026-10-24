@@ -1,138 +1,125 @@
-# 🛡️ Security Guide
+# Security Guide
 
 [![Licença: GPL v3](https://img.shields.io/badge/Licen%C3%A7a-GPLv3-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-bem--vindas-brightgreen.svg)](CONTRIBUTING.md)
 [![100% FOSS](https://img.shields.io/badge/ferramentas-100%25%20FOSS-orange.svg)](osint-tools-collection/README.md)
 
-Bem-vindo ao **Security Guide**! Um hub central em português com recursos de segurança digital, ferramentas OSINT, pentest/red team e guias práticos — do básico ao avançado. Tudo **100% open source**, sem paywalls.
+O **Security Guide** reúne, em português, material de segurança digital. O repositório cobre proteção pessoal, OSINT, pentest, red team e estudo ofensivo. As ferramentas listadas são software livre. Este guia não vende acesso a conteúdo.
 
 ## Índice
 
-- [Para quem é este guia?](#para-quem-é-este-guia)
-- [Roadmap de Aprendizado](#-roadmap-de-aprendizado)
-- [Conteúdo](#-conteúdo)
+- [Para quem é este guia](#para-quem-é-este-guia)
+- [Roteiro de estudo](#roteiro-de-estudo)
+- [Conteúdo](#conteúdo)
 - [Estudos ofensivos](./offensive-security/README.md)
-- [Guia de Google Dorks](#-guia-de-google-dorks)
-- [Contribuição](#-contribuição)
+- [Guia de Google Dorks](#guia-de-google-dorks)
+- [Contribuição](#contribuição)
 - [Código de Conduta](CODE_OF_CONDUCT.md)
 - [Licença](#licença)
 
-## Para quem é este guia?
+## Para quem é este guia
 
-| Perfil | Por onde começar |
-|--------|-----------------|
-| Usuário comum preocupado com privacidade | [Guia para Iniciantes](./for-noobs/README.md) |
-| Pesquisador de segurança / OSINT | [Coleção de Ferramentas OSINT](./osint-tools-collection/README.md) |
-| Quer aprender Google Dorks | [Guia de Google Dorks](./osint-tools-collection/docs/google-search/README.md) |
-| Profissional de CTI / Threat Intel | [Inteligência de Ameaças](./osint-tools-collection/README.md#inteligência-de-ameaças--ioc) |
-| Pentester / Red Team / Bug Bounty | [Coleção de Ferramentas de Pentest](./pentest-tools-collection/README.md) |
-| Quer **estudar** segurança ofensiva (conceitos, não certificação) | [Estudos de Segurança Ofensiva](./offensive-security/README.md) |
+| Perfil | Ponto de partida |
+|--------|------------------|
+| Pessoa que protege a própria conta e os próprios dados | [Fundamentos para iniciantes](./for-noobs/README.md) |
+| Pesquisador de segurança ou de OSINT | [Coleção de ferramentas OSINT](./osint-tools-collection/README.md) |
+| Pessoa que estuda operadores de busca do Google | [Guia de Google Dorks](./osint-tools-collection/docs/google-search/README.md) |
+| Profissional de CTI ou de threat intelligence | [Inteligência de ameaças](./osint-tools-collection/README.md#inteligência-de-ameaças--ioc) |
+| Pentester, red team ou programa de bug bounty | [Coleção de ferramentas de pentest](./pentest-tools-collection/README.md) |
+| Pessoa que estuda segurança ofensiva (conceitos, sem trilha de certificação) | [Estudos de segurança ofensiva](./offensive-security/README.md) |
 
----
+## Roteiro de estudo
 
-## 🗺️ Roadmap de Aprendizado
-
-Se você está começando do zero e quer progredir de forma estruturada:
+Siga esta ordem quando o estudo começa do zero.
 
 ```
 Nível 1 — Proteção pessoal
-└── Guia para Iniciantes: senhas, 2FA, criptografia, phishing, backups
+└── Fundamentos para iniciantes: senhas, 2FA, criptografia, phishing, cópias de segurança
 
-Nível 2 — Entender sua exposição
-└── Pegada digital: Google Dorks sobre si mesmo, verificação de emails vazados
+Nível 2 — Exposição pública
+└── Pegada digital: Google Dorks sobre a própria pessoa; verificação de e-mails em vazamentos
 
 Nível 3 — Ferramentas OSINT básicas
-└── Sherlock (usernames), holehe (emails), Subfinder (domínios)
+└── Sherlock (nomes de usuário), holehe (e-mails), Subfinder (domínios)
 
 Nível 4 — Reconhecimento de infraestrutura
 └── Amass, httpx, GoWitness, Nmap
 
 Nível 5 — Análise e correlação
-└── IntelOwl, MISP, OpenCTI, Sigma rules
+└── IntelOwl, MISP, OpenCTI, regras Sigma
 
 Nível 6 — Automação de pipelines
 └── n8n, Prefect, Cortex/Analyzers
 
-Nível 7 — Segurança ofensiva (opcional, requer autorização)
-└── Estudos (metodologia, web, AD, nuvem) + labs legais + coleção de pentest
+Nível 7 — Segurança ofensiva (opcional; exige autorização por escrito)
+└── Estudos (método, web, AD, nuvem) + laboratórios legais + coleção de pentest
 ```
 
-> Cada nível pressupõe domínio do anterior. Não pule etapas — entender como se defender é o que torna um pesquisador ético eficaz.
+Cada nível depende do nível anterior. Estude a defesa antes do reconhecimento ativo. Essa ordem reduz o risco de uso fora de escopo.
 
----
+## Conteúdo
 
-## 📂 Conteúdo
+### 1. [Fundamentos para iniciantes](./for-noobs/README.md)
 
-### 1. [Guia para Iniciantes (For Noobs)](./for-noobs/README.md)
+Guia prático para proteger contas, dispositivos e dados. O texto define o termo técnico quando ele aparece.
 
-Um guia prático para quem está começando a se preocupar com segurança digital e privacidade. Sem jargão técnico desnecessário.
-
-- Higiene cibernética básica (atualizações, bloqueio de tela)
-- Senhas fortes e gerenciadores
+- Higiene básica: atualizações e bloqueio de tela
+- Senhas e gerenciadores
 - Autenticação de dois fatores (2FA)
-- Navegação segura e VPN
-- Comunicação segura (Signal, ProtonMail)
+- Navegação e VPN
+- Comunicação (Signal, Proton Mail)
 - Criptografia de disco (BitLocker, FileVault, LUKS)
 - Phishing e engenharia social
-- Segurança mobile e resposta a incidentes (o que fazer se você for comprometido)
-- Backups com a regra 3-2-1
-- Como verificar sua pegada digital
+- Dispositivos móveis
+- Resposta quando uma conta ou um dispositivo é comprometido
+- Cópias de segurança (regra 3-2-1)
+- Verificação da pegada digital
 
-### 2. [Coleção de Ferramentas OSINT](./osint-tools-collection/README.md)
+### 2. [Coleção de ferramentas OSINT](./osint-tools-collection/README.md)
 
-Uma biblioteca viva com projetos **100% open source** para investigações OSINT/CTI. Executáveis localmente, sem cadastros pagos.
+Catálogo de projetos de código aberto para investigação OSINT e CTI. A execução é local. O uso básico não exige cadastro pago.
 
-- Frameworks & suites de reconhecimento
+- Frameworks e suítes de reconhecimento
 - Perfis e redes sociais
-- Email, telefone e credenciais
-- Domínios, IPs e infraestrutura
-- Inteligência de ameaças (IOC/CTI)
+- E-mail, telefone e credenciais
+- Domínios, endereços IP e infraestrutura
+- Inteligência de ameaças (IOC e CTI)
 - Automação e pipelines
-- E muito mais...
 
-### 3. [Coleção de Ferramentas de Pentest](./pentest-tools-collection/README.md)
+### 3. [Coleção de ferramentas de pentest](./pentest-tools-collection/README.md)
 
-Ferramentas e listas **100% open source** para pentest, red team e bug bounty — uso autorizado apenas.
+Catálogo de ferramentas e listas de código aberto para pentest, red team e bug bounty. Use estas ferramentas somente com autorização por escrito.
 
-- Listas e coleções de recursos
-- Ferramentas clássicas (Metasploit, sqlmap, dirsearch, Hydra...)
-- Agentes de IA para pentest (experimental)
-- Labs e apps propositalmente vulneráveis para praticar
+- Listas e coleções de referência
+- Ferramentas de teste (Metasploit, sqlmap, dirsearch, Hydra)
+- Agentes de IA para pentest (uso experimental, com escopo)
+- Laboratórios e aplicações vulneráveis de propósito
 
-### 4. [Estudos de Segurança Ofensiva](./offensive-security/README.md)
+### 4. [Estudos de segurança ofensiva](./offensive-security/README.md)
 
-Biblioteca de documentos em português sobre **temas** ofensivos: método, recon, web/API, redes, Linux/Windows, AD, nuvem, CI/CD, engenharia social, detecção e relatório. Sem trilha de certificação, sem payloads e sem passo a passo de exploit.
+Documentos em português sobre temas ofensivos: método, reconhecimento, web, API, redes, Linux, Windows, Active Directory, nuvem, CI/CD, engenharia social, detecção e relatório. Não há trilha de certificação. Não há payload. Não há procedimento de exploit.
 
-- Fundamentos (ética, PTES, ATT&CK, threat modeling)
-- Superfícies (web, mobile, protocolos, identidade, cloud, containers)
-- Prática em labs legais e lista de material livre (OWASP, PortSwigger, MITRE)
-- Catálogo FOSS no estilo OSINT: [coleção de pentest](./pentest-tools-collection/README.md) (HackTricks, ZAP, Impacket, GOAD, Prowler…)
+- Fundamentos: ética, PTES, ATT&CK e modelagem de ameaças
+- Superfícies: web, mobile, protocolos, identidade, nuvem e contêineres
+- Prática em laboratórios legais e material livre (OWASP, PortSwigger, MITRE)
+- Catálogo FOSS no mesmo formato da coleção OSINT: [coleção de pentest](./pentest-tools-collection/README.md) (HackTricks, ZAP, Impacket, GOAD, Prowler)
 
----
+## Guia de Google Dorks
 
-## 📖 Guia de Google Dorks
+O guia fica na seção OSINT. O [Guia de Google Dorks](./osint-tools-collection/docs/google-search/README.md) serve a dois usos. A pessoa iniciante verifica o que está publicado sobre ela. O pesquisador consulta infraestrutura e arquivos públicos dentro do escopo autorizado.
 
-Está separado na seção OSINT, mas merece destaque: o [Guia de Google Dorks](./osint-tools-collection/docs/google-search/README.md) é util tanto para iniciantes (verificar o que está exposto sobre você) quanto para pesquisadores (recon de infraestrutura e dados sensíveis).
+## Contribuição
 
----
+Contribuições são bem-vindas. Leia o [guia de contribuição](CONTRIBUTING.md) antes de abrir uma issue ou um pull request. Você pode:
 
-## 🤝 Contribuição
+- Sugerir uma ferramenta de software livre.
+- Corrigir uma informação desatualizada ou um link quebrado.
+- Ampliar o guia para iniciantes.
+- Ampliar os [estudos de segurança ofensiva](./offensive-security/README.md) com conceitos e referências, sem exploit.
 
-Contribuições são bem-vindas! Veja o [guia de contribuição](CONTRIBUTING.md) para abrir uma issue ou pull request para:
-
-- Sugerir novas ferramentas FOSS
-- Corrigir informações desatualizadas ou links quebrados
-- Adicionar seções ao guia para iniciantes
-- Expandir os [estudos de segurança ofensiva](./offensive-security/README.md) (conceitos e referências, sem exploits)
-
-O espaço é de estudo. Ao participar, siga o [Código de Conduta](CODE_OF_CONDUCT.md): respeito, OSINT ético e prática ofensiva só com autorização.
-
----
-
-*Mantenha-se seguro e curioso.*
-
+Este repositório é um espaço de estudo. Siga o [Código de Conduta](CODE_OF_CONDUCT.md). OSINT ético e prática ofensiva exigem autorização.
 
 ## Licença
 
-Este projeto está licenciado sob a [GNU General Public License v3.0](LICENSE).
-Participar também significa seguir o [Código de Conduta](CODE_OF_CONDUCT.md).
+Este projeto usa a [GNU General Public License v3.0](LICENSE).
+A participação também segue o [Código de Conduta](CODE_OF_CONDUCT.md).

@@ -1,24 +1,24 @@
-# Wireless e físico (visão de risco)
+# Rede sem fio e acesso físico
 
-Red team completo às vezes inclui o prédio. A maior parte dos leitores deste guia **não** tem esse escopo — e não deve improvisar.
+Um red team completo às vezes inclui o prédio. A maior parte dos leitores deste guia **não** tem esse escopo. Não improvise.
 
-## Wireless
+## Rede sem fio
 
-Wi-Fi é rede com fronteira radio. Classes de risco: senha fraca, WPS legado, guest mal isolado, rogue AP (usuário liga no SSID homônimo). Estude o **modelo** (associação, 802.1X corporativo vs PSK) em material de administração de rede.
+O Wi-Fi é uma rede cuja fronteira é o rádio. Classes de risco: senha fraca, WPS legado, rede de visitante mal isolada e ponto de acesso falso (a pessoa se conecta a um SSID com o mesmo nome). Estude o modelo (associação, 802.1X corporativo e PSK) em material de administração de rede.
 
-Ataque a Wi-Fi de vizinho, cafeteria “para treinar” ou empresa sem ROE escrito é ilegal. Labs: seu AP, ou exercícios de curso com kit próprio.
+Atacar o Wi-Fi do vizinho, de uma cafeteria "para treinar" ou de uma empresa sem regras de engajamento escritas é ilegal. Laboratório: o seu ponto de acesso, ou um exercício de curso com equipamento próprio.
 
-## Físico
+## Acesso físico
 
-Crachá, recepção, USB “perdido”, impressora, sala de servidor aberta, lockpicking de filme. Em exercício profissional: atores combinados, seguro, e debrief. Fora disso: não.
+Crachá, recepção, USB deixado de propósito, impressora e sala de servidor aberta. Em exercício profissional: atores combinados, seguro e debrief. Fora disso, não execute.
 
-## Cabo e “físico de data center”
+## Cabo e data center
 
-Console, iLO/iDRAC na VLAN de usuários, rack sem câmara. Inventário. Mesma ética.
+Console, iLO ou iDRAC na VLAN de usuários, e rack sem controle de acesso. Isto é inventário. A ética é a mesma.
 
-## Defesa que o ofensivo deve recomendar
+## Defesa que o estudo ofensivo deve recomendar
 
-Segmentar guest, 802.1X, NAC se o madurez permitir, USB boot desligado por GPO, mesa limpa, *privacy screen* em open office se o threat model incluir ombro.
+Segmente a rede de visitante. Use 802.1X. Use NAC quando a maturidade permitir. Desative o boot por USB via GPO. Adote mesa limpa. Use filtro de privacidade em escritório aberto se o modelo de ameaça incluir observação por cima do ombro.
 
 ## Leitura seguinte
 
