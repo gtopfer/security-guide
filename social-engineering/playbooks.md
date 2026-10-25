@@ -80,7 +80,7 @@ Treine o reporte. Não treine o medo.
 3. Use material pronto do [CERT.br](https://cartilha.cert.br/fasciculos/#golpes) e da [CISA](https://www.cisa.gov/secure-our-world/recognize-and-report-phishing). Não escreva isca nova neste repositório.
 4. Não humilhe quem reportou. Não humilhe quem clicou. Acolha o reporte.
 5. Meça o tempo até o reporte. Não publique ranking de "quem caiu".
-6. Se houver exercício com pessoa real, obtenha autorização por escrito antes. Defina quem está fora do exercício. Não inclua dado de saúde, família nem cliente.
+6. Se houver exercício com pessoa real, obtenha autorização por escrito antes. O registro mínimo está em [quando o estudo é permitido](estudos-ofensivos/autorizacao.md). Defina quem está fora do exercício. Não inclua dado de saúde, família nem cliente.
 7. Não colete senha real no exercício. Não guarde dado pessoal além do necessário. Apague o dado no prazo definido.
 8. Não publique resultado, alvo nem modelo neste repositório.
 

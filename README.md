@@ -13,6 +13,7 @@ O **Security Guide** reúne, em português, material de segurança digital. O re
 - [Conteúdo](#conteúdo)
 - [Estudos ofensivos](./offensive-security/README.md)
 - [Engenharia social (defesa)](./social-engineering/README.md)
+- [Engenharia social — estudos ofensivos (somente conceito)](./social-engineering/estudos-ofensivos/README.md)
 - [Guia de Google Dorks](#guia-de-google-dorks)
 - [Contribuição](#contribuição)
 - [Código de Conduta](CODE_OF_CONDUCT.md)
@@ -29,6 +30,7 @@ O **Security Guide** reúne, em português, material de segurança digital. O re
 | Pentester, red team ou programa de bug bounty | [Coleção de ferramentas de pentest](./pentest-tools-collection/README.md) |
 | Pessoa que estuda segurança ofensiva (conceitos, sem trilha de certificação) | [Estudos de segurança ofensiva](./offensive-security/README.md) |
 | Pessoa que reconhece golpe e responde no trabalho (usuário, service desk ou SOC) | [Engenharia social: conceitos e defesa](./social-engineering/README.md) |
+| Pessoa que estuda engenharia social no lado ofensivo, com autorização por escrito | [Estudos ofensivos (somente conceito)](./social-engineering/estudos-ofensivos/README.md) |
 
 ## Roteiro de estudo
 
@@ -56,6 +58,7 @@ Nível 6 — Automação de pipelines
 
 Nível 7 — Segurança ofensiva (opcional; exige autorização por escrito)
 └── Estudos (método, web, AD, nuvem) + laboratórios legais + coleção de pentest
+    └── Engenharia social: somente conceito (autorização, fase e vetor)
 ```
 
 Cada nível depende do nível anterior. Estude a defesa antes do reconhecimento ativo. Essa ordem reduz o risco de uso fora de escopo.
@@ -115,6 +118,7 @@ Trilha sobre phishing, vishing, pretexting e fraude de e-mail corporativo. O tex
 - Canais e sinais para a pessoa, para o service desk e para o SOC
 - Playbooks: reporte, contenção de conta, autenticação de e-mail e treino
 - Fontes: CERT.br, NIST, CISA, MITRE e software livre de defesa
+- [Estudos ofensivos](./social-engineering/estudos-ofensivos/README.md): autorização, fase e vetor, somente conceito. Sem modelo, sem kit e sem script.
 
 ## Guia de Google Dorks
 
@@ -127,7 +131,7 @@ Contribuições são bem-vindas. Leia o [guia de contribuição](CONTRIBUTING.md
 - Sugerir uma ferramenta de software livre.
 - Corrigir uma informação desatualizada ou um link quebrado.
 - Ampliar o guia para iniciantes.
-- Ampliar a trilha de [engenharia social](./social-engineering/README.md) com conceito e defesa, sem roteiro de ataque.
+- Ampliar a trilha de [engenharia social](./social-engineering/README.md): defesa, ou conceito ofensivo em [estudos ofensivos](./social-engineering/estudos-ofensivos/README.md). Sem modelo, sem kit e sem script.
 - Ampliar os [estudos de segurança ofensiva](./offensive-security/README.md) com conceitos e referências, sem exploit.
 
 Este repositório é um espaço de estudo. Siga o [Código de Conduta](CODE_OF_CONDUCT.md). OSINT ético e prática ofensiva exigem autorização.

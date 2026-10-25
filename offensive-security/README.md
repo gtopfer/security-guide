@@ -74,7 +74,7 @@ Cada documento explica **conceito, vocabulário, o que observar e o que ler**. N
 |-----------|--------|
 | [Superfície em nuvem](nuvem/cloud-superficie.md) | IAM, armazenamento público e metadado |
 | [CI/CD e supply chain](nuvem/cicd-e-supply-chain.md) | Pipeline como caminho de comprometimento |
-| [Engenharia social](humano/engenharia-social.md) | Pretexto e phishing como classe de risco |
+| [Engenharia social](humano/engenharia-social.md) | Ponte: defesa e conceitos ofensivos (sem modelo e sem kit) |
 
 ### Fechamento (defesa e prática)
 

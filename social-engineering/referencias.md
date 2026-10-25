@@ -79,4 +79,5 @@ Evidência guardada (sem senha e sem código):
 ## Leitura seguinte
 
 - [Índice da trilha](README.md)
+- [Estudos ofensivos (somente conceito)](estudos-ofensivos/README.md). Esta lista continua sem kit de campanha.
 - [Fundamentos para iniciantes](../for-noobs/README.md)

@@ -64,3 +64,4 @@ Não grave senha, código de uso único nem documento completo. Não publique es
 
 - [Playbooks](playbooks.md)
 - [Phishing no guia para iniciantes](../for-noobs/README.md#7-phishing-e-engenharia-social)
+- [Estudos ofensivos (somente conceito)](estudos-ofensivos/README.md)
