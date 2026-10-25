@@ -4,7 +4,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-bem--vindas-brightgreen.svg)](CONTRIBUTING.md)
 [![100% FOSS](https://img.shields.io/badge/ferramentas-100%25%20FOSS-orange.svg)](osint-tools-collection/README.md)
 
-O **Security Guide** reúne, em português, material de segurança digital. O repositório cobre proteção pessoal, OSINT, pentest, red team e estudo ofensivo. As ferramentas listadas são software livre. Este guia não vende acesso a conteúdo.
+O **Security Guide** reúne, em português, material de segurança digital. O repositório cobre proteção pessoal, defesa contra engenharia social, OSINT, pentest, red team e estudo ofensivo. As ferramentas listadas são software livre. Este guia não vende acesso a conteúdo.
 
 ## Índice
 
@@ -12,6 +12,7 @@ O **Security Guide** reúne, em português, material de segurança digital. O re
 - [Roteiro de estudo](#roteiro-de-estudo)
 - [Conteúdo](#conteúdo)
 - [Estudos ofensivos](./offensive-security/README.md)
+- [Engenharia social (defesa)](./social-engineering/README.md)
 - [Guia de Google Dorks](#guia-de-google-dorks)
 - [Contribuição](#contribuição)
 - [Código de Conduta](CODE_OF_CONDUCT.md)
@@ -27,6 +28,7 @@ O **Security Guide** reúne, em português, material de segurança digital. O re
 | Profissional de CTI ou de threat intelligence | [Inteligência de ameaças](./osint-tools-collection/README.md#inteligência-de-ameaças--ioc) |
 | Pentester, red team ou programa de bug bounty | [Coleção de ferramentas de pentest](./pentest-tools-collection/README.md) |
 | Pessoa que estuda segurança ofensiva (conceitos, sem trilha de certificação) | [Estudos de segurança ofensiva](./offensive-security/README.md) |
+| Pessoa que reconhece golpe e responde no trabalho (usuário, service desk ou SOC) | [Engenharia social: conceitos e defesa](./social-engineering/README.md) |
 
 ## Roteiro de estudo
 
@@ -35,6 +37,7 @@ Siga esta ordem quando o estudo começa do zero.
 ```
 Nível 1 — Proteção pessoal
 └── Fundamentos para iniciantes: senhas, 2FA, criptografia, phishing, cópias de segurança
+    └── Engenharia social: conceitos, sinais e playbooks de defesa
 
 Nível 2 — Exposição pública
 └── Pegada digital: Google Dorks sobre a própria pessoa; verificação de e-mails em vazamentos
@@ -104,6 +107,15 @@ Documentos em português sobre temas ofensivos: método, reconhecimento, web, AP
 - Prática em laboratórios legais e material livre (OWASP, PortSwigger, MITRE)
 - Catálogo FOSS no mesmo formato da coleção OSINT: [coleção de pentest](./pentest-tools-collection/README.md) (HackTricks, ZAP, Impacket, GOAD, Prowler)
 
+### 5. [Engenharia social: conceitos e defesa](./social-engineering/README.md)
+
+Trilha sobre phishing, vishing, pretexting e fraude de e-mail corporativo. O texto explica o risco e a defesa. Não há roteiro de ataque. Não há kit. Não há modelo de mensagem.
+
+- Conceitos e princípios de influência, só como alerta
+- Canais e sinais para a pessoa, para o service desk e para o SOC
+- Playbooks: reporte, contenção de conta, autenticação de e-mail e treino
+- Fontes: CERT.br, NIST, CISA, MITRE e software livre de defesa
+
 ## Guia de Google Dorks
 
 O guia fica na seção OSINT. O [Guia de Google Dorks](./osint-tools-collection/docs/google-search/README.md) serve a dois usos. A pessoa iniciante verifica o que está publicado sobre ela. O pesquisador consulta infraestrutura e arquivos públicos dentro do escopo autorizado.
@@ -115,6 +127,7 @@ Contribuições são bem-vindas. Leia o [guia de contribuição](CONTRIBUTING.md
 - Sugerir uma ferramenta de software livre.
 - Corrigir uma informação desatualizada ou um link quebrado.
 - Ampliar o guia para iniciantes.
+- Ampliar a trilha de [engenharia social](./social-engineering/README.md) com conceito e defesa, sem roteiro de ataque.
 - Ampliar os [estudos de segurança ofensiva](./offensive-security/README.md) com conceitos e referências, sem exploit.
 
 Este repositório é um espaço de estudo. Siga o [Código de Conduta](CODE_OF_CONDUCT.md). OSINT ético e prática ofensiva exigem autorização.
