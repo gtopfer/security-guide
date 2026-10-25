@@ -43,6 +43,15 @@ Um texto novo nesta pasta deve:
 - Apontar para um laboratório oficial e para a fonte primária (OWASP, MITRE, RFC, documentação do fornecedor).
 - **Não** incluir payload, exploit, prova de conceito, dump de prova ou procedimento para reproduzir um ataque.
 
+## Engenharia social (`social-engineering/`)
+
+Um texto novo nesta pasta deve:
+
+- Permanecer em **pt-BR**.
+- Explicar o conceito e a defesa: o que a pessoa vê, qual sinal observar e qual ação tomar.
+- Apontar para a fonte primária (CERT.br, NIST, CISA, MITRE, RFC).
+- **Não** incluir roteiro de ataque, modelo de mensagem, kit de phishing, payload, ferramenta de campanha nem dado de exercício (alvo, resultado ou prova de cliente).
+
 ## Código de conduta
 
 O texto completo está no [Código de Conduta](CODE_OF_CONDUCT.md).

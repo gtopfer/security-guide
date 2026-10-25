@@ -112,6 +112,8 @@ O phishing ataca a pessoa que usa o sistema, não só o software.
 - **Desconfie de urgência.** A frase "sua conta será bloqueada agora" é um padrão comum de golpe.
 - **Confira o endereço.** `g0ogle.com` não é `google.com`.
 
+O texto completo de defesa (canais, sinais e resposta no trabalho) está na trilha [Engenharia social](../social-engineering/README.md).
+
 ## 8. Integridade do arquivo baixado
 
 Antes de instalar um software importante, confirme que o arquivo não foi alterado.

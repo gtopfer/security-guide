@@ -1,6 +1,6 @@
 # Engenharia social (classe de risco)
 
-A pessoa é uma interface do sistema. O ataque real combina pretexto, canal (e-mail, telefone, presença) e um componente técnico (página falsa, USB ou um pedido em nome da TI). Este guia trata o **reconhecimento do risco e a defesa**. Não ensina a montar golpe contra pessoas.
+A pessoa é uma interface do sistema. O ataque real combina pretexto, canal (e-mail, telefone, presença) e um componente técnico (página falsa, USB ou um pedido em nome da TI). Este guia trata o **reconhecimento do risco e a defesa**. Não ensina a montar golpe contra pessoas. O texto completo de defesa está na [trilha de engenharia social](../../social-engineering/README.md).
 
 ## Pretexto
 
@@ -32,5 +32,6 @@ Sherlock, dump e organograma, no pentest, mostram a **exposição da organizaç�
 
 ## Leitura seguinte
 
+- [Trilha de engenharia social (conceitos e defesa)](../../social-engineering/README.md)
 - [Ética](../fundamentos/etica-e-lei.md)
 - [Phishing no guia para iniciantes](../../for-noobs/README.md)
