@@ -14,6 +14,12 @@ Antes de qualquer teste em sistema que não seja inteiramente seu, registre:
 
 Uma mensagem de "pode testar" no chat não substitui e-mail ou contrato com data e lista de alvos.
 
+## Engenharia social contra pessoa
+
+O padrão é deixar engenharia social, acesso físico e terceiro fora do escopo. Inclua engenharia social só com um registro próprio. Esse registro nomeia a pessoa, o vetor, a janela e a ação proibida.
+
+O vocabulário e o limite estão em [estudos ofensivos de engenharia social](../../social-engineering/estudos-ofensivos/README.md). Sem esse registro, não faça contato. Não use colega nem família como exercício.
+
 ## Situações comuns
 
 | Situação | Em geral |

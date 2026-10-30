@@ -1,6 +1,6 @@
 # Engenharia social (classe de risco)
 
-A pessoa é uma interface do sistema. O ataque real combina pretexto, canal (e-mail, telefone, presença) e um componente técnico (página falsa, USB ou um pedido em nome da TI). Este guia trata o **reconhecimento do risco e a defesa**. Não ensina a montar golpe contra pessoas. O texto completo de defesa está na [trilha de engenharia social](../../social-engineering/README.md).
+A pessoa é uma interface do sistema. O ataque real combina pretexto, canal (e-mail, telefone, presença) e um componente técnico (página falsa, USB ou um pedido em nome da TI). Esta página é a ponte. A defesa completa está na [trilha de engenharia social](../../social-engineering/README.md). O vocabulário ofensivo, só em conceito, está em [estudos ofensivos](../../social-engineering/estudos-ofensivos/README.md). Nenhum dos dois textos ensina a montar golpe.
 
 ## Pretexto
 
@@ -18,6 +18,8 @@ O pretexto é uma história plausível: RH, suporte, fornecedor, urgência. Urg�
 
 O escopo de engenharia social é **explícito**. Ele define quem pode ser alvo. Não inclui pessoa em situação de saúde grave nem cliente. Define o que é proibido: não pedir dinheiro e não assustar a família. Define o debrief depois do exercício. Sem esse acordo, não execute o teste.
 
+O registro, a fase e o vetor estão em [estudos ofensivos](../../social-engineering/estudos-ofensivos/README.md). Essa pasta não traz modelo, kit nem script. Sem autorização por escrito, não faça contato.
+
 ## Defesa que escala
 
 - FIDO2 e chave de segurança: o phishing de senha perde valor.
@@ -33,5 +35,6 @@ Sherlock, dump e organograma, no pentest, mostram a **exposição da organizaç�
 ## Leitura seguinte
 
 - [Trilha de engenharia social (conceitos e defesa)](../../social-engineering/README.md)
+- [Estudos ofensivos de engenharia social (somente conceito)](../../social-engineering/estudos-ofensivos/README.md)
 - [Ética](../fundamentos/etica-e-lei.md)
 - [Phishing no guia para iniciantes](../../for-noobs/README.md)

@@ -45,12 +45,20 @@ Um texto novo nesta pasta deve:
 
 ## Engenharia social (`social-engineering/`)
 
+A pasta tem duas trilhas.
+
+- **Defesa** (arquivos na raiz da pasta): o que a pessoa vê, qual sinal observar e qual ação tomar.
+- **Estudos ofensivos** (`social-engineering/estudos-ofensivos/`): autorização, fase, vetor e limite de reporte. O texto nomeia o conceito. O texto não ensina a executar o contato.
+
 Um texto novo nesta pasta deve:
 
 - Permanecer em **pt-BR**.
-- Explicar o conceito e a defesa: o que a pessoa vê, qual sinal observar e qual ação tomar.
-- Apontar para a fonte primária (CERT.br, NIST, CISA, MITRE, RFC).
-- **Não** incluir roteiro de ataque, modelo de mensagem, kit de phishing, payload, ferramenta de campanha nem dado de exercício (alvo, resultado ou prova de cliente).
+- Na defesa, explicar o conceito e a ação.
+- Nos estudos ofensivos, explicar a fase, o vetor e a autorização. Não ensinar a montar a tentativa.
+- Apontar para a fonte primária (CERT.br, NIST, CISA, MITRE, RFC). Na defesa, aponte para o playbook já existente. Não duplique o playbook.
+- **Não** incluir roteiro de ataque, passo a passo de campanha, modelo de mensagem, texto de isca, kit de phishing, script, payload, configuração de ferramenta de campanha nem dado de exercício (alvo, resultado ou prova de cliente).
+
+Essa proibição vale para as duas trilhas.
 
 ## Código de conduta
 

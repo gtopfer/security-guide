@@ -65,4 +65,5 @@ Um exercício com pessoa real exige autorização por escrito **antes** do exerc
 
 - [Canais](canais.md)
 - [Ética e lei no estudo ofensivo](../offensive-security/fundamentos/etica-e-lei.md)
+- [Estudos ofensivos (somente conceito)](estudos-ofensivos/README.md)
 - [Código de Conduta](../CODE_OF_CONDUCT.md)

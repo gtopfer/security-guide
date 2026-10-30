@@ -2,6 +2,8 @@
 
 Trilha de **estudo defensivo** sobre engenharia social. O texto explica o que a pessoa vê, qual sinal observar e qual ação tomar. Não é um roteiro de ataque.
 
+A pasta [estudos ofensivos](estudos-ofensivos/README.md) é separada. Ela nomeia autorização, fase e vetor. Ela não traz modelo, kit nem script. Ela não substitui os playbooks.
+
 > Pratique a resposta no seu processo e com dado seu. Não publique alvo, resultado de exercício nem prova de cliente. Acesso sem autorização a dispositivo pode ser crime ([Lei 12.737/2012](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12737.htm)). Privacidade e registro de acesso estão no [Marco Civil](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm) (Lei 12.965/2014). Dado pessoal está na [LGPD](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) (Lei 13.709/2018). Fraude contra a pessoa também pode ser crime, em norma própria. Este texto não é aconselhamento jurídico.
 
 ## Para quem é esta pasta
@@ -9,6 +11,7 @@ Trilha de **estudo defensivo** sobre engenharia social. O texto explica o que a 
 - Pessoa que protege a própria conta. Comece também pelo [guia para iniciantes](../for-noobs/README.md).
 - Service desk, SOC (centro de operações de segurança) e quem treina a equipe.
 - Pessoa que estuda a classe de risco para desenhar controle. O resumo no estudo ofensivo está em [engenharia social](../offensive-security/humano/engenharia-social.md). Ele não substitui esta trilha.
+- Pessoa que redige regras de engajamento. Leia esta trilha primeiro. Depois leia [estudos ofensivos](estudos-ofensivos/README.md). Essa pasta é só conceito.
 
 ## Como ler
 
@@ -17,6 +20,7 @@ Trilha de **estudo defensivo** sobre engenharia social. O texto explica o que a 
 3. Use [Sinais de alerta](sinais-de-alerta.md) como lista de conferência.
 4. Execute [Playbooks](playbooks.md) quando houver uma tentativa.
 5. Aprofunde nas [Referências](referencias.md).
+6. Se você estuda o lado ofensivo, leia [estudos ofensivos](estudos-ofensivos/README.md) por último. Essa leitura não autoriza contato.
 
 ## Índice
 
@@ -27,6 +31,7 @@ Trilha de **estudo defensivo** sobre engenharia social. O texto explica o que a 
 | [Sinais de alerta](sinais-de-alerta.md) | Listas para quem recebe e para service desk ou SOC |
 | [Playbooks](playbooks.md) | Reporte, contenção de conta, e-mail e treino |
 | [Referências](referencias.md) | CERT.br, NIST, CISA, MITRE, RFC e software livre de defesa |
+| [Estudos ofensivos](estudos-ofensivos/README.md) | Somente conceito: autorização, fase, vetor e limite de reporte |
 
 ## O que entra
 
