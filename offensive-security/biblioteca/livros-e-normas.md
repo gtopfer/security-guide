@@ -15,7 +15,7 @@ Referências **estáveis**. Prefira a fonte primária a uma publicação de rede
 - OWASP ASVS, WSTG e Cheat Sheet Series — <https://owasp.org/>
 - NIST SP 800-115 (*technical guide to information security testing*) — <https://csrc.nist.gov/>
 - NIST SP 800-63 (identidade)
-- PTES — <http://www.pentest-standard.org/>
+- PTES — <https://pentest-standard.readthedocs.io/en/latest/>
 - CIS Benchmarks — hardening
 
 ## Ameaça e detecção
